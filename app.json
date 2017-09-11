@@ -3,10 +3,43 @@
     "pages/index/index",
     "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
-  }
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "河南理工大学",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#cc3333",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tabBar_index.png",
+        "selectedIconPath": "images/tabBar_index_selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tabBar_find.png",
+        "selectedIconPath": "images/tabBar_find_selected.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tabBar_more.png",
+        "selectedIconPath": "images/tabBar_more_selected.png",
+        "text": "更多"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
 }
