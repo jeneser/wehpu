@@ -10,7 +10,9 @@
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "河南理工大学",
     "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#7A7E83",
@@ -20,20 +22,20 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/tabBar_index.png",
-        "selectedIconPath": "images/tabBar_index_selected.png",
+        "iconPath": "images/tabBar/tabBar_index.png",
+        "selectedIconPath": "images/tabBar/tabBar_index_selected.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/explore/explore",
-        "iconPath": "images/tabBar_find.png",
-        "selectedIconPath": "images/tabBar_find_selected.png",
+        "iconPath": "images/tabBar/tabBar_find.png",
+        "selectedIconPath": "images/tabBar/tabBar_find_selected.png",
         "text": "发现"
       },
       {
         "pagePath": "pages/more/more",
-        "iconPath": "images/tabBar_more.png",
-        "selectedIconPath": "images/tabBar_more_selected.png",
+        "iconPath": "images/tabBar/tabBar_more.png",
+        "selectedIconPath": "images/tabBar/tabBar_more_selected.png",
         "text": "更多"
       }
     ]

@@ -1,4 +1,25 @@
 <!--index.wxml-->
-<view class="container">
-  index
+<!-- 首页功能导航 -->
+<view class="index-tools">
+  <block wx:for="{{tools}}" wx:key="id">
+    <navigator class="index-tools__item" url="">
+      <image class="index-tools__icon" src="/images/tools/{{item.id}}.png"></image>
+      <text class="index-tools__name">{{item.name}}</text>
+    </navigator>
+  </block>
+</view>
+<!-- 课表信息 -->
+<view class="index-main">
+  <view class="kb-list">
+    <view class="kb-list__meta">
+      <text class="kb-list__title">我的课程</text>
+      <text class="kb-list__more">更多</text>
+    </view>
+    <navigator class="kb-list__item">
+      这里是课程信息卡片
+    </navigator>
+    <navigator class="kb-list__item">
+      这里是课程信息卡片
+    </navigator>
+  </view>
 </view>

@@ -1,1 +1,70 @@
-/**index.wxss**/
+/* 工具导航 */
+.index-tools{
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  padding: 20rpx 15rpx 15rpx;
+  margin-bottom: 30rpx;
+  min-height: 350rpx;
+  background: #fff;
+  overflow: hidden;
+}
+.index-tools__item{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 25%;
+  height: 180rpx;
+}
+.index-tools__icon{
+  display: block;
+  width: 90rpx;
+  height: 90rpx;
+  margin: 25rpx auto 15rpx auto;
+}
+.index-tools__name{
+  display: block;
+  font-size: 11pt;
+}
+/* 主体部分 */
+.index-main{
+  display: block;
+  box-sizing: border-box;
+  margin-top: 45rpx;
+  height: 1000rpx;
+  background-color: #f7f7f7;
+}
+/* 我的课程信息 */
+.index-main{
+  padding: 45rpx 30rpx;
+}
+.kb-list__meta{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.kb-list__title{
+  display: inline-block;
+  margin-left: 15rpx;
+  padding-left: 20rpx;
+  line-height: 1;
+  font-size: 13pt;
+  font-weight: bold;
+  color: #000;
+  border-left: solid #cc3333 10rpx;
+}
+.kb-list__more{
+  color: #cc3333;
+  font-size: 12pt;
+  font-weight: bold;
+}
+.kb-list__item{
+  height: 200rpx;
+  margin-top: 45rpx;
+  margin-bottom: 45rpx;
+  background-color: #fff;
+  box-shadow: 0 0 6rpx 6rpx #eee;
+  border-radius: 2rpx;
+}
