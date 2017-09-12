@@ -1,0 +1,4 @@
+<!--more.wxml-->
+<view class="container log-list">
+  I am more!
+</view>

@@ -1,0 +1,4 @@
+<!--explore.wxml-->
+<view class="container explore">
+  I am explore!
+</view>

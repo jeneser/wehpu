@@ -1,7 +1,10 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+
+    "pages/explore/explore",
+
+    "pages/more/more"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -22,13 +25,13 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/explore/explore",
         "iconPath": "images/tabBar_find.png",
         "selectedIconPath": "images/tabBar_find_selected.png",
         "text": "发现"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/more/more",
         "iconPath": "images/tabBar_more.png",
         "selectedIconPath": "images/tabBar_more_selected.png",
         "text": "更多"
