@@ -60,11 +60,67 @@
   font-size: 12pt;
   font-weight: bold;
 }
-.kb-list__item{
-  height: 200rpx;
+/* 课程卡片 */
+.kb-card{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  box-sizing: border-box;
+  min-height: 240rpx;
   margin-top: 45rpx;
   margin-bottom: 45rpx;
+  padding: 30rpx 15rpx;
   background-color: #fff;
   box-shadow: 0 0 6rpx 6rpx #eee;
   border-radius: 2rpx;
+  overflow: hidden;
+}
+.kb-card__name{
+  display: block;
+  color: #000;
+  font-size: 10pt;
+}
+.kb-card__room{
+  display: block;
+  padding: 30rpx 0 15rpx 0;
+  color: #cc3333;
+  font-size: 20pt;
+  font-weight: bold;
+}
+.kb-card__place{
+  display: block;
+  color: #999;
+  font-size: 9pt;
+}
+.kb-card__count{
+  display: block;
+  padding: 30rpx 0 15rpx 0;
+  color: #000;
+  font-size: 20pt;
+  font-weight: bold;
+}
+.kb-card__teacher{
+  display: block;
+  color: #999;
+  font-size: 9pt;
+}
+.kb-card__state{
+  display: block;
+  padding: 10rpx 20rpx;
+  margin: 30rpx 0 15rpx 0; 
+  font-size: 11pt;
+  color: #fff;
+  border-radius: 50rpx;
+}
+.kb-card__state--on{
+  background-color: #cc3333;
+}
+.kb-card__state--off{
+  background-color: #999;
+}
+.kb-card__time{
+  display: block;
+  margin-left: 15rpx;
+  color: #999;
+  font-size: 9pt;
 }
