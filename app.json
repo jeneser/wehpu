@@ -1,10 +1,11 @@
 {
   "pages":[
+    "pages/more/more",
+
     "pages/index/index",
 
-    "pages/explore/explore",
+    "pages/explore/explore"
 
-    "pages/more/more"
   ],
   "window": {
     "navigationBarTextStyle": "black",

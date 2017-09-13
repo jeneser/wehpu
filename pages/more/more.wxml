@@ -1,4 +1,35 @@
-<!--more.wxml-->
-<view class="container log-list">
-  I am more!
+<view class="more">
+  <view class="userinfo">
+    <navigator class="userinfo__item">
+      <image class="userinfo__avatar" src="/images/more/face.png"></image>
+      <view class="userinfo__meta">
+        <text class="userinfo__nickname">jeneser</text>
+        <text class="userinfo__state">未绑定</text>
+      </view>
+      <text class="userinfo__r-icon">r</text>
+    </navigator>
+  </view>
+  <view class="more-list">
+    <navigator class="more-list__nav">
+      <view class="more-list__item more-list__bind">
+        <image class="more-list__l-icon" src="/images/more/bind.png"></image>
+        <text class="more-list__text">账号绑定</text>
+        <text class="more-list__r-icon">r</text>
+      </view>
+    </navigator>
+    <navigator class="more-list__nav">
+      <view class="more-list__item more-list__feedback">
+        <image class="more-list__l-icon" src="/images/more/feedback.png"></image>
+        <text class="more-list__text">意见反馈</text>
+        <text class="more-list__r-icon">r</text>
+      </view>
+    </navigator>
+    <navigator class="more-list__nav">
+      <view class="more-list__item more-list__about">
+        <image class="more-list__l-icon" src="/images/more/about.png"></image>
+        <text class="more-list__text">关于我们</text>
+        <text class="more-list__r-icon">r</text>
+      </view>
+    </navigator>
+  </view>
 </view>
