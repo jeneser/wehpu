@@ -1,3 +1,4 @@
+<!--more.wxml-->
 <view class="more">
   <view class="userinfo">
     <navigator class="userinfo__item">

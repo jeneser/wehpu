@@ -33,13 +33,11 @@
   display: block;
   box-sizing: border-box;
   margin-top: 45rpx;
+  padding: 45rpx 30rpx;
   height: 1000rpx;
   background-color: #f7f7f7;
 }
 /* 我的课程信息 */
-.index-main{
-  padding: 45rpx 30rpx;
-}
 .kb-list__meta{
   display: flex;
   justify-content: space-between;
