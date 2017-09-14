@@ -15,6 +15,7 @@
       <text class="kb-list__title">我的课程</text>
       <navigator>
         <text class="kb-list__more">更多</text>
+        <image class="kb-list__r-icon" src="/images/arrow_right_red.png"></image>
       </navigator>
     </view>
     <navigator class="kb-card">

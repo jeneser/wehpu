@@ -20,6 +20,7 @@
         <text class="topic-list__title">热门话题</text>
         <navigator>
           <text class="topic-list__more">更多</text>
+          <image class="topic-list__r-icon" src="/images/arrow_right_red.png"></image>
         </navigator>
       </view>
       <navigator class="topic-card">
@@ -28,11 +29,11 @@
       </navigator>
       <navigator class="topic-card">
         <text class="topic-card__title">人丑一定要多去读读书吗？</text>
-        <text class="topic-card__description">今天讨论一个特别严肃的话题，人丑一定要多去读读书吗？今天讨论一个特别严肃的话题，人丑一定要多去读读书吗？</text>
+        <text class="topic-card__description">今天讨论一个特别严肃的话题，人丑一定要多去读读书吗</text>
       </navigator>
       <navigator class="topic-card">
         <text class="topic-card__title">人丑一定要多去读读书吗？</text>
-        <text class="topic-card__description">今天讨论一个特别严肃的话题，人丑一定要多去读读书吗？今天讨论一个特别严肃的话题，人丑一定要多去读读书吗？</text>
+        <text class="topic-card__description">今天讨论一个特别严肃的话题，人丑一定要多去读读书吗</text>
       </navigator>
     </view>
   </view>

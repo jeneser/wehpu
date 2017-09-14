@@ -43,6 +43,13 @@
   justify-content: space-between;
   align-items: center;
 }
+.kb-list__r-icon{
+  display: inline-block;
+  width: 16rpx;
+  height: 28rpx;
+  margin-left: 15rpx;
+  line-height: 1;
+}
 .kb-list__title{
   display: inline-block;
   margin-left: 15rpx;

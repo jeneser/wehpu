@@ -46,6 +46,13 @@
   justify-content: space-between;
   align-items: center;
 }
+.topic-list__r-icon{
+  display: inline-block;
+  width: 16rpx;
+  height: 28rpx;
+  margin-left: 15rpx;
+  line-height: 1;
+}
 .topic-list__title{
   display: inline-block;
   margin-left: 15rpx;
@@ -64,7 +71,7 @@
 /* 话题卡片 */
 .topic-card{
   box-sizing: border-box;
-  min-height: 240rpx;
+  min-height: 180rpx;
   margin-top: 45rpx;
   margin-bottom: 45rpx;
   padding: 30rpx 15rpx;
@@ -77,10 +84,10 @@
   display: block;
   padding-bottom: 15rpx;
   color: #000;
-  font-size: 13pt;
+  font-size: 12pt;
   font-weight: bold;
 }
 .topic-card__description{
   color: #999;
-  font-size: 9pt;
+  font-size: 10pt;
 }

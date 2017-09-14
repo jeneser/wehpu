@@ -38,6 +38,10 @@
   font-size: 10pt;
   color: #999;
 }
+.userinfo__r-icon{
+  width: 50rpx;
+  height: 50rpx;
+}
 /* 功能列表 */
 .more-list{
   box-sizing: border-box;
@@ -54,9 +58,13 @@
   border-bottom: solid 1rpx #eee;
 }
 .more-list__l-icon{
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: -135rpx;
+}
+.more-list__r-icon{
   width: 50rpx;
   height: 50rpx;
-  margin-left: -135rpx;
 }
 .more-list__text{
   flex: 1;
