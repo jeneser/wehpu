@@ -1,14 +1,12 @@
 {
   "pages":[
-    
     "pages/more/more",
     
     "pages/index/index",
 
     "pages/explore/explore",
-
-    "pages/more/user/user"
-    
+    "pages/more/user/user",
+    "pages/more/about/about"
   ],
   "window": {
     "navigationBarTextStyle": "black",

@@ -1,0 +1,40 @@
+.about{
+  padding: 45rpx;
+  overflow: hidden;
+}
+.app{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.app__logo{
+  width: 144rpx;
+  height: 144rpx;
+  margin-top: 15%;
+}
+.app__name{
+  margin: 30rpx 0;
+  font-size: 18pt;
+  color: #000;
+  font-weight: bold;
+}
+.app__version{
+  font-size: 10pt;
+  font-weight: bold;
+  color: #999;
+  margin-bottom: 80rpx;
+}
+.app__github,
+.app__contact{
+  margin-bottom: 15rpx;
+  font-size: 11pt;
+  font-weight: bold;
+  color: #999;
+}
+.app__repository,
+.app__email{
+  margin-bottom: 45rpx;
+  font-size: 9pt;
+  font-weight: bold;
+  color: #3399ff;
+}

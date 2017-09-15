@@ -1,0 +1,11 @@
+<view class="about">
+  <view class="app">
+    <image class="app__logo" src="/images/logo.png"></image>
+    <text class="app__name">wehpu</text>
+    <text class="app__version">V1.0.0</text>
+    <text class="app__github">GitHub</text>
+    <text class="app__repository">https://github.com/hpufe/wehpu</text>
+    <text class="app__contact">联系邮箱</text>
+    <text class="app__email">jeneserwang@gmail.com</text>
+  </view>
+</view>
