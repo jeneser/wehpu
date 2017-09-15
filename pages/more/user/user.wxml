@@ -1,0 +1,35 @@
+<view class="user">
+  <view class="userinfo">
+    <view class="userinfo__item">
+      <text class="userinfo__l-text">头像</text>
+      <image class="userinfo__avatar" src="/images/more/face.png"></image>
+    </view>
+    <view class="userinfo__item">
+      <text class="userinfo__l-text">昵称</text>
+      <text class="userinfo__r-text userinfo__nickname">jeneser</text>
+    </view>
+    <view class="userinfo__item">
+      <text class="userinfo__l-text">姓名</text>
+      <text class="userinfo__r-text userinfo__name">王亚哲</text>
+    </view>
+    <view class="userinfo__item">
+      <text class="userinfo__l-text">学号</text>
+      <text class="userinfo__r-text userinfo__num">311509040120</text>
+    </view>
+    <view class="userinfo__item">
+      <text class="userinfo__l-text">班级</text>
+      <text class="userinfo__r-text userinfo__class">网络-1501</text>
+    </view>
+    <view class="userinfo__item">
+      <text class="userinfo__l-text">系别</text>
+      <text class="userinfo__r-text userinfo__academe">计算机科学与技术学院</text>
+    </view>
+    <navigator class="userinfo__item">
+      <text class="userinfo__l-text">账号绑定</text>
+      <view class="userinfo__r-text userinfo__r-wrap">
+        <text class="userinfo__bind">未绑定</text>
+        <image class="userinfo__r-icon" src="/images/more/arrow_right.png"></image>
+      </view>
+    </navigator>
+  </view>
+</view>

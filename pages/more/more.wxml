@@ -1,7 +1,7 @@
 <!--more.wxml-->
 <view class="more">
   <view class="userinfo">
-    <navigator class="userinfo__item">
+    <navigator class="userinfo__item" url="/pages/more/user/user">
       <image class="userinfo__avatar" src="/images/more/face.png"></image>
       <view class="userinfo__meta">
         <text class="userinfo__nickname">jeneser</text>
