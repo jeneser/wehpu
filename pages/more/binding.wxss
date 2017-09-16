@@ -1,55 +1,67 @@
+/* binding */
 .binding{
   padding: 60rpx;
   background-color: #fff;
 }
-/* 第一步 */
+/* step */
 .step-one,
-.form-group{
+.form-one,
+.step-two,
+.form-two{
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.form-group{
+.form-one,
+.form-two{
   margin-top: 20%;
 }
-/* 学号字段 */
+/* input-group */
 .input-group{
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 .input-group__input{
   flex: 1;
   height: 80rpx;
   min-height: 80rpx;
+  margin-bottom: 45rpx;
   padding: 0 30rpx;
   font-size: 14pt;
   border: solid 1rpx #ddd;
   border-radius: 45rpx;
 }
-.input-active{
-  border-color: #0099ff;
+.form-two .input-group__input{
+  font-size: 13pt;
 }
 /* placeholder */
 .input-placeholder{
   color: #ddd;
 }
 /* Tip */
-.form-group__tip{
-  margin: 45rpx 0;
+.form-one__tip,
+.form-two__tip{
+  margin-top: 15rpx;
   text-align: center;
   font-size: 9pt;
   font-weight: bold;
   color: #999;
 }
-/* 按钮组 */
-.form-group__btns{
+.form-two__help{
+  color: #0099ff;
+}
+/* btns */
+.form-one__btns,
+.form-two__btns{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 100rpx;
+  margin-top: 145rpx;
 }
-.form-group__btn--cancel,
-.form-group__btn--next{
+.form-one__btn--cancel,
+.form-one__btn--next,
+.form-two__btn--start{
   padding: 20rpx 0;
   text-align: center;
   font-size: 12pt;
@@ -57,12 +69,117 @@
   color: #fff;
   border-radius: 50rpx;
 }
-.form-group__btn--next{
+.form-one__btn--next{
   flex: 1.5;
   margin-left: 45rpx;
   background-color: #0099ff;
 }
-.form-group__btn--cancel{
+.form-one__btn--cancel{
   flex: 1;
   background-color: #999;
-} 
+}
+.form-two__btn--start{
+  flex: 1;
+  background-color: #0099ff;
+}
+/* active */
+.input-active{
+  border-color: #0099ff;
+}
+/* help */
+.help{
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #fff; */
+}
+.help__box{
+  position: relative;
+  width: 80%;
+  padding: 45rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  box-shadow: 0 0 60rpx #ccc;
+  z-index: 10;
+}
+.help__item{
+  padding: 15rpx;
+}
+.help__question{
+  display: block;
+  font-size: 11pt;
+  font-weight: bold;
+  color: #999;
+}
+.help__answer{
+  font-size: 11pt;
+  font-weight: bold;
+  color: #ccc;
+}
+.help__close{
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+  width: 45rpx;
+  height: 45rpx;
+}
+/* loading */
+@keyframes rotate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loading-text-opacity {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.loading,
+.loading__main {
+  position: relative;
+  height: 240rpx;
+  width: 240rpx;
+  border-radius: 100%;
+}
+.loading {
+  margin: 40rpx auto;
+}
+.loading__main {
+  border: 10rpx solid transparent;
+  border-color: transparent #0099ff transparent #0099ff;
+  animation: rotate-loading 1.5s linear 0s infinite normal;
+  transform-origin: 50% 50%;
+}
+.loading .loading__main {
+  transition: all 0.5s ease-in-out;
+}
+.loading__text {
+  animation: loading-text-opacity 2s linear 0s infinite normal;
+  position: absolute;
+  top: 0; 
+  width: 240rpx;
+  margin-top: 100rpx;
+  color: #0099ff;
+  font-size: 13pt;
+  font-weight: bold;
+  opacity: 0;
+  text-align: center;
+}
