@@ -14,5 +14,10 @@ Page({
       { id: 'slj', name: '四六级', disabled: false},
       { id: 'other', name: '更多', disabled: false}
     ],
+  },
+  onLoad: function() {
+    wx.navigateTo({
+      url: '/pages/more/binding'
+    });
   }
 })

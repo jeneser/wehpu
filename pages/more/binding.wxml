@@ -1,0 +1,15 @@
+<view class="binding">
+  <!-- 第一步 -->
+  <view class="step-one">
+    <view class="form-group">
+      <view class="input-group">
+        <input class="input-group__input {{useridFocus ? 'input-active' : ''}}" id="userid" type="number" maxlength="12" confirm-type="done" auto-focus="true" placeholder="学号或一卡通号" bindfocus="inputFocus" bindblur="inputBlur"></input>
+      </view>
+      <text class="form-group__tip">接下来进行VPN认证和教务认证,离完成还差两步</text>
+      <view class="form-group__btns">
+        <text class="form-group__btn--cancel" bindtap="navigateCancel">暂不认证</text>
+        <text class="form-group__btn--next" bindtap="navigateNext">下一步</text>
+      </view>
+    </view>
+  </view>
+</view>

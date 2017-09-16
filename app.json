@@ -1,10 +1,9 @@
 {
   "pages":[
-    "pages/more/more",
-    
     "pages/index/index",
-
     "pages/explore/explore",
+    "pages/more/more",
+    "pages/more/binding",
     "pages/more/user/user",
     "pages/more/feedback/feedback",
     "pages/more/about/about"

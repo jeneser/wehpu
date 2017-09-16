@@ -11,7 +11,7 @@
     </navigator>
   </view>
   <view class="more-list">
-    <navigator class="more-list__nav">
+    <navigator class="more-list__nav" url="/pages/more/binding">
       <view class="more-list__item more-list__bind">
         <image class="more-list__l-icon" src="/images/more/bind.png"></image>
         <text class="more-list__text">账号绑定</text>

@@ -1,0 +1,68 @@
+.binding{
+  padding: 60rpx;
+  background-color: #fff;
+}
+/* 第一步 */
+.step-one,
+.form-group{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.form-group{
+  margin-top: 20%;
+}
+/* 学号字段 */
+.input-group{
+  display: flex;
+  align-items: center;
+}
+.input-group__input{
+  flex: 1;
+  height: 80rpx;
+  min-height: 80rpx;
+  padding: 0 30rpx;
+  font-size: 14pt;
+  border: solid 1rpx #ddd;
+  border-radius: 45rpx;
+}
+.input-active{
+  border-color: #0099ff;
+}
+/* placeholder */
+.input-placeholder{
+  color: #ddd;
+}
+/* Tip */
+.form-group__tip{
+  margin: 45rpx 0;
+  text-align: center;
+  font-size: 9pt;
+  font-weight: bold;
+  color: #999;
+}
+/* 按钮组 */
+.form-group__btns{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100rpx;
+}
+.form-group__btn--cancel,
+.form-group__btn--next{
+  padding: 20rpx 0;
+  text-align: center;
+  font-size: 12pt;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 50rpx;
+}
+.form-group__btn--next{
+  flex: 1.5;
+  margin-left: 45rpx;
+  background-color: #0099ff;
+}
+.form-group__btn--cancel{
+  flex: 1;
+  background-color: #999;
+} 
