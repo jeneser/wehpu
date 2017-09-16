@@ -6,6 +6,7 @@
 
     "pages/explore/explore",
     "pages/more/user/user",
+    "pages/more/feedback/feedback",
     "pages/more/about/about"
   ],
   "window": {

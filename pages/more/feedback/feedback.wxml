@@ -1,0 +1,38 @@
+<view class="feedback">
+  <form class="feedback-form" bindsubmit="formSubmit">
+    <!-- 反馈类型 -->
+    <view class="feedback-form__item">
+      <view class="feedback-form__title">
+        <text class="feedback-form__text">反馈类型</text>
+        <text class="feedback-form__required">*</text>
+      </view>
+      <radio-group class="radio-group">
+        <label class="radio-group__radio" wx:for="{{items}}" wx:key="id">
+          <radio value="{{item.name}}" checked="{{item.checked}}" color="#0099ff"/>{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+    <!-- 问题描述 -->
+    <view class="feedback-form__item">
+      <view class="feedback-form__title">
+        <text class="feedback-form__text">问题描述</text>
+        <text class="feedback-form__required">*</text>
+      </view>
+      <textarea class="content" name="textarea" maxlength="300" auto-height="true" cursor-spacing="45" placeholder="请详细描述你的问题,可附图" placeholder-style="color: #999;"/>
+      <!-- 图片上传 -->
+      <view class="upload-photo">
+        <view class="photo-panel__add" bindtap="chooseImage"></view>
+        <!-- 预览图片 -->
+        <block wx:for="{{imageList}}" wx:for-item="image" wx:key="*this">
+          <!-- <view class="preview"> -->
+            <image class="preview__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+          <!-- </view> -->
+        </block>
+      </view>
+    </view>
+    <!-- 提交反馈 -->
+    <view class="feedback-form__item feedback-form__post">
+      <button class="feedback-form__button--post" form-type="submit">提交反馈</button>
+    </view>
+  </form>
+</view>

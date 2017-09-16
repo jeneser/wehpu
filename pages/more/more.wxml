@@ -18,7 +18,7 @@
         <image class="more-list__r-icon" src="/images/more/arrow_right.png"></image>
       </view>
     </navigator>
-    <navigator class="more-list__nav">
+    <navigator class="more-list__nav" url="/pages/more/feedback/feedback">
       <view class="more-list__item more-list__feedback">
         <image class="more-list__l-icon" src="/images/more/feedback.png"></image>
         <text class="more-list__text">意见反馈</text>
