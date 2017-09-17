@@ -1,0 +1,62 @@
+<view class="activity">
+  <navigator>
+    <view class="activity-card">
+      <image class="activity-card__cover" src="/images/cover/cover_1.jpg"></image>
+      <view class="activity-card__info">
+        <text class="activity-card__title">世界这么大,我们出去走走吧!</text>
+        <view class="activity-card__meta">
+          <view class="activity-card__from">
+            <image class="activity-card__ic-from" src="/images/ic_from.png"></image>
+            <text class="activity-card__author">创意俱乐部</text>
+          </view>
+          <view class="activity-card__time">9月17日</view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+  <navigator>
+    <view class="activity-card">
+      <image class="activity-card__cover" src="/images/cover/cover_1.jpg"></image>
+      <view class="activity-card__info">
+        <text class="activity-card__title">世界这么大,我们出去走走吧!</text>
+        <view class="activity-card__meta">
+          <view class="activity-card__from">
+            <image class="activity-card__ic-from" src="/images/ic_from.png"></image>
+            <text class="activity-card__author">创意俱乐部</text>
+          </view>
+          <view class="activity-card__time">9月17日</view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+  <navigator>
+    <view class="activity-card">
+      <image class="activity-card__cover" src="/images/cover/cover_1.jpg"></image>
+      <view class="activity-card__info">
+        <text class="activity-card__title">世界这么大,我们出去走走吧!</text>
+        <view class="activity-card__meta">
+          <view class="activity-card__from">
+            <image class="activity-card__ic-from" src="/images/ic_from.png"></image>
+            <text class="activity-card__author">创意俱乐部</text>
+          </view>
+          <view class="activity-card__time">9月17日</view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+  <navigator>
+    <view class="activity-card">
+      <image class="activity-card__cover" src="/images/cover/cover_1.jpg"></image>
+      <view class="activity-card__info">
+        <text class="activity-card__title">世界这么大,我们出去走走吧!</text>
+        <view class="activity-card__meta">
+          <view class="activity-card__from">
+            <image class="activity-card__ic-from" src="/images/ic_from.png"></image>
+            <text class="activity-card__author">创意俱乐部</text>
+          </view>
+          <view class="activity-card__time">9月17日</view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</view>
