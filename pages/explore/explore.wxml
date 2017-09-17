@@ -1,13 +1,13 @@
 <!--explore.wxml-->
 <!-- 分类导航 -->
 <view class="classify">
-  <navigator class="classify__item">
+  <navigator class="classify__item" url="/pages/explore/activity/activity">
     <text class="classify__activity">校园活动</text>
   </navigator>
-  <navigator class="classify__item">
-    <text class="classify__job">就业招聘</text>
+  <navigator class="classify__item" url="/pages/explore/notice/notice">
+    <text class="classify__job">通知公告</text>
   </navigator>
-  <navigator class="classify__item">
+  <navigator class="classify__item" url="/pages/explore/download/download">
     <text class="classify__download">文件下载</text>
   </navigator>
 </view>
