@@ -17,7 +17,7 @@
   border-bottom: solid 1rpx #eee;
 }
 .details-box__content{
-  max-height: 730rpx;
+  max-height: 670rpx;
   padding-top: 45rpx;
   font-size: 12pt;
   font-weight: 400;
