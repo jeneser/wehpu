@@ -1,0 +1,104 @@
+<view class="course-tody">
+  <view class="time">
+    <text class="time__week">星期一</text>
+    <view class="time__tody">
+      <text class="time__date">2017/9/17</text>
+      <text class="time__weekly">第三周</text>
+    </view>
+  </view>
+  <view class="kb-list">
+    <!-- 上午 -->
+    <view class="kb-list__meta">
+      <text class="kb-list__title">今日上午</text>
+    </view>
+    <view class="kb-card">
+      <view class="kb-card__l">
+        <text class="kb-card__name">数据库系统原理</text>
+        <text class="kb-card__room">202</text>
+        <text class="kb-card__place">计算机综合楼</text>
+      </view>
+      <view class="kb-card__m">
+        <text class="kb-card__count">2</text>
+        <text class="kb-card__teacher">刘老师</text>
+      </view>
+      <view class="kb-card__r">
+        <text class="kb-card__state kb-card__state--on">即将上课</text>
+        <text class="kb-card__time">8:00-10:00</text>
+      </view>
+    </view>
+    <view class="kb-card">
+      <view class="kb-card__l">
+        <text class="kb-card__name">高级路由交换技术</text>
+        <text class="kb-card__room">106</text>
+        <text class="kb-card__place">计算机综合楼</text>
+      </view>
+      <view class="kb-card__m">
+        <text class="kb-card__count">2</text>
+        <text class="kb-card__teacher">陈老师</text>
+      </view>
+      <view class="kb-card__r">
+        <text class="kb-card__state kb-card__state--off">已经下课</text>
+        <text class="kb-card__time">8:00-10:00</text>
+      </view>
+    </view>
+    <!-- 下午 -->
+    <view class="kb-list__meta">
+      <text class="kb-list__title">今日下午</text>
+    </view>
+    <view class="kb-card">
+      <view class="kb-card__l">
+        <text class="kb-card__name">高级路由交换技术</text>
+        <text class="kb-card__room">106</text>
+        <text class="kb-card__place">计算机综合楼</text>
+      </view>
+      <view class="kb-card__m">
+        <text class="kb-card__count">2</text>
+        <text class="kb-card__teacher">陈老师</text>
+      </view>
+      <view class="kb-card__r">
+        <text class="kb-card__state kb-card__state--off">已经下课</text>
+        <text class="kb-card__time">8:00-10:00</text>
+      </view>
+    </view>
+    <view class="kb-card">
+      <view class="kb-card__l">
+        <text class="kb-card__name">高级路由交换技术</text>
+        <text class="kb-card__room">106</text>
+        <text class="kb-card__place">计算机综合楼</text>
+      </view>
+      <view class="kb-card__m">
+        <text class="kb-card__count">2</text>
+        <text class="kb-card__teacher">陈老师</text>
+      </view>
+      <view class="kb-card__r">
+        <text class="kb-card__state kb-card__state--off">已经下课</text>
+        <text class="kb-card__time">8:00-10:00</text>
+      </view>
+    </view>
+    <!-- 晚上 -->
+    <view class="kb-list__meta">
+      <text class="kb-list__title">今日晚上</text>
+    </view>
+    <view class="kb-card">
+      <view class="kb-card__l">
+        <text class="kb-card__name">高级路由交换技术</text>
+        <text class="kb-card__room">106</text>
+        <text class="kb-card__place">计算机综合楼</text>
+      </view>
+      <view class="kb-card__m">
+        <text class="kb-card__count">2</text>
+        <text class="kb-card__teacher">陈老师</text>
+      </view>
+      <view class="kb-card__r">
+        <text class="kb-card__state kb-card__state--off">已经下课</text>
+        <text class="kb-card__time">8:00-10:00</text>
+      </view>
+    </view>
+  </view>
+  <!-- 查看所有 -->
+  <view class="see-all">
+    <navigator class="see-all__btn" url="/pages/tools/course/course_all">
+      <text>查看所有课程</text>
+    </navigator>
+  </view>
+</view>
