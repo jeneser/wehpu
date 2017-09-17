@@ -59,5 +59,19 @@ Page({
         'helpStatus': false
       });
     }
+  },
+  // 解除绑定
+  unbind: function() {
+    wx.showModal({
+      title: '提示',
+      content: '确定要解除绑定吗?',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   }
 })

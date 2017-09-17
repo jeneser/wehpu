@@ -53,6 +53,16 @@
   </view> -->
   <!-- 认证成功 -->
   <view class="succeed">
-    认证成功
+    <view class="succeed__item">
+      <text class="succeed__vpn">VPN账户</text>
+      <image class="succeed__state" src="/images/ic_succeed.png"></image>
+    </view>
+    <view class="succeed__item">
+      <text class="succeed__jwc">教务处账户</text>
+      <image class="succeed__state" src="/images/ic_succeed.png"></image>
+    </view>
+    <view class="succeed__unbind">
+      <text class="succeed__btn" bindtap="unbind">解除绑定</text>
+    </view>
   </view>
 </view>
