@@ -24,7 +24,7 @@
       <text class="userinfo__l-text">系别</text>
       <text class="userinfo__r-text userinfo__academe">计算机科学与技术学院</text>
     </view>
-    <navigator class="userinfo__item">
+    <navigator class="userinfo__item" url="/pages/more/binding">
       <text class="userinfo__l-text">账号绑定</text>
       <view class="userinfo__r-text userinfo__r-wrap">
         <text class="userinfo__bind">未绑定</text>

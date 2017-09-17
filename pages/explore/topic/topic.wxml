@@ -1,28 +1,7 @@
-<!--explore.wxml-->
-<!-- 分类导航 -->
-<view class="classify">
-  <navigator class="classify__item">
-    <text class="classify__activity">校园活动</text>
-  </navigator>
-  <navigator class="classify__item">
-    <text class="classify__job">就业招聘</text>
-  </navigator>
-  <navigator class="classify__item">
-    <text class="classify__download">文件下载</text>
-  </navigator>
-</view>
-<!-- 主体部分 -->
-<view class="explore-main">
-  <!-- 热门话题 -->
+<view class="container">
+  <!-- 往期话题 -->
   <view class="topic">
     <view class="topic-list">
-      <view class="topic-list__meta">
-        <text class="topic-list__title">热门话题</text>
-        <navigator url="/pages/explore/topic/topic">
-          <text class="topic-list__more">更多</text>
-          <image class="topic-list__r-icon" src="/images/arrow_right_red.png"></image>
-        </navigator>
-      </view>
       <navigator class="topic-card" url="/pages/explore/topic/topic_details">
         <text class="topic-card__title">人丑一定要多去读读书吗？</text>
         <text class="topic-card__description">今天讨论一个特别严肃的话题，人丑一定要多去读读书吗？今天讨论一个特别严肃的话题，人丑一定要多去读读书吗？</text>
