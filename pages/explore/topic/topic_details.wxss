@@ -40,12 +40,17 @@
 .details-box__share{
   display: flex;
   align-items: center;
-  position: static;
   margin: 0;
   padding: 0;
   border: none;
   outline: none;
   background-color:transparent;
+}
+/* reset button */
+button::after{
+  content: "";
+  width:0;
+  height:0;
 }
 .details-box__ic-share{
   width: 45rpx;
