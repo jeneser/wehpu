@@ -2,7 +2,7 @@
 <!-- 首页功能导航 -->
 <view class="index-tools">
   <block wx:for="{{tools}}" wx:key="id">
-    <navigator class="index-tools__item" url="">
+    <navigator class="index-tools__item" url="{{item.url}}">
       <image class="index-tools__icon" src="/images/tools/{{item.id}}.png"></image>
       <text class="index-tools__name">{{item.name}}</text>
     </navigator>
@@ -13,12 +13,12 @@
   <view class="kb-list">
     <view class="kb-list__meta">
       <text class="kb-list__title">我的课程</text>
-      <navigator>
+      <navigator url="/pages/tools/course/course_tody">
         <text class="kb-list__more">更多</text>
         <image class="kb-list__r-icon" src="/images/arrow_right_red.png"></image>
       </navigator>
     </view>
-    <navigator class="kb-card">
+    <navigator class="kb-card" url="/pages/tools/course/course_tody">
       <view class="kb-card__l">
         <text class="kb-card__name">数据库系统原理</text>
         <text class="kb-card__room">202</text>
@@ -33,7 +33,7 @@
         <text class="kb-card__time">8:00-10:00</text>
       </view>
     </navigator>
-    <navigator class="kb-card">
+    <navigator class="kb-card" url="/pages/tools/course/course_tody">
       <view class="kb-card__l">
         <text class="kb-card__name">高级路由交换技术</text>
         <text class="kb-card__room">106</text>

@@ -1,10 +1,12 @@
 {
   "pages":[
+    "pages/index/index",
     "pages/explore/explore",
+    "pages/tools/course/course_tody",
+    "pages/tools/course/course_all",
     "pages/explore/activity/activity",
     "pages/explore/notice/notice_details",
     "pages/explore/notice/notice",
-    "pages/index/index",
     "pages/explore/download/download",
     "pages/explore/topic/topic",
     "pages/explore/topic/topic_details",
