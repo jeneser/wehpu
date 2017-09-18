@@ -1,0 +1,45 @@
+<view class="score">
+  <view class="score-list">
+    <view class="score-list__head">
+      <text class="score-list__title">历年成绩</text>
+      <view class="score-list__user-info">
+        <text class="score-list__user">王亚哲</text>
+        <text class="score-list__number">311509040120</text>
+      </view>
+    </view>
+    <view class="score-list__box">
+      <view class="score-list__item">
+        <text class="score-list__name">计算机网络</text>
+        <text class="score-list__mark">90</text>
+      </view>
+      <view class="score-list__item">
+        <text class="score-list__name">线性代数a</text>
+        <text class="score-list__mark">90</text>
+      </view>
+      <view class="score-list__item">
+        <text class="score-list__name">计算机网络课程设计计算机网络课程设计</text>
+        <text class="score-list__mark">90</text>
+      </view>
+      <view class="score-list__item">
+        <text class="score-list__name">网络编程技术</text>
+        <text class="score-list__mark">90</text>
+      </view>
+      <view class="score-list__item">
+        <text class="score-list__name">中国近现代史纲要</text>
+        <text class="score-list__mark">A</text>
+      </view>
+      <view class="score-list__item">
+        <text class="score-list__name">二年级足球2</text>
+        <text class="score-list__mark">90</text>
+      </view>
+      <view class="score-list__item">
+        <text class="score-list__name">旅游景观鉴赏</text>
+        <text class="score-list__mark">中等</text>
+      </view>
+      <view class="score-list__item">
+        <text class="score-list__name">数据结构</text>
+        <text class="score-list__mark">90</text>
+      </view>
+    </view>
+  </view>
+</view>
