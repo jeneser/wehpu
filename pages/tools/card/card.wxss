@@ -1,0 +1,102 @@
+.e-card{
+  margin: 60rpx 20rpx;
+  padding-bottom: 15rpx;
+  color: #fff;
+  background-color: #ff9933;
+  border-radius: 25rpx;
+  box-shadow: 0 0 60rpx #ccc;
+  overflow: hidden;
+}
+.e-card__stripe{
+  margin-top: 45rpx;
+  width: 100%;
+  height: 100rpx;
+  background-color: #666;
+}
+.e-card__head{
+  box-sizing: border-box;
+  padding: 60rpx 30rpx 0 30rpx;
+  font-size: 11pt;
+  font-weight: 400;
+}
+.e-card__body{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30rpx;
+  margin-left: 100rpx;
+  margin-right: 50rpx;
+}
+.e-card__rmb{
+  font-size: 34pt;
+  font-weight: bolder;
+}
+.e-card__yuan{
+  margin-left: 30rpx;
+  font-size: 9pt;
+}
+.e-card__img{
+  width: 120rpx;
+  height: 100rpx;
+}
+.e-card__meta{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 30rpx;
+  font-size: 9pt;
+  font-weight: 400;
+}
+/* help */
+.card__help{
+  margin-top: 45rpx;
+  text-align: center;
+  font-size: 10pt;
+  color: #999;
+}
+.card__need-help{
+  color: #0099ff;
+}
+.help{
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .6);
+}
+.help__box{
+  position: relative;
+  width: 80%;
+  padding: 45rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  z-index: 10;
+}
+.help__item{
+  padding: 15rpx;
+}
+.help__question{
+  display: block;
+  font-size: 11pt;
+  font-weight: bold;
+  color: #999;
+}
+.help__answer{
+  font-size: 11pt;
+  font-weight: bold;
+  color: #ccc;
+}
+.help__close{
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+  width: 45rpx;
+  height: 45rpx;
+}
