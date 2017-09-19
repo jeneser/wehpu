@@ -1,0 +1,39 @@
+.classroom{
+  padding: 45rpx;
+}
+.classroom-form__picker{
+  margin-bottom: 15rpx;
+  border-bottom: solid 1rpx #eee;
+}
+.classroom-form__item{
+  padding: 45rpx 0;
+}
+.classroom-form__label{
+  margin-right: 30rpx;
+  font-size: 13pt;
+  font-weight: bold;
+  color: #000;
+}
+.classroom-form__value{
+  margin: 0 15rpx;
+  padding: 10rpx 20rpx;
+  font-size: 11pt;
+  font-weight: 500;
+  color: #000;
+  background-color: #f7f7f7;
+  border-radius: 50rpx;
+}
+.classroom-form__btns{
+  display: flex;
+  margin-top: 100rpx;
+}
+.classroom-form__btn--query{
+  flex: 1;
+  padding: 20rpx 0;
+  text-align: center;
+  font-size: 12pt;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 50rpx;
+  background-color: #0099ff;
+}
