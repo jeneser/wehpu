@@ -55,5 +55,14 @@ Page({
       weeklyIndex: e.detail.value
     })
   },
+
+  // 选择地址
+  chooseLocation: function() {
+    wx.chooseLocation({
+      success: function(res) {
+        console.log(res.name);
+      },
+    })
+  }
   
 })

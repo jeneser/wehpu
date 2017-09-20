@@ -1,24 +1,34 @@
 <view class="classroom">
   <view class="classroom-form">
-    <picker class="classroom-form__picker" bindchange="bindPickerChange" value="{{locationIndex}}" range="{{location}}">
-      <view class="classroom-form__item">
-        <text class="classroom-form__label">位置:</text>
-        <text class="classroom-form__value">{{location[locationIndex]}}</text>
-      </view>
-    </picker>
-    <picker class="classroom-form__picker" mode="multiSelector" bindchange="bindWeeklyChange" value="{{weeklyIndex}}" range="{{weekly}}">
-      <view class="classroom-form__item">
-        <text class="classroom-form__label">周次:</text>
-        <text class="classroom-form__value">{{weekly[0][weeklyIndex[0]]}}</text>
-        <text class="classroom-form__value">{{weekly[1][weeklyIndex[1]]}}</text>
-      </view>
-    </picker>
-    <picker class="classroom-form__picker" bindchange="bindLessonChange" value="{{lessonIndex}}" range="{{lesson}}">
-      <view class="classroom-form__item">
-        <text class="classroom-form__label">节次:</text>
-        <text class="classroom-form__value">{{lesson[lessonIndex]}}</text>
-      </view>
-    </picker>
+    <!-- 位置 -->
+    <view class="classroom-form__item">
+      <picker class="classroom-form__picker" bindchange="bindPickerChange" value="{{locationIndex}}" range="{{location}}">
+        <view class="classroom-form__field">
+          <text class="classroom-form__label">位置:</text>
+          <text class="classroom-form__value">{{location[locationIndex]}}</text>
+        </view>
+      </picker>
+      <image class="classroom-form__r-icon" src="/images/ic_location.png" bindtap="chooseLocation"></image>
+    </view>
+    <!-- 周次 -->
+    <view class="classroom-form__item">
+      <picker class="classroom-form__picker" mode="multiSelector" bindchange="bindWeeklyChange" value="{{weeklyIndex}}" range="{{weekly}}">
+        <view class="classroom-form__field">
+          <text class="classroom-form__label">周次:</text>
+          <text class="classroom-form__value">{{weekly[0][weeklyIndex[0]]}}</text>
+          <text class="classroom-form__value">{{weekly[1][weeklyIndex[1]]}}</text>
+        </view>
+      </picker>
+    </view>
+    <!-- 节次 -->
+    <view class="classroom-form__item">
+      <picker class="classroom-form__picker" bindchange="bindLessonChange" value="{{lessonIndex}}" range="{{lesson}}">
+        <view class="classroom-form__field">
+          <text class="classroom-form__label">节次:</text>
+          <text class="classroom-form__value">{{lesson[lessonIndex]}}</text>
+        </view>
+      </picker>
+    </view>
     <view class="classroom-form__btns">
       <text class="classroom-form__btn--query" bindtap="">立即查询</text>
     </view>
