@@ -1,0 +1,6 @@
+<view class="seat">
+  <view class="offline" wx:if="{{offline}}">
+    <image class="offline__bg" src="/images/bg_location.png"></image>
+    <text class="offline__tip">第三方系统升级,暂无法提供服务</text>
+  </view>
+</view>

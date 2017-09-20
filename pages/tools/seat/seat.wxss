@@ -1,0 +1,15 @@
+.offline{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 37.5%;
+}
+.offline__bg{
+  width: 380rpx;
+  height: 380rpx;
+}
+.offline__tip{
+  font-size: 13pt;
+  color: #999;
+}
