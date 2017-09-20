@@ -1,4 +1,5 @@
 Page({
   data: {
+    offline: true
   }
 })
