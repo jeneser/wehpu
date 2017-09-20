@@ -1,0 +1,88 @@
+.repair{
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+  overflow: hidden;
+}
+.repair-form__item{
+  box-sizing: border-box;
+  margin-bottom: 15rpx;
+  padding: 45rpx 45rpx 30rpx 45rpx;
+  background-color: #fff;
+}
+.repair-form__title{
+  margin-bottom: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: solid 1rpx #eee;
+}
+.repair-form__text{
+  font-size: 13pt;
+  color: #000;
+  font-weight: bold;
+}
+.repair-form__required{
+  color: #cc3333;
+  font-weight: bold;
+}
+.repair-form__container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.repair-form__picker{
+  flex: 1;
+  font-size: 11pt;
+}
+.repair-form__r-icon{
+  width: 64rpx;
+  height: 64rpx;
+  margin-left: 45rpx;
+}
+/* 图片上传 */
+.upload-photo{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 100rpx 0 30rpx 0;
+}
+.photo-panel__add {
+  position: relative;
+  width: 135rpx;
+  height: 135rpx;
+  background-color: #f7f7f7;
+  border-radius: 5rpx;
+}
+.photo-panel__add::before, .photo-panel__add::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #e5e5e5;
+}
+.photo-panel__add::before {
+  width: 10rpx;
+  height: 80rpx;
+  margin-top: -40rpx;
+  margin-left: -5rpx;
+}
+.photo-panel__add::after {
+  width: 80rpx;
+  height: 10rpx;
+  margin-top: -5rpx;
+  margin-left: -40rpx;
+}
+/* 提交反馈 */
+.repair-form__post{
+  margin-bottom: 0;
+}
+.repair-form__button--post{
+  color: #fff;
+  background-color: #0099ff;
+  border: none;
+  outline: none;
+}
+/* 预览图片 */
+.preview__img{
+  width: 135rpx;
+  height: 135rpx;
+  margin: 0 15rpx;
+}

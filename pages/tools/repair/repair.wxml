@@ -1,2 +1,76 @@
 <view class="repair">
+  <form class="repair-form" bindsubmit="formSubmit">
+    <!-- 故障区域 -->
+    <view class="repair-form__item">
+      <view class="repair-form__title">
+        <text class="repair-form__text">故障区域</text>
+        <text class="repair-form__required">*</text>
+      </view>
+      <view class="repair-form__container">
+        <picker class="repair-form__picker" bindchange="bindPickerChange" value="{{locationIndex}}" range="{{location}}">
+          <view class="repair-form__field">
+            <text class="repair-form__value">{{location[locationIndex]}}</text>
+          </view>
+        </picker>
+        <image class="repair-form__r-icon" src="/images/ic_location.png" bindtap="chooseLocation"></image>
+      </view>
+    </view>
+    <!-- 详细地址 -->
+    <view class="repair-form__item">
+      <view class="repair-form__title">
+        <text class="repair-form__text">详细地址</text>
+        <text class="repair-form__required">*</text>
+      </view>
+      <view class="repair-form__container">
+        <input type="text" confirm-type="done" placeholder="请输入详细地址"/>
+      </view>
+    </view>
+    <!-- 维修项目 -->
+    <view class="repair-form__item">
+      <view class="repair-form__title">
+        <text class="repair-form__text">维修项目</text>
+        <text class="repair-form__required">*</text>
+      </view>
+      <view class="repair-form__container">
+        <picker class="repair-form__picker" mode="multiSelector" bindchange="bindProjectChange" value="{{projectIndex}}" range="{{project}}">
+          <view class="repair-form__field">
+            <text class="repair-form__value">{{project[0][projectIndex[0]]}} / </text>
+            <text class="repair-form__value">{{project[1][projectIndex[1]]}}</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <!-- 联系方式 -->
+    <view class="repair-form__item">
+      <view class="repair-form__title">
+        <text class="repair-form__text">联系方式</text>
+        <text class="repair-form__required">*</text>
+      </view>
+      <view class="repair-form__container">
+        <input type="number" confirm-type="done" placeholder="请输入手机号码"/>
+      </view>
+    </view>
+    <!-- 故障详情 -->
+    <view class="repair-form__item">
+      <view class="repair-form__title">
+        <text class="repair-form__text">故障详情</text>
+        <text class="repair-form__required">*</text>
+      </view>
+      <textarea class="content" name="textarea" maxlength="300" auto-height="true" cursor-spacing="45" placeholder="请详细描述您的问题,可附图" placeholder-style="color: #999;"/>
+      <!-- 图片上传 -->
+      <view class="upload-photo">
+        <view class="photo-panel__add" bindtap="chooseImage"></view>
+        <!-- 预览图片 -->
+        <block wx:for="{{imageList}}" wx:for-item="image" wx:key="*this">
+          <!-- <view class="preview"> -->
+            <image class="preview__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+          <!-- </view> -->
+        </block>
+      </view>
+    </view>
+    <!-- 提交 -->
+    <view class="repair-form__item repair-form__post">
+      <button class="repair-form__button--post" form-type="submit">提交信息</button>
+    </view>
+  </form>
 </view>
