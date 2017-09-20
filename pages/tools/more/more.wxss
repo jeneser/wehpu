@@ -1,0 +1,30 @@
+.more{
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  margin: 15rpx 60rpx;
+  padding: 20rpx 15rpx 15rpx;
+  min-height: 350rpx;
+  background: #fff;
+  overflow: hidden;
+}
+.more-tools__item{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  margin-bottom: 15rpx;
+  align-items: center;
+  box-sizing: border-box;
+  width: 50%;
+  height: 180rpx;
+}
+.more-tools__icon{
+  display: block;
+  width: 90rpx;
+  height: 90rpx;
+  margin: 25rpx auto 15rpx auto;
+}
+.more-tools__name{
+  display: block;
+  font-size: 11pt;
+}

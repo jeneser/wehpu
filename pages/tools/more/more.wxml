@@ -1,2 +1,8 @@
 <view class="more">
+  <block wx:for="{{tools}}" wx:key="id">
+    <navigator class="more-tools__item" url="{{item.url}}">
+      <image class="more-tools__icon" src="/images/tools/{{item.id}}.png"></image>
+      <text class="more-tools__name">{{item.name}}</text>
+    </navigator>
+  </block>
 </view>

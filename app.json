@@ -1,14 +1,15 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/tools/more/more",
+    "pages/tools/seat/seat",
+    "pages/tools/repair/repair",
+    "pages/tools/library/library",
     "pages/tools/classroom/classroom",
     "pages/tools/card/card",
     "pages/tools/score/score",
     "pages/tools/score/score_all",
     "pages/tools/cet/cet",
-    "pages/tools/library/library",
-    "pages/tools/more/more",
-    "pages/tools/repair/repair",
     "pages/explore/explore",
     "pages/tools/course/course_tody",
     "pages/tools/course/course_all",

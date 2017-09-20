@@ -11,7 +11,7 @@ Page({
       { id: 'library', name: '图书馆', url: '/pages/tools/library/library', disabled: false},
       { id: 'card', name: '一卡通', url: '/pages/tools/card/card', disabled: false},
       { id: 'repair', name: '报修', url: '/pages/tools/repair/repair', disabled: false},
-      { id: 'cet', name: '四六级', url: '/pages/tools/cet/cet', disabled: false},
+      { id: 'cet', name: '座位预约', url: '/pages/tools/seat/seat', disabled: false},
       { id: 'more', name: '更多', url: '/pages/tools/more/more', disabled: false}
     ],
   },
