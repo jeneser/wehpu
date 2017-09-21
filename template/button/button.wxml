@@ -1,0 +1,17 @@
+<!-- 自定义默认按钮 -->
+<template name="button-primary">
+  <view class="button-primary">
+    <navigator class="button__nav" url="{{href}}">
+      <text>{{text}}</text>
+    </navigator>
+  </view>
+</template>
+
+<!-- 自定义主按钮 -->
+<template name="button-secondary">
+  <view class="button-default">
+    <navigator class="button__nav" url="{{href}}">
+      <text>{{text}}</text>
+    </navigator>
+  </view>
+</template>

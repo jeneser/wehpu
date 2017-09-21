@@ -1,0 +1,64 @@
+/* 课表卡片 */
+.course-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  box-sizing: border-box;
+  min-height: 240rpx;
+  margin-top: 45rpx;
+  margin-bottom: 45rpx;
+  padding: 30rpx 15rpx;
+  background-color: #fff;
+  box-shadow: 0 0 6rpx 6rpx #eee;
+  border-radius: 2rpx;
+  overflow: hidden;
+}
+.course-card__name {
+  display: block;
+  color: #000;
+  font-size: 10pt;
+}
+.course-card__room {
+  display: block;
+  padding: 30rpx 0 15rpx 0;
+  color: #cc3333;
+  font-size: 20pt;
+  font-weight: bold;
+}
+.course-card__place {
+  display: block;
+  color: #999;
+  font-size: 9pt;
+}
+.course-card__count {
+  display: block;
+  padding: 30rpx 0 15rpx 0;
+  color: #000;
+  font-size: 20pt;
+  font-weight: bold;
+}
+.course-card__teacher {
+  display: block;
+  color: #999;
+  font-size: 9pt;
+}
+.course-card__state {
+  display: block;
+  padding: 10rpx 20rpx;
+  margin: 30rpx 0 15rpx 0;
+  font-size: 11pt;
+  color: #fff;
+  border-radius: 50rpx;
+}
+.course-card__state--on {
+  background-color: #cc3333;
+}
+.course-card__state--off {
+  background-color: #999;
+}
+.course-card__time {
+  display: block;
+  margin-left: 15rpx;
+  color: #999;
+  font-size: 9pt;
+}

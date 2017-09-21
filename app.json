@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+
     "pages/tools/more/more",
     "pages/tools/seat/seat",
     "pages/tools/repair/repair",
@@ -10,15 +11,17 @@
     "pages/tools/score/score",
     "pages/tools/score/score_all",
     "pages/tools/cet/cet",
-    "pages/explore/explore",
     "pages/tools/course/course_tody",
     "pages/tools/course/course_all",
+
+    "pages/explore/explore",
     "pages/explore/activity/activity",
     "pages/explore/notice/notice_details",
     "pages/explore/notice/notice",
     "pages/explore/download/download",
     "pages/explore/topic/topic",
     "pages/explore/topic/topic_details",
+
     "pages/more/more",
     "pages/more/binding",
     "pages/more/user/user",

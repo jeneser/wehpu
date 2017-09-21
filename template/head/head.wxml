@@ -1,0 +1,14 @@
+<!-- 通用分类标头 -->
+<!--
+  title: 标题
+  href: 更多链接
+-->
+<template name="classify-head">
+  <view class="classify-head">
+    <text class="classify-head__title">{{title}}</text>
+    <navigator wx:if="{{href}}" class="classify-head__nav" url="{{href}}">
+      <text class="classify-head__more">更多</text>
+      <image class="classify-head__r-icon" src="/images/arrow_right_red.png"></image>
+    </navigator>
+  </view>
+</template>

@@ -1,9 +1,6 @@
-//index.js
-//获取应用实例
-const app = getApp();
-
 Page({
   data: {
+    // 工具
     tools: [
       {
         id: 'course',
@@ -48,11 +45,27 @@ Page({
         disabled: false
       },
       { id: 'more', name: '更多', url: '/pages/tools/more/more', disabled: false }
+    ],
+    // 当前课程
+    currentCourse: [
+      {
+        name: '数据库系统原理',
+        room: '202',
+        place: '计算机综合楼',
+        count: '2',
+        teacher: '刘老师',
+        time: '8:00-10:00',
+        state: 1
+      },
+      {
+        name: '数据库系统原理',
+        room: '202',
+        place: '计算机综合楼',
+        count: '2',
+        teacher: '刘老师',
+        time: '8:00-10:00',
+        state: 0
+      }
     ]
   }
-  // onLoad: function() {
-  //   wx.navigateTo({
-  //     url: '/pages/more/binding'
-  //   });
-  // }
 });

@@ -1,0 +1,28 @@
+/* 通用分类标头 */
+.classify-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.classify-head__title {
+  display: inline-block;
+  margin-left: 15rpx;
+  padding-left: 20rpx;
+  line-height: 1;
+  font-size: 13pt;
+  font-weight: bold;
+  color: #000;
+  border-left: solid #cc3333 10rpx;
+}
+.classify-head__r-icon {
+  display: inline-block;
+  width: 16rpx;
+  height: 28rpx;
+  margin-left: 15rpx;
+  line-height: 1;
+}
+.classify-head__more {
+  color: #cc3333;
+  font-size: 12pt;
+  font-weight: bold;
+}

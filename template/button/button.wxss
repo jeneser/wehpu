@@ -1,0 +1,18 @@
+/* 导航按钮 */
+.button__nav {
+  width: 80%;
+  margin-top: 100rpx;
+  padding: 25rpx 45rpx;
+  text-align: center;
+  font-size: 13pt;
+}
+.button-primary {
+  color: #fff;
+  background-color: #cc3333;
+  border-radius: 50rpx;
+}
+.button-secondary {
+  color: #fff;
+  background-color: #cc3333;
+  border-radius: 50rpx;
+}

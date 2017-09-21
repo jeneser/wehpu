@@ -1,0 +1,18 @@
+<!-- 课表卡片 -->
+<template name="course-card">
+  <view class="course-card">
+    <view class="course-card__l">
+      <text class="course-card__name">{{name}}</text>
+      <text class="course-card__room">{{room}}</text>
+      <text class="course-card__place">{{place}}</text>
+    </view>
+    <view class="course-card__m">
+      <text class="course-card__count">{{count}}</text>
+      <text class="course-card__teacher">{{teacher}}</text>
+    </view>
+    <view class="course-card__r">
+      <text class="course-card__state {{state ? 'course-card__state--on' : 'course-card__state--off'}}">{{state ? '即将上课' : '已经下课'}}</text>
+      <text class="course-card__time">{{time}}</text>
+    </view>
+  </view>
+</template>
