@@ -1,8 +1,8 @@
-.score{
+.score {
   padding: 45rpx;
   background-color: #f7f7f7;
 }
-.score-list{
+.score-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,26 +12,26 @@
   border-radius: 4rpx;
   overflow: hidden;
 }
-.score-list__head{
+.score-list__head {
   margin-bottom: 30rpx;
   padding-bottom: 30rpx;
   border-bottom: solid 1rpx #eee;
 }
-.score-list__title{
+.score-list__title {
   margin-bottom: 15rpx;
   font-size: 16pt;
   font-weight: bold;
   color: #000;
 }
-.score-list__user-info{
+.score-list__user-info {
   margin-top: 15rpx;
   font-size: 12pt;
   color: #999;
 }
-.score-list__box{
+.score-list__box {
   min-height: 825rpx;
 }
-.score-list__item{
+.score-list__item {
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -40,21 +40,21 @@
   padding: 30rpx 0;
   border-bottom: solid 1rpx #eee;
 }
-.score-list__item:last-child{
+.score-list__item:last-child {
   margin-bottom: 0;
   border: none;
 }
 .score-list__name,
-.score-list__mark{
+.score-list__mark {
   font-size: 12pt;
   font-weight: bold;
   color: #666;
 }
-.score-list__mark{
+.score-list__mark {
   margin-left: 45rpx;
 }
 /* footer */
-.details-box__foot{
+.details-box__foot {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,36 +62,36 @@
   padding-top: 35rpx;
   border-top: solid 1rpx #eee;
 }
-.details-box__from{
+.details-box__from {
   font-size: 10pt;
   color: #666;
 }
-.details-box__share{
+.details-box__share {
   display: flex;
   align-items: center;
   margin: 0;
   padding: 0;
   border: none;
   outline: none;
-  background-color:transparent;
+  background-color: transparent;
 }
 /* reset button */
-button::after{
-  content: "";
-  width:0;
-  height:0;
+button::after {
+  content: '';
+  width: 0;
+  height: 0;
 }
-.details-box__ic-share{
+.details-box__ic-share {
   width: 45rpx;
   height: 45rpx;
 }
 /* 查看所有 */
-.see-all{
+.see-all {
   display: flex;
   justify-content: center;
   box-sizing: border-box;
 }
-.see-all__btn{
+.see-all__btn {
   width: 80%;
   margin-top: 100rpx;
   padding: 25rpx 45rpx;
@@ -102,7 +102,7 @@ button::after{
   border-radius: 50rpx;
 }
 /* 帮助 */
-.help{
+.help {
   position: fixed;
   z-index: 9;
   top: 0;
@@ -112,9 +112,9 @@ button::after{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, .6);
+  background-color: rgba(0, 0, 0, 0.6);
 }
-.help__box{
+.help__box {
   position: relative;
   width: 80%;
   padding: 45rpx;
@@ -123,21 +123,21 @@ button::after{
   /* box-shadow: 0 0 60rpx #ccc; */
   z-index: 10;
 }
-.help__item{
+.help__item {
   padding: 15rpx;
 }
-.help__question{
+.help__question {
   display: block;
   font-size: 11pt;
   font-weight: bold;
   color: #999;
 }
-.help__answer{
+.help__answer {
   font-size: 11pt;
   font-weight: bold;
   color: #ccc;
 }
-.help__close{
+.help__close {
   position: absolute;
   top: 30rpx;
   right: 30rpx;

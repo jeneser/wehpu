@@ -6,34 +6,34 @@ Page({
     helpStatus: false
   },
   // 获取焦点
-  inputFocus: function (e) {
+  inputFocus: function(e) {
     if (e.target.id === 'userId') {
       this.setData({
-        'userIdFocus': true
+        userIdFocus: true
       });
     } else if (e.target.id === 'vpnPassWord') {
       this.setData({
-        'vpnPassWordFocus': true
+        vpnPassWordFocus: true
       });
     } else if (e.target.id === 'jwcPassWord') {
       this.setData({
-        'jwcPassWordFocus': true
+        jwcPassWordFocus: true
       });
     }
   },
   // 失去焦点
-  inputBlur: function (e) {
+  inputBlur: function(e) {
     if (e.target.id === 'userId') {
       this.setData({
-        'userIdFocus': false
+        userIdFocus: false
       });
     } else if (e.target.id === 'vpnPassWord') {
       this.setData({
-        'vpnPassWordFocus': false
+        vpnPassWordFocus: false
       });
     } else if (e.target.id === 'jwcPassWord') {
       this.setData({
-        'jwcPassWordFocus': false
+        jwcPassWordFocus: false
       });
     }
   },
@@ -41,7 +41,7 @@ Page({
   navigateNext: function() {
     wx.navigateTo({
       url: 'binding?id=1'
-    })
+    });
   },
   // 取消认证
   navigateCancel: function() {
@@ -50,13 +50,13 @@ Page({
   // 帮助
   showHelp: function() {
     this.setData({
-      'helpStatus': true
+      helpStatus: true
     });
   },
   hideHelp: function(e) {
-    if (e.target.id === "help" || e.target.id === "close-help") {
+    if (e.target.id === 'help' || e.target.id === 'close-help') {
       this.setData({
-        'helpStatus': false
+        helpStatus: false
       });
     }
   },
@@ -65,13 +65,13 @@ Page({
     wx.showModal({
       title: '提示',
       content: '确定要解除绑定吗?',
-      success: function (res) {
+      success: function(res) {
         if (res.confirm) {
-          console.log('用户点击确定')
+          console.log('用户点击确定');
         } else if (res.cancel) {
-          console.log('用户点击取消')
+          console.log('用户点击取消');
         }
       }
-    })
+    });
   }
-})
+});

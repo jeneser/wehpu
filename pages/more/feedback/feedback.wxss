@@ -1,36 +1,36 @@
 /* 意见反馈 */
-.feedback{
+.feedback {
   box-sizing: border-box;
   background-color: #f7f7f7;
   overflow: hidden;
 }
-.feedback-form__item{
+.feedback-form__item {
   box-sizing: border-box;
   margin-bottom: 15rpx;
   padding: 45rpx 45rpx 0 45rpx;
   background-color: #fff;
 }
-.feedback-form__title{
+.feedback-form__title {
   margin-bottom: 45rpx;
   padding-bottom: 30rpx;
   border-bottom: solid 1rpx #eee;
 }
-.feedback-form__text{
+.feedback-form__text {
   font-size: 11pt;
   color: #000;
   font-weight: bold;
 }
-.feedback-form__required{
+.feedback-form__required {
   color: #cc3333;
   font-weight: bold;
 }
 /* 反馈类型 */
-.radio-group{
+.radio-group {
   display: flex;
   padding-bottom: 45rpx;
   justify-content: space-around;
 }
-.radio-group__radio{
+.radio-group__radio {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -38,7 +38,7 @@
   font-weight: bold;
 }
 /* 图片上传 */
-.upload-photo{
+.upload-photo {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -51,7 +51,8 @@
   background-color: #f7f7f7;
   border-radius: 5rpx;
 }
-.photo-panel__add::before, .photo-panel__add::after{
+.photo-panel__add::before,
+.photo-panel__add::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -71,17 +72,17 @@
   margin-left: -40rpx;
 }
 /* 提交反馈 */
-.feedback-form__post{
+.feedback-form__post {
   margin-bottom: 0;
 }
-.feedback-form__button--post{
+.feedback-form__button--post {
   color: #fff;
   background-color: #0099ff;
   border: none;
   outline: none;
 }
 /* 预览图片 */
-.preview__img{
+.preview__img {
   width: 135rpx;
   height: 135rpx;
   margin: 0 15rpx;

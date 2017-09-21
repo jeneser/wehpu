@@ -1,5 +1,5 @@
 /* 工具导航 */
-.index-tools{
+.index-tools {
   display: flex;
   flex-flow: row wrap;
   align-content: flex-start;
@@ -9,7 +9,7 @@
   background: #fff;
   overflow: hidden;
 }
-.index-tools__item{
+.index-tools__item {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -18,18 +18,18 @@
   width: 25%;
   height: 180rpx;
 }
-.index-tools__icon{
+.index-tools__icon {
   display: block;
   width: 90rpx;
   height: 90rpx;
   margin: 25rpx auto 15rpx auto;
 }
-.index-tools__name{
+.index-tools__name {
   display: block;
   font-size: 11pt;
 }
 /* 主体部分 */
-.index-main{
+.index-main {
   display: block;
   box-sizing: border-box;
   margin-top: 45rpx;
@@ -38,19 +38,19 @@
   background-color: #f7f7f7;
 }
 /* 我的课程信息 */
-.kb-list__meta{
+.kb-list__meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.kb-list__r-icon{
+.kb-list__r-icon {
   display: inline-block;
   width: 16rpx;
   height: 28rpx;
   margin-left: 15rpx;
   line-height: 1;
 }
-.kb-list__title{
+.kb-list__title {
   display: inline-block;
   margin-left: 15rpx;
   padding-left: 20rpx;
@@ -60,13 +60,13 @@
   color: #000;
   border-left: solid #cc3333 10rpx;
 }
-.kb-list__more{
+.kb-list__more {
   color: #cc3333;
   font-size: 12pt;
   font-weight: bold;
 }
 /* 课程卡片 */
-.kb-card{
+.kb-card {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
@@ -80,50 +80,50 @@
   border-radius: 2rpx;
   overflow: hidden;
 }
-.kb-card__name{
+.kb-card__name {
   display: block;
   color: #000;
   font-size: 10pt;
 }
-.kb-card__room{
+.kb-card__room {
   display: block;
   padding: 30rpx 0 15rpx 0;
   color: #cc3333;
   font-size: 20pt;
   font-weight: bold;
 }
-.kb-card__place{
+.kb-card__place {
   display: block;
   color: #999;
   font-size: 9pt;
 }
-.kb-card__count{
+.kb-card__count {
   display: block;
   padding: 30rpx 0 15rpx 0;
   color: #000;
   font-size: 20pt;
   font-weight: bold;
 }
-.kb-card__teacher{
+.kb-card__teacher {
   display: block;
   color: #999;
   font-size: 9pt;
 }
-.kb-card__state{
+.kb-card__state {
   display: block;
   padding: 10rpx 20rpx;
-  margin: 30rpx 0 15rpx 0; 
+  margin: 30rpx 0 15rpx 0;
   font-size: 11pt;
   color: #fff;
   border-radius: 50rpx;
 }
-.kb-card__state--on{
+.kb-card__state--on {
   background-color: #cc3333;
 }
-.kb-card__state--off{
+.kb-card__state--off {
   background-color: #999;
 }
-.kb-card__time{
+.kb-card__time {
   display: block;
   margin-left: 15rpx;
   color: #999;

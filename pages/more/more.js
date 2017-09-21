@@ -1,6 +1,4 @@
-//more.js
-
 Page({
   data: {},
-  onLoad: function () {}
-})
+  onLoad: function() {}
+});

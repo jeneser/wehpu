@@ -1,12 +1,12 @@
 /* 分类导航 */
-.classify{
+.classify {
   display: flex;
   justify-content: space-around;
   align-items: center;
   box-sizing: border-box;
   padding: 45rpx;
 }
-.classify__item{
+.classify__item {
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -15,24 +15,24 @@
 }
 .classify__activity,
 .classify__job,
-.classify__download{
+.classify__download {
   padding: 25rpx 35rpx;
   font-size: 12pt;
   color: #fff;
   font-weight: bold;
   border-radius: 6rpx;
 }
-.classify__activity{
+.classify__activity {
   background-color: #ffcc33;
 }
-.classify__job{
+.classify__job {
   background-color: #66cc66;
 }
-.classify__download{
+.classify__download {
   background-color: #ff9933;
 }
 /* 主题部分 */
-.explore-main{
+.explore-main {
   display: block;
   box-sizing: border-box;
   margin-top: 15rpx;
@@ -41,19 +41,19 @@
   background-color: #f7f7f7;
 }
 /* 热门话题 */
-.topic-list__meta{
+.topic-list__meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.topic-list__r-icon{
+.topic-list__r-icon {
   display: inline-block;
   width: 16rpx;
   height: 28rpx;
   margin-left: 15rpx;
   line-height: 1;
 }
-.topic-list__title{
+.topic-list__title {
   display: inline-block;
   margin-left: 15rpx;
   padding-left: 20rpx;
@@ -63,13 +63,13 @@
   color: #000;
   border-left: solid #cc3333 10rpx;
 }
-.topic-list__more{
+.topic-list__more {
   color: #cc3333;
   font-size: 12pt;
   font-weight: bold;
 }
 /* 话题卡片 */
-.topic-card{
+.topic-card {
   box-sizing: border-box;
   min-height: 180rpx;
   margin-top: 45rpx;
@@ -80,14 +80,14 @@
   border-radius: 2rpx;
   overflow: hidden;
 }
-.topic-card__title{
+.topic-card__title {
   display: block;
   padding-bottom: 15rpx;
   color: #000;
   font-size: 12pt;
   font-weight: bold;
 }
-.topic-card__description{
+.topic-card__description {
   color: #999;
   font-size: 10pt;
 }

@@ -9,7 +9,7 @@ Page({
       { id: 'phone', name: '常用电话', url: '', disabled: false },
       { id: 'calendar', name: '校历', url: '', disabled: false },
       { id: 'newcome', name: '迎新生', url: '', disabled: false },
-      { id: 'song', name: '校歌', url: '', disabled: false },
-    ],
+      { id: 'song', name: '校歌', url: '', disabled: false }
+    ]
   }
-})
+});

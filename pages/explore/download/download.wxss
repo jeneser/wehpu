@@ -1,7 +1,7 @@
-.download{
+.download {
   padding: 15rpx 30rpx;
 }
-.file{
+.file {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,32 +10,32 @@
   margin-left: 150rpx;
   border-bottom: solid 1rpx #eee;
 }
-.file__icon{
+.file__icon {
   width: 120rpx;
   height: 120rpx;
   margin-left: -150rpx;
 }
-.file__download{
+.file__download {
   width: 60rpx;
   height: 60rpx;
 }
-.file__meta{
+.file__meta {
   display: flex;
   flex-direction: column;
   flex: 1;
   margin-left: 30rpx;
 }
-.file__title{
+.file__title {
   padding-bottom: 15rpx;
   font-size: 12pt;
   font-weight: bold;
   color: #000;
 }
-.file__time{
+.file__time {
   font-size: 10pt;
   color: #999;
   font-weight: bold;
 }
-.file__download{
+.file__download {
   margin-left: 15rpx;
 }
