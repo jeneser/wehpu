@@ -1,3 +1,17 @@
+<!-- 基础卡片 -->
+<template name="basis-card">
+  <navigator class="basis-card" url="{{href}}">
+    <view class="basis-card__content">
+      <text class="basis-card__title">{{title}}</text>
+      <view class="basis-card__meta">
+        <image wx:if="{{icon}}" class="basis-card__l-icon" src="/images/{{icon}}.png"></image>
+        <text wx:if="{{time}}" class="basis-card__time">{{time}}</text>
+        <text wx:if="{{description}}" class="basis-card__description">{{description}}</text>
+      </view>
+    </view>
+  </navigator>
+</template>
+
 <!-- 课表卡片 -->
 <template name="course-card">
   <view class="course-card">
@@ -13,6 +27,43 @@
     <view class="course-card__r">
       <text class="course-card__state {{state ? 'course-card__state--on' : 'course-card__state--off'}}">{{state ? '即将上课' : '已经下课'}}</text>
       <text class="course-card__time">{{time}}</text>
+    </view>
+  </view>
+</template>
+
+<!-- 附加图片卡片 -->
+<template name="image-card">
+  <navigator src="{{href}}">
+    <view class="image-card">
+      <image class="image-card__cover" src="{{cover}}"></image>
+      <view class="image-card__info">
+        <text class="image-card__title">{{title}}</text>
+        <view class="image-card__meta">
+          <view class="image-card__from">
+            <image class="image-card__ic-from" src="/images/ic_from.png"></image>
+            <text class="image-card__author">{{author}}</text>
+          </view>
+          <view class="image-card__time">{{time}}</view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</template>
+
+<!-- 文章详情卡片 -->
+<template name="article-card">
+  <view class="article-card">
+    <view class="article-card__head">
+      <view class="article-card__title">{{title}}</view>
+    </view>
+    <view class="article-card__content">
+      <text>{{content}}</text>
+    </view>
+    <view class="article-card__foot">
+      <text class="article-card__from">{{from}}</text>
+      <button class="article-card__share" open-type="share">
+        <image class="article-card__ic-share" src="/images/ic_share.png"></image>
+      </button>
     </view>
   </view>
 </template>

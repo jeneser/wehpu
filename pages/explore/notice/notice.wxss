@@ -1,39 +1,4 @@
 .notice {
-  padding: 15rpx 45rpx;
+  padding: 15rpx 30rpx;
   background-color: #f7f7f7;
-}
-.notice-card {
-  box-sizing: border-box;
-  min-height: 180rpx;
-  margin-top: 45rpx;
-  margin-bottom: 45rpx;
-  padding: 30rpx 15rpx;
-  background-color: #fff;
-  box-shadow: 0 0 6rpx 6rpx #eee;
-  border-radius: 2rpx;
-  overflow: hidden;
-}
-.notice-card__title {
-  display: block;
-  padding-bottom: 15rpx;
-  color: #000;
-  font-size: 12pt;
-  font-weight: bold;
-}
-.notice-card__meta {
-  display: flex;
-  align-items: center;
-}
-.notice-card__icon {
-  width: 35rpx;
-  height: 35rpx;
-  margin-right: 15rpx;
-}
-.notice-card__time {
-  flex: 1;
-  color: #999;
-  font-size: 10pt;
-  /* white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden; */
 }

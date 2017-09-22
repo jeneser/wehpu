@@ -1,3 +1,43 @@
+/* 基础卡片 */
+.basis-card {
+  min-height: 180rpx;
+  margin-top: 45rpx;
+  margin-bottom: 45rpx;
+  padding: 15rpx;
+  background-color: #fff;
+  box-shadow: 0 0 6rpx 6rpx #eee;
+  border-radius: 2rpx;
+  overflow: hidden;
+}
+.basis-card__title {
+  display: block;
+  padding-bottom: 15rpx;
+  color: #000;
+  font-size: 13pt;
+  font-weight: bold;
+}
+.basis-card__meta {
+  display: flex;
+  align-items: center;
+}
+.basis-card__l-icon {
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 15rpx;
+}
+.basis-card__description {
+  color: #999;
+  font-size: 10pt;
+}
+.basis-card__time {
+  flex: 1;
+  color: #999;
+  font-size: 11pt;
+  /* white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; */
+}
+
 /* 课表卡片 */
 .course-card {
   display: flex;
@@ -7,7 +47,7 @@
   min-height: 240rpx;
   margin-top: 45rpx;
   margin-bottom: 45rpx;
-  padding: 30rpx 15rpx;
+  padding: 30rpx 5rpx;
   background-color: #fff;
   box-shadow: 0 0 6rpx 6rpx #eee;
   border-radius: 2rpx;
@@ -61,4 +101,103 @@
   margin-left: 15rpx;
   color: #999;
   font-size: 9pt;
+}
+
+/* 附加图片卡片 */
+.image-card {
+  box-sizing: border-box;
+  margin-bottom: 45rpx;
+  padding-bottom: 15rpx;
+  border-radius: 8rpx;
+  box-shadow: 0 0 40rpx #ddd;
+  overflow: hidden;
+}
+.image-card__cover {
+  width: 100%;
+  min-height: 280rpx;
+  max-height: 340rpx;
+}
+.image-card__title {
+  font-size: 12pt;
+  font-weight: bold;
+  color: #000;
+}
+.image-card__info {
+  padding: 15rpx 20rpx;
+}
+.image-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15rpx;
+  font-size: 9pt;
+}
+.image-card__from {
+  display: flex;
+  align-items: center;
+  color: #000;
+}
+.image-card__ic-from {
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 15rpx;
+}
+.image-card__time {
+  color: #999;
+}
+
+/* 文章详情卡片 */
+.article-card {
+  margin-top: 15rpx;
+  padding: 45rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-shadow: 0 0 60rpx #ccc;
+}
+.article-card__head {
+  padding-top: 15rpx;
+  padding-bottom: 45rpx;
+  font-size: 16pt;
+  font-weight: bold;
+  border-bottom: solid 1rpx #eee;
+}
+.article-card__content {
+  max-height: 670rpx;
+  padding-top: 45rpx;
+  font-size: 12pt;
+  font-weight: 400;
+  color: #666;
+  line-height: 2;
+  overflow-y: scroll;
+}
+.article-card__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 35rpx;
+  padding-top: 35rpx;
+  border-top: solid 1rpx #eee;
+}
+.article-card__from {
+  font-size: 10pt;
+  color: #666;
+}
+.article-card__share {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+/* reset button */
+button::after {
+  content: '';
+  width: 0;
+  height: 0;
+}
+.article-card__ic-share {
+  width: 45rpx;
+  height: 45rpx;
 }

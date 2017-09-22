@@ -1,19 +1,9 @@
-<view class="container">
-  <!-- 往期话题 -->
-  <view class="topic">
-    <view class="topic-list">
-      <navigator class="topic-card" url="/pages/explore/topic/topic_details">
-        <text class="topic-card__title">人丑一定要多去读读书吗？</text>
-        <text class="topic-card__description">今天讨论一个特别严肃的话题，人丑一定要多去读读书吗？今天讨论一个特别严肃的话题，人丑一定要多去读读书吗？</text>
-      </navigator>
-      <navigator class="topic-card" url="/pages/explore/topic/topic_details">
-        <text class="topic-card__title">人丑一定要多去读读书吗？</text>
-        <text class="topic-card__description">今天讨论一个特别严肃的话题，人丑一定要多去读读书吗</text>
-      </navigator>
-      <navigator class="topic-card" url="/pages/explore/topic/topic_details">
-        <text class="topic-card__title">人丑一定要多去读读书吗？</text>
-        <text class="topic-card__description">今天讨论一个特别严肃的话题，人丑一定要多去读读书吗</text>
-      </navigator>
-    </view>
-  </view>
+<!-- 导入模板 -->
+<import src="/template/card/card.wxml" />
+
+<!-- 往期话题 -->
+<view class="topic">
+  <block wx:for="{{topicList}}" wx:key="*this">
+    <template is="basis-card" data="{{...item}}" />
+  </block>
 </view>
