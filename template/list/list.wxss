@@ -1,0 +1,138 @@
+/* 基础列表 */
+.basic-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 40rpx 0;
+  background-color: #fff;
+  border-bottom: solid 1rpx #eee;
+}
+.basic-list__l-text {
+  font-size: 12pt;
+  font-weight: bold;
+  color: #000;
+}
+.basic-list__r-wrap {
+  display: flex;
+  align-items: center;
+}
+.basic-list__r-text {
+  font-size: 11pt;
+  color: #999;
+}
+.basic-list__r-icon {
+  width: 45rpx;
+  height: 45rpx;
+  margin-left: 10rpx;
+}
+.basic-list__r-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+/* 图标列表 */
+.icon-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 45rpx;
+  margin-left: 135rpx;
+  border-bottom: solid 1rpx #eee;
+}
+.icon-list__text {
+  flex: 1;
+  margin-left: 45rpx;
+  font-size: 12pt;
+  font-weight: bold;
+  color: #000;
+}
+.icon-list__l-icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: -135rpx;
+}
+.icon-list__r-icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+/* 缩略图列表 */
+.thumbnail-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 45rpx 0;
+  margin-left: 150rpx;
+  border-bottom: solid 1rpx #eee;
+}
+.thumbnail-list__image {
+  width: 120rpx;
+  height: 120rpx;
+  margin-left: -150rpx;
+}
+.thumbnail-list__meta {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 30rpx;
+}
+.thumbnail-list__title {
+  padding-bottom: 15rpx;
+  font-size: 12pt;
+  font-weight: bold;
+  color: #000;
+}
+.thumbnail-list__time {
+  font-size: 10pt;
+  color: #999;
+  font-weight: bold;
+}
+.thumbnail-list__r-icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 15rpx;
+}
+
+/* 头像列表 */
+.avatar-list {
+  background-color: #fff;
+  padding: 45rpx;
+}
+.avatar-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding-bottom: 45rpx;
+  background-color: #fff;
+  border-bottom: solid 1rpx #eee;
+}
+.avatar-list__avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.avatar-list__meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 30rpx;
+}
+.avatar-list__nickname {
+  padding-bottom: 10rpx;
+  font-size: 13pt;
+  font-weight: bold;
+  color: #000;
+}
+.avatar-list__bind {
+  font-size: 10pt;
+  color: #999;
+}
+.avatar-list__r-icon {
+  width: 50rpx;
+  height: 50rpx;
+}

@@ -3,7 +3,7 @@
 
 <!-- 校园活动 -->
 <view class="activity">
-  <block wx:for="{{activityList}}">
+  <block wx:for="{{activityList}}" wx:key="*this">
     <template is="image-card" data="{{...item}}" />
   </block>
 </view>

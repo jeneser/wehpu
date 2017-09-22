@@ -1,50 +1,9 @@
+<!-- 导入模板 -->
+<import src="/template/list/list.wxml" />
+
+<!-- 文件下载 -->
 <view class="download">
-  <view class="file">
-    <image class="file__icon" src="/images/ic_zip.png"></image>
-    <view class="file__meta">
-      <text class="file__title">2017年下半年全国大学英语四六级考试报名通知</text>
-      <text class="file__time">2017-09-04</text>
-    </view>
-    <image class="file__download" src="/images/ic_download.png"></image>
-  </view>
-  <view class="file">
-    <image class="file__icon" src="/images/ic_doc.png"></image>
-    <view class="file__meta">
-      <text class="file__title">2017年下半年全国大学英语四六级考试报名通知</text>
-      <text class="file__time">2017-09-04</text>
-    </view>
-    <image class="file__download" src="/images/ic_download.png"></image>
-  </view>
-  <view class="file">
-    <image class="file__icon" src="/images/ic_excel.png"></image>
-    <view class="file__meta">
-      <text class="file__title">2017年下半年全国大学英语四六级考试报名通知</text>
-      <text class="file__time">2017-09-04</text>
-    </view>
-    <image class="file__download" src="/images/ic_download.png"></image>
-  </view>
-  <view class="file">
-    <image class="file__icon" src="/images/ic_excel.png"></image>
-    <view class="file__meta">
-      <text class="file__title">2017年下半年全国大学英语四六级考试报名通知</text>
-      <text class="file__time">2017-09-04</text>
-    </view>
-    <image class="file__download" src="/images/ic_download.png"></image>
-  </view>
-  <view class="file">
-    <image class="file__icon" src="/images/ic_zip.png"></image>
-    <view class="file__meta">
-      <text class="file__title">2017年下半年全国大学英语四六级考试报名通知</text>
-      <text class="file__time">2017-09-04</text>
-    </view>
-    <image class="file__download" src="/images/ic_download.png"></image>
-  </view>
-  <view class="file">
-    <image class="file__icon" src="/images/ic_excel.png"></image>
-    <view class="file__meta">
-      <text class="file__title">2017年下半年全国大学英语四六级考试报名通知</text>
-      <text class="file__time">2017-09-04</text>
-    </view>
-    <image class="file__download" src="/images/ic_download.png"></image>
-  </view>
+  <block wx:for="{{downloadList}}" wx:key="*this">
+    <template is="thumbnail-list" data="{{...item}}" />
+  </block>
 </view>

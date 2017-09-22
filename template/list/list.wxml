@@ -1,0 +1,55 @@
+<!-- 基础列表 -->
+<template name="basic-list">
+  <navigator wx:if="{{href}}" class="basic-list__item" url="{{href}}">
+    <text class="basic-list__l-text">{{lText}}</text>
+    <view class="basic-list__r-wrap">
+      <text class="basic-list__r-text">{{rText}}</text>
+      <image class="basic-list__r-icon" src="/images/more/arrow_right.png"></image>
+      <image wx:if="{{avatar}}" class="basic-list__r-avatar" src="{{avatar}}"></image>
+    </view>
+  </navigator>
+  <view wx:else class="basic-list__item">
+    <text class="basic-list__l-text">{{lText}}</text>
+    <view class="basic-list__r-wrap">
+      <text class="basic-list__r-text">{{rText}}</text>
+      <image wx:if="{{avatar}}" class="basic-list__r-avatar" src="{{avatar}}"></image>
+    </view>
+  </view>
+</template>
+
+<!-- 图标列表 -->
+<template name="icon-list">
+  <navigator class="icon-list__nav" url="{{href}}">
+    <view class="icon-list__item">
+      <image class="icon-list__l-icon" src="{{lIcon}}"></image>
+      <text class="icon-list__text">{{text}}</text>
+      <image class="icon-list__r-icon" src="/images/more/arrow_right.png"></image>
+    </view>
+  </navigator>
+</template>
+
+<!-- 缩略图列表 -->
+<template name="thumbnail-list">
+  <view class="thumbnail-list__item">
+    <image class="thumbnail-list__image" src="{{image}}"></image>
+    <view class="thumbnail-list__meta">
+      <text class="thumbnail-list__title">{{title}}</text>
+      <text class="thumbnail-list__time">{{time}}</text>
+    </view>
+    <image class="thumbnail-list__r-icon" src="{{rIcon}}" bindtap="{{tapHandle}}"></image>
+  </view>
+</template>
+
+<!-- 头像列表 -->
+<template name="avatar-list">
+  <view class="avatar-list">
+    <navigator class="avatar-list__item" url="{{href}}">
+      <image class="avatar-list__avatar" src="{{avatar}}"></image>
+      <view class="avatar-list__meta">
+        <text class="avatar-list__nickname">{{nickname}}</text>
+        <text class="avatar-list__bind">{{bind ? '已绑定' : '未绑定'}}</text>
+      </view>
+      <image class="avatar-list__r-icon" src="/images/more/arrow_right.png"></image>
+    </navigator>
+  </view>
+</template>
