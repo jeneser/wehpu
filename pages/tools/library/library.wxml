@@ -1,6 +1,7 @@
+<!-- 导入模板 -->
+<import src="/template/placeholder/placeholder.wxml" />
+
+<!-- 图书馆 -->
 <view class="library">
-  <view class="offline" wx:if="{{offline}}">
-    <image class="offline__bg" src="/images/bg_book.png"></image>
-    <text class="offline__tip">图书馆系统升级,暂无法提供服务</text>
-  </view>
+  <template is="placeholder-fullpage" data="{{bg: '/images/placeholder/bg_book.png', text: '图书馆系统升级,暂无法提供服务'}}" />
 </view>

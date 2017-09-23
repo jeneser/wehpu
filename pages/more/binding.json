@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "认证"
+  "navigationBarTitleText": "认证",
+  "enablePullDownRefresh": false
 }

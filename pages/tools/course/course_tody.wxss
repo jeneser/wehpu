@@ -1,120 +1,25 @@
-.course-tody{
+.course-tody {
   box-sizing: border-box;
+  min-height: 1400rpx;
   padding: 45rpx 30rpx;
   background-color: #f7f7f7;
 }
-/* 时间 */
-.time{
+
+/* 今日时间 */
+.time {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 45rpx;
 }
-.time__week{
+.time__week {
   padding-bottom: 15rpx;
   font-size: 13pt;
   font-weight: bold;
   color: #000;
 }
-.time__tody{
+.time__tody {
   font-size: 11pt;
   font-weight: bold;
   color: #999;
-}
-/* 我的课程信息 */
-.kb-list__meta{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 60rpx;
-}
-.kb-list__title{
-  display: inline-block;
-  margin-left: 15rpx;
-  padding-left: 20rpx;
-  line-height: 1;
-  font-size: 13pt;
-  font-weight: bold;
-  color: #000;
-  border-left: solid #cc3333 10rpx;
-}
-/* 课程卡片 */
-.kb-card{
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  box-sizing: border-box;
-  min-height: 240rpx;
-  margin-top: 45rpx;
-  margin-bottom: 45rpx;
-  padding: 30rpx 15rpx;
-  background-color: #fff;
-  box-shadow: 0 0 6rpx 6rpx #eee;
-  border-radius: 2rpx;
-  overflow: hidden;
-}
-.kb-card__name{
-  display: block;
-  color: #000;
-  font-size: 10pt;
-}
-.kb-card__room{
-  display: block;
-  padding: 30rpx 0 15rpx 0;
-  color: #cc3333;
-  font-size: 20pt;
-  font-weight: bold;
-}
-.kb-card__place{
-  display: block;
-  color: #999;
-  font-size: 9pt;
-}
-.kb-card__count{
-  display: block;
-  padding: 30rpx 0 15rpx 0;
-  color: #000;
-  font-size: 20pt;
-  font-weight: bold;
-}
-.kb-card__teacher{
-  display: block;
-  color: #999;
-  font-size: 9pt;
-}
-.kb-card__state{
-  display: block;
-  padding: 10rpx 20rpx;
-  margin: 30rpx 0 15rpx 0; 
-  font-size: 11pt;
-  color: #fff;
-  border-radius: 50rpx;
-}
-.kb-card__state--on{
-  background-color: #cc3333;
-}
-.kb-card__state--off{
-  background-color: #999;
-}
-.kb-card__time{
-  display: block;
-  margin-left: 15rpx;
-  color: #999;
-  font-size: 9pt;
-}
-/* 查看所有课程 */
-.see-all{
-  display: flex;
-  justify-content: center;
-  box-sizing: border-box;
-}
-.see-all__btn{
-  width: 80%;
-  margin-top: 100rpx;
-  padding: 25rpx 45rpx;
-  text-align: center;
-  font-size: 13pt;
-  color: #fff;
-  background-color: #cc3333;
-  border-radius: 50rpx;
 }

@@ -1,0 +1,102 @@
+<!-- 导入模板 -->
+<import src="/template/placeholder/placeholder.wxml" />
+
+<!-- 基础卡片 -->
+<template name="card-basis">
+  <navigator class="card-basis" url="{{href}}">
+    <view class="card-basis__content">
+      <text class="card-basis__title">{{title}}</text>
+      <view class="card-basis__meta">
+        <image wx:if="{{icon}}" class="card-basis__l-icon" src="/images/{{icon}}.png"></image>
+        <text wx:if="{{time}}" class="card-basis__time">{{time}}</text>
+        <text wx:if="{{description}}" class="card-basis__description">{{description}}</text>
+      </view>
+    </view>
+  </navigator>
+</template>
+
+<!-- 课表卡片 -->
+<template name="card-course">
+  <view class="card-course">
+    <view class="card-course__l">
+      <text class="card-course__name">{{name}}</text>
+      <text class="card-course__room">{{room}}</text>
+      <text class="card-course__place">{{place}}</text>
+    </view>
+    <view class="card-course__m">
+      <text class="card-course__count">{{count}}</text>
+      <text class="card-course__teacher">{{teacher}}</text>
+    </view>
+    <view class="card-course__r">
+      <text class="card-course__state {{state ? 'card-course__state--on' : 'card-course__state--off'}}">{{state ? '即将上课' : '已经下课'}}</text>
+      <text class="card-course__time">{{time}}</text>
+    </view>
+  </view>
+</template>
+
+<!-- 附加图片卡片 -->
+<template name="card-image">
+  <navigator src="{{href}}">
+    <view class="card-image">
+      <image class="card-image__cover" src="{{cover}}"></image>
+      <view class="card-image__info">
+        <text class="card-image__title">{{title}}</text>
+        <view class="card-image__meta">
+          <view class="card-image__from">
+            <image class="card-image__ic-from" src="/images/ic_from.png"></image>
+            <text class="card-image__author">{{author}}</text>
+          </view>
+          <view class="card-image__time">{{time}}</view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</template>
+
+<!-- 文章详情卡片 -->
+<template name="card-article">
+  <view class="card-article">
+    <view class="card-article__head">
+      <view class="card-article__title">{{title}}</view>
+    </view>
+    <view class="card-article__content">
+      <text>{{content}}</text>
+    </view>
+    <view class="card-article__foot">
+      <text class="card-article__from">{{from}}</text>
+      <button class="card-article__share" open-type="share">
+        <image class="card-article__ic-share" src="/images/ic_share.png"></image>
+      </button>
+    </view>
+  </view>
+</template>
+
+<!-- 成绩卡片 -->
+<template name="card-score">
+  <view class="card-score">
+    <view class="card-score__head">
+      <text class="card-score__title">{{title}}</text>
+      <view class="card-score__user-info">
+        <text class="card-score__user-name">{{userName}}</text>
+        <text class="card-score__student-id">{{studentId}}</text>
+      </view>
+    </view>
+    <view class="card-score__box">
+      <block wx:if="{{scoreList}}" wx:for="{{scoreList}}" wx:key="courseName">
+        <view class="card-score__item">
+          <text class="card-score__course-name">{{item.courseName}}</text>
+          <text class="card-score__mark">{{item.mark}}</text>
+        </view>
+      </block>
+      <block wx:if="{{scoreList.length === 0}}">
+        <template is="placeholder-basic" data="{{bg: '/images/placeholder/bg_serach.png', text: '暂无成绩信息'}}" />
+      </block>
+    </view>
+    <view class="card-score__foot">
+      <text class="card-score__update-time">{{updateTime}}</text>
+      <button class="card-score__share" bindtap="showHelp">
+        <image class="card-score__ic-share" src="/images/ic_tip.png"></image>
+      </button>
+    </view>
+  </view>
+</template>

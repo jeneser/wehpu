@@ -1,75 +1,10 @@
-.more{
-  box-sizing: border-box;
+.more {
   background-color: #f7f7f7;
   overflow: hidden;
 }
-/* 用户信息 */
-.userinfo{
-  background-color: #fff;
-  padding: 45rpx;
-}
-.userinfo__item{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-  padding-bottom: 45rpx;
-  background-color: #fff;
-  border-bottom: solid 1rpx #eee;
-}
-.userinfo__avatar{
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 50%;
-}
-.userinfo__meta{
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding-left: 30rpx;
-}
-.userinfo__nickname{
-  padding-bottom: 10rpx;
-  font-size: 13pt;
-  font-weight: bold;
-  color: #000;
-}
-.userinfo__state{
-  font-size: 10pt;
-  color: #999;
-}
-.userinfo__r-icon{
-  width: 50rpx;
-  height: 50rpx;
-}
+
 /* 功能列表 */
-.more-list{
-  box-sizing: border-box;
+.list {
   margin-top: 30rpx;
   background-color: #fff;
-}
-.more-list__item{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 45rpx;
-  margin-left: 135rpx;
-  border-bottom: solid 1rpx #eee;
-}
-.more-list__l-icon{
-  width: 60rpx;
-  height: 60rpx;
-  margin-left: -135rpx;
-}
-.more-list__r-icon{
-  width: 50rpx;
-  height: 50rpx;
-}
-.more-list__text{
-  flex: 1;
-  margin-left: 45rpx;
-  font-size: 12pt;
-  font-weight: bold;
-  color: #000;
 }

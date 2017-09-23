@@ -2,4 +2,4 @@ Page({
   data: {
     offline: true
   }
-})
+});

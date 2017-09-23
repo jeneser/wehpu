@@ -32,8 +32,7 @@ App({
     } catch (e) {
       console.warn('读取缓存失败！');
     }
-    
-  },
+  }
 
   // 获取微信用户信息
   // getUserInfo: function() {
@@ -57,5 +56,4 @@ App({
   //     }
   //   });
   // }
-
 });

@@ -2,5 +2,15 @@
   "files.associations": {
     "*.wxml": "html",
     "*.wxss": "css"
-  }
+  },
+  "workbench.colorTheme": "Atom One Dark",
+  "workbench.iconTheme": "file-icons",
+  "editor.fontSize": 20,
+  "window.zoomLevel": 1,
+  "prettier.singleQuote": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "wordWrapColumn",
+  "html.format.indentInnerHtml": true,
+  "html.format.endWithNewline": true,
+  "workbench.startupEditor": "newUntitledFile"
 }

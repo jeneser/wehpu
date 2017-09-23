@@ -1,36 +1,15 @@
-<!--more.wxml-->
+<!-- 导入模板 -->
+<import src="/template/list/list.wxml" />
+
+<!-- 更多 -->
 <view class="more">
-  <view class="userinfo">
-    <navigator class="userinfo__item" url="/pages/more/user/user">
-      <image class="userinfo__avatar" src="/images/more/face.png"></image>
-      <view class="userinfo__meta">
-        <text class="userinfo__nickname">jeneser</text>
-        <text class="userinfo__state">未绑定</text>
-      </view>
-      <image class="userinfo__r-icon" src="/images/more/arrow_right.png"></image>
-    </navigator>
-  </view>
-  <view class="more-list">
-    <navigator class="more-list__nav" url="/pages/more/binding">
-      <view class="more-list__item more-list__bind">
-        <image class="more-list__l-icon" src="/images/more/bind.png"></image>
-        <text class="more-list__text">账号绑定</text>
-        <image class="more-list__r-icon" src="/images/more/arrow_right.png"></image>
-      </view>
-    </navigator>
-    <navigator class="more-list__nav" url="/pages/more/feedback/feedback">
-      <view class="more-list__item more-list__feedback">
-        <image class="more-list__l-icon" src="/images/more/feedback.png"></image>
-        <text class="more-list__text">意见反馈</text>
-        <image class="more-list__r-icon" src="/images/more/arrow_right.png"></image>
-      </view>
-    </navigator>
-    <navigator class="more-list__nav" url="/pages/more/about/about">
-      <view class="more-list__item more-list__about">
-        <image class="more-list__l-icon" src="/images/more/about.png"></image>
-        <text class="more-list__text">关于我们</text>
-        <image class="more-list__r-icon" src="/images/more/arrow_right.png"></image>
-      </view>
-    </navigator>
+  <!-- 用户信息 -->
+  <template is="list-avatar" data="{{...userInfo}}" />
+  <!-- 功能列表 -->
+  <view class="list">
+    <template is="list-icon" data="{{href: '/pages/more/binding', lIcon: '/images/more/bind.png', text: '账号绑定'}}" />
+    <template is="list-icon" data="{{href: '/pages/more/feedback/feedback', lIcon: '/images/more/feedback.png', text: '意见反馈'}}"
+    />
+    <template is="list-icon" data="{{href: '/pages/more/about/about', lIcon: '/images/more/about.png', text: '关于我们'}}" />
   </view>
 </view>

@@ -1,52 +1,38 @@
-<!--index.wxml-->
-<!-- 首页功能导航 -->
-<view class="index-tools">
-  <block wx:for="{{tools}}" wx:key="id">
-    <navigator class="index-tools__item" url="{{item.url}}">
-      <image class="index-tools__icon" src="/images/tools/{{item.id}}.png"></image>
-      <text class="index-tools__name">{{item.name}}</text>
-    </navigator>
-  </block>
-</view>
-<!-- 课表信息 -->
-<view class="index-main">
-  <view class="kb-list">
-    <view class="kb-list__meta">
-      <text class="kb-list__title">我的课程</text>
-      <navigator url="/pages/tools/course/course_tody">
-        <text class="kb-list__more">更多</text>
-        <image class="kb-list__r-icon" src="/images/arrow_right_red.png"></image>
+<!-- 导入模板 -->
+<import src="/template/card/card.wxml" />
+<import src="/template/head/head.wxml" />
+<import src="/template/placeholder/placeholder.wxml" />
+
+<!-- index -->
+<view class="index">
+  <!-- 首页功能导航 -->
+  <view class="tools">
+    <block wx:for="{{tools}}" wx:key="id">
+      <navigator class="tools__item" url="{{item.url}}">
+        <image class="tools__icon" src="/images/tools/{{item.id}}.png"></image>
+        <text class="tools__name">{{item.name}}</text>
       </navigator>
+    </block>
+  </view>
+  <!-- 课表信息 -->
+  <view class="main">
+    <view class="course-list">
+      <!-- 分类头部 -->
+      <template is="head-classify" data="{{title: '我的课程', href: '/pages/tools/course/course_tody'}}" />
+      <!-- 暂无课程 -->
+      <block wx:if="{{currentCourse.length === 0 && bind}}">
+        <template is="placeholder-basic" data="{{href: '/pages/more/binding', text: '暂无课程', bg: '/images/placeholder/bg_no_data.png'}}"
+        />
+      </block>
+      <!-- 课程列表 -->
+      <block wx:if="{{currentCourse.length !== 0 && bind}}" wx:for="{{currentCourse}}" wx:key="*this">
+        <template is="card-course" data="{{...item}}" />
+      </block>
+      <!-- 未绑定 -->
+      <block wx:if="{{!bind}}">
+        <template is="placeholder-basic" data="{{href: '/pages/more/binding', text: '未绑定', bg: '/images/placeholder/bg_no_login.png'}}"
+        />
+      </block>
     </view>
-    <navigator class="kb-card" url="/pages/tools/course/course_tody">
-      <view class="kb-card__l">
-        <text class="kb-card__name">数据库系统原理</text>
-        <text class="kb-card__room">202</text>
-        <text class="kb-card__place">计算机综合楼</text>
-      </view>
-      <view class="kb-card__m">
-        <text class="kb-card__count">2</text>
-        <text class="kb-card__teacher">刘老师</text>
-      </view>
-      <view class="kb-card__r">
-        <text class="kb-card__state kb-card__state--on">即将上课</text>
-        <text class="kb-card__time">8:00-10:00</text>
-      </view>
-    </navigator>
-    <navigator class="kb-card" url="/pages/tools/course/course_tody">
-      <view class="kb-card__l">
-        <text class="kb-card__name">高级路由交换技术</text>
-        <text class="kb-card__room">106</text>
-        <text class="kb-card__place">计算机综合楼</text>
-      </view>
-      <view class="kb-card__m">
-        <text class="kb-card__count">2</text>
-        <text class="kb-card__teacher">陈老师</text>
-      </view>
-      <view class="kb-card__r">
-        <text class="kb-card__state kb-card__state--off">已经下课</text>
-        <text class="kb-card__time">8:00-10:00</text>
-      </view>
-    </navigator>
   </view>
 </view>

@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "更多"
+  "navigationBarTitleText": "更多",
+  "enablePullDownRefresh": false
 }

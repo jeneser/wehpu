@@ -1,0 +1,28 @@
+<!-- 自定义主按钮 -->
+<template name="button-primary">
+  <view class="button-primary">
+    <navigator class="button-primary__btn" url="{{href}}">
+      <text>{{text}}</text>
+    </navigator>
+  </view>
+</template>
+
+<!-- 自定义次按钮 -->
+<template name="button-secondary">
+  <view class="button-secondary">
+    <navigator wx:if="{{href}}" class="button-secondary__btn" url="{{href}}">
+      <text>{{text}}</text>
+    </navigator>
+    <view wx:else class="button-secondary__btn" bindtap="{{tapHandle}}">
+      <text>{{text}}</text>
+    </view>
+  </view>
+</template>
+
+<!-- 成对按钮 -->
+<template name="button-pairs">
+  <view class="button-pairs">
+    <text class="button-pairs__left" bindtap="{{lTapHandle}}">{{lText}}</text>
+    <text class="button-pairs__right" bindtap="{{rTapHandle}}">{{rText}}</text>
+  </view>
+</template>

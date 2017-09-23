@@ -1,0 +1,48 @@
+/* 自定义按钮 */
+.button-secondary,
+.button-primary {
+  margin-top: 120rpx;
+}
+.button-primary__btn,
+.button-secondary__btn {
+  width: 80%;
+  padding: 25rpx 45rpx;
+  text-align: center;
+  font-size: 13pt;
+}
+.button-primary {
+  color: #fff;
+  background-color: #cc3333;
+  border-radius: 50rpx;
+}
+.button-secondary {
+  color: #fff;
+  background-color: #0099ff;
+  border-radius: 50rpx;
+}
+
+/* 成对按钮 */
+.button-pairs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 145rpx;
+}
+.button-pairs__left,
+.button-pairs__right {
+  padding: 20rpx 0;
+  text-align: center;
+  font-size: 12pt;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 50rpx;
+}
+.button-pairs__left {
+  flex: 1;
+  background-color: #999;
+}
+.button-pairs__right {
+  flex: 1.5;
+  margin-left: 45rpx;
+  background-color: #0099ff;
+}

@@ -1,4 +1,4 @@
-.more{
+.more {
   display: flex;
   flex-flow: row wrap;
   align-content: flex-start;
@@ -8,7 +8,7 @@
   background: #fff;
   overflow: hidden;
 }
-.more-tools__item{
+.more-tools__item {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -18,13 +18,13 @@
   width: 50%;
   height: 180rpx;
 }
-.more-tools__icon{
+.more-tools__icon {
   display: block;
   width: 90rpx;
   height: 90rpx;
   margin: 25rpx auto 15rpx auto;
 }
-.more-tools__name{
+.more-tools__name {
   display: block;
   font-size: 11pt;
 }

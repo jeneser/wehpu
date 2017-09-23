@@ -1,47 +1,8 @@
+<!-- 导入模板 -->
+<import src="/template/card/card.wxml" />
+
 <view class="notice">
-  <navigator url="/pages/explore/notice/notice_details">
-    <view class="notice-card">
-      <text class="notice-card__title">改革语境下的高校共青团与思想政治工作</text>
-      <view class="notice-card__meta">
-        <image class="notice-card__icon" src="/images/ic_ringing.png"></image>
-        <text class="notice-card__time">2017年9月8日（星期五）9:30 测绘学院一楼会议室</text>
-      </view>
-    </view>
-  </navigator>
-  <navigator url="/pages/explore/notice/notice_details">
-    <view class="notice-card">
-      <text class="notice-card__title">改革语境下的高校共青团与思想政治工作</text>
-      <view class="notice-card__meta">
-        <image class="notice-card__icon" src="/images/ic_ringing.png"></image>
-        <text class="notice-card__time">2017年9月8日（星期五）9:30 测绘学院一楼会议室</text>
-      </view>
-    </view>
-  </navigator>
-  <navigator url="/pages/explore/notice/notice_details">
-    <view class="notice-card">
-      <text class="notice-card__title">关于教师节教职工免费乘坐班车的通知 </text>
-      <view class="notice-card__meta">
-        <image class="notice-card__icon" src="/images/ic_record.png"></image>
-        <text class="notice-card__time">2017/9/9 10:11:36</text>
-      </view>
-    </view>
-  </navigator>
-  <navigator url="/pages/explore/notice/notice_details">
-    <view class="notice-card">
-      <text class="notice-card__title">关于教师节教职工免费乘坐班车的通知 </text>
-      <view class="notice-card__meta">
-        <image class="notice-card__icon" src="/images/ic_record.png"></image>
-        <text class="notice-card__time">2017/9/9 10:11:36</text>
-      </view>
-    </view>
-  </navigator>
-  <navigator url="/pages/explore/notice/notice_details">
-    <view class="notice-card">
-      <text class="notice-card__title">改革语境下的高校共青团与思想政治工作</text>
-      <view class="notice-card__meta">
-        <image class="notice-card__icon" src="/images/ic_ringing.png"></image>
-        <text class="notice-card__time">2017年9月8日（星期五）9:30 测绘学院一楼会议室</text>
-      </view>
-    </view>
-  </navigator>
+  <block wx:for="{{noticeList}}" wx:key="*this">
+    <template is="card-basis" data="{{...item}}" />
+  </block>
 </view>
