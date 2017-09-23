@@ -1,5 +1,6 @@
 .course-tody {
   box-sizing: border-box;
+  min-height: 1400rpx;
   padding: 45rpx 30rpx;
   background-color: #f7f7f7;
 }

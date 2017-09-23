@@ -1,6 +1,7 @@
 <!-- 导入模板 -->
 <import src="/template/card/card.wxml" />
 <import src="/template/head/head.wxml" />
+<import src="/template/placeholder/placeholder.wxml" />
 
 <!-- index -->
 <view class="index">
@@ -18,9 +19,19 @@
     <view class="course-list">
       <!-- 分类头部 -->
       <template is="classify-head" data="{{title: '我的课程', href: '/pages/tools/course/course_tody'}}" />
-      <!-- 课程卡片 -->
-      <block wx:for="{{currentCourse}}" wx:key="*this">
+      <!-- 暂无课程 -->
+      <block wx:if="{{currentCourse.length === 0 && bind}}">
+        <template is="placeholder-basic" data="{{href: '/pages/more/binding', text: '暂无课程', bg: '/images/placeholder/bg_no_data.png'}}"
+        />
+      </block>
+      <!-- 课程列表 -->
+      <block wx:if="{{currentCourse.length !== 0 && bind}}" wx:for="{{currentCourse}}" wx:key="*this">
         <template is="course-card" data="{{...item}}" />
+      </block>
+      <!-- 未绑定 -->
+      <block wx:if="{{!bind}}">
+        <template is="placeholder-basic" data="{{href: '/pages/more/binding', text: '未绑定', bg: '/images/placeholder/bg_no_login.png'}}"
+        />
       </block>
     </view>
   </view>

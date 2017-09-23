@@ -1,6 +1,7 @@
 <!-- 导入模板 -->
 <import src="/template/card/card.wxml" />
 <import src="/template/head/head.wxml" />
+<import src="/template/placeholder/placeholder.wxml" />
 
 <view class="explore">
   <!-- 分类导航 -->
@@ -21,8 +22,11 @@
     <view class="topic">
       <template is="classify-head" data="{{title: '热门话题', href: '/pages/explore/topic/topic'}}" />
       <!-- 话题列表 -->
-      <block wx:for="{{topicList}}" wx:key="*this">
+      <block wx:if="{{topicList.length !== 0}}" wx:for="{{topicList}}" wx:key="*this">
         <template is="basis-card" data="{{...item}}" />
+      </block>
+      <block wx:if="{{topicList.length === 0}}">
+        <template is="placeholder-basic" data="{{bg: '/images/placeholder/bg_no_data.png', text: '暂无话题'}}"/>
       </block>
     </view>
   </view>

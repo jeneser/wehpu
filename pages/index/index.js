@@ -1,5 +1,6 @@
 Page({
   data: {
+    bind: 0,
     // 工具
     tools: [
       {

@@ -1,4 +1,5 @@
 .explore {
+  min-height: 1400rpx;
   background-color: #f7f7f7;
 }
 

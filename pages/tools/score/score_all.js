@@ -5,34 +5,34 @@ Page({
       userName: '王亚哲',
       studentId: '311509040120',
       scoreList: [
-        {
-          courseName: '计算机网络',
-          mark: 90
-        },
-        {
-          courseName: '线性代数a',
-          mark: 90
-        },
-        {
-          courseName: '计算机网络课程设计计算机网络课程设计',
-          mark: 90
-        },
-        {
-          courseName: '网络编程技术',
-          mark: 90
-        },
-        {
-          courseName: '中国近现代史纲要',
-          mark: 'A'
-        },
-        {
-          courseName: '二年级足球2',
-          mark: 90
-        },
-        {
-          courseName: '旅游景观鉴赏',
-          mark: 90
-        }
+        // {
+        //   courseName: '计算机网络',
+        //   mark: 90
+        // },
+        // {
+        //   courseName: '线性代数a',
+        //   mark: 90
+        // },
+        // {
+        //   courseName: '计算机网络课程设计计算机网络课程设计',
+        //   mark: 90
+        // },
+        // {
+        //   courseName: '网络编程技术',
+        //   mark: 90
+        // },
+        // {
+        //   courseName: '中国近现代史纲要',
+        //   mark: 'A'
+        // },
+        // {
+        //   courseName: '二年级足球2',
+        //   mark: 90
+        // },
+        // {
+        //   courseName: '旅游景观鉴赏',
+        //   mark: 90
+        // }
       ],
       updateTime: '9/18 21:14 更新'
     },

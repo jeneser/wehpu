@@ -1,3 +1,6 @@
+<!-- 导入模板 -->
+<import src="/template/placeholder/placeholder.wxml" />
+
 <!-- 基础卡片 -->
 <template name="basis-card">
   <navigator class="basis-card" url="{{href}}">
@@ -79,11 +82,14 @@
       </view>
     </view>
     <view class="card-score__box">
-      <block wx:for="{{scoreList}}" wx:key="courseName">
+      <block wx:if="{{scoreList}}" wx:for="{{scoreList}}" wx:key="courseName">
         <view class="card-score__item">
           <text class="card-score__course-name">{{item.courseName}}</text>
           <text class="card-score__mark">{{item.mark}}</text>
         </view>
+      </block>
+      <block wx:if="{{scoreList.length === 0}}">
+        <template is="placeholder-basic" data="{{bg: '/images/placeholder/bg_serach.png', text: '暂无成绩信息'}}" />
       </block>
     </view>
     <view class="card-score__foot">

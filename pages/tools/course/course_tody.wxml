@@ -2,6 +2,7 @@
 <import src="/template/card/card.wxml" />
 <import src="/template/head/head.wxml" />
 <import src="/template/button/button.wxml" />
+<import src="/template/placeholder/placeholder.wxml" />
 
 <!-- 今日课程 -->
 <view class="course-tody">
@@ -14,7 +15,7 @@
     </view>
   </view>
   <!-- 今日课程列表 -->
-  <view class="course-list">
+  <view wx:if="{{todyCourse.length !== 0}}" class="course-list">
     <!-- 上午 -->
     <template is="classify-head" data="{{title: '今日上午'}}" />
     <block wx:for="{{todyCourse}}" wx:key="*this">
@@ -31,6 +32,11 @@
       <template is="course-card" data="{{...item}}" />
     </block>
   </view>
+  <!-- 暂无课程 -->
+  <block wx:if="{{todyCourse.length === 0}}">
+    <template is="placeholder-basic" data="{{href: '/pages/more/binding', text: '暂无课程', bg: '/images/placeholder/bg_no_data.png'}}"
+    />
+  </block>
   <!-- 查看所有课程 -->
   <template is="button-primary" data="{{text: '查看所有课程', href: '/pages/tools/course/course_all'}}" />
 </view>
