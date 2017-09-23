@@ -1,3 +1,8 @@
+<!-- 导入模板 -->
+<import src="/template/tip/tip.wxml" />
+<import src="/template/help/help.wxml" />
+
+<!-- 一卡通 -->
 <view class="card">
   <view class="e-card">
     <view class="e-card__stripe"></view>
@@ -19,17 +24,6 @@
     </view>
   </view>
   <!-- 帮助 -->
-  <view class="card__help">
-    <text>余额不准确, </text>
-    <text class="card__need-help" bindtap="showHelp">帮助?</text>
-  </view>
-  <view class="help" id="help" wx:if="{{helpStatus}}" bindtap="hideHelp">
-    <view class="help__box">
-      <image class="help__close" id="close-help" src="/images/ic_clear.png" bindtap="hideHelp"></image>
-      <view class="help__item">
-        <text class="help__question">1.校外访问VPN密码是什么?</text>
-        <text class="help__answer">初始密码或者已更改的密码。初始密码一般为身份证号后6位。</text>
-      </view>
-    </view>
-  </view>
+  <template is="basic-tip" data="{{text: '余额不准确, ', help: '需要帮助?'}}" />
+  <template is="help" data="{{...help}}" />
 </view>

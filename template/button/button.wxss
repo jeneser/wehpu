@@ -1,8 +1,11 @@
 /* 自定义按钮 */
+.button-secondary,
+.button-primary {
+  margin-top: 120rpx;
+}
 .button-primary__btn,
 .button-secondary__btn {
   width: 80%;
-  margin-top: 120rpx;
   padding: 25rpx 45rpx;
   text-align: center;
   font-size: 13pt;

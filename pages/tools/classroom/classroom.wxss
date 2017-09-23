@@ -34,17 +34,3 @@
   background-color: #0099ff;
   border-radius: 50rpx;
 }
-.classroom-form__btns {
-  display: flex;
-  margin-top: 100rpx;
-}
-.classroom-form__btn--query {
-  flex: 1;
-  padding: 20rpx 0;
-  text-align: center;
-  font-size: 12pt;
-  font-weight: bold;
-  color: #fff;
-  border-radius: 50rpx;
-  background-color: #0099ff;
-}

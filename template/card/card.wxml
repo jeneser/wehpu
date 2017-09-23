@@ -67,3 +67,30 @@
     </view>
   </view>
 </template>
+
+<!-- 成绩卡片 -->
+<template name="card-score">
+  <view class="card-score">
+    <view class="card-score__head">
+      <text class="card-score__title">{{title}}</text>
+      <view class="card-score__user-info">
+        <text class="card-score__user-name">{{userName}}</text>
+        <text class="card-score__student-id">{{studentId}}</text>
+      </view>
+    </view>
+    <view class="card-score__box">
+      <block wx:for="{{scoreList}}" wx:key="courseName">
+        <view class="card-score__item">
+          <text class="card-score__course-name">{{item.courseName}}</text>
+          <text class="card-score__mark">{{item.mark}}</text>
+        </view>
+      </block>
+    </view>
+    <view class="card-score__foot">
+      <text class="card-score__update-time">{{updateTime}}</text>
+      <button class="card-score__share" bindtap="showHelp">
+        <image class="card-score__ic-share" src="/images/ic_tip.png"></image>
+      </button>
+    </view>
+  </view>
+</template>

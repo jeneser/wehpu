@@ -1,3 +1,7 @@
+<!-- 导入模板 -->
+<import src="/template/button/button.wxml" />
+
+<!-- 空教室 -->
 <view class="classroom">
   <view class="classroom-form">
     <!-- 位置 -->
@@ -29,8 +33,6 @@
         </view>
       </picker>
     </view>
-    <view class="classroom-form__btns">
-      <text class="classroom-form__btn--query" bindtap="">立即查询</text>
-    </view>
+    <template is="button-secondary" data="{{text: '立即查询', tapHandle: ''}}"/>
   </view>
 </view>
