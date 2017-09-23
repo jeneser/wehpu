@@ -2,6 +2,8 @@
   padding: 45rpx;
   overflow: hidden;
 }
+
+/* app */
 .app {
   display: flex;
   flex-direction: column;

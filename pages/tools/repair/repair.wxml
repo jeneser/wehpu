@@ -1,3 +1,7 @@
+<!-- 导入模板 -->
+<import src="/template/upload/upload.wxml" />
+
+<!-- 报修 -->
 <view class="repair">
   <form class="repair-form" bindsubmit="formSubmit">
     <!-- 故障区域 -->
@@ -59,15 +63,7 @@
       <textarea class="content" name="textarea" maxlength="300" auto-height="true" cursor-spacing="45" placeholder="请详细描述您的问题,可附图"
         placeholder-style="color: #999;" />
       <!-- 图片上传 -->
-      <view class="upload-photo">
-        <view class="photo-panel__add" bindtap="chooseImage"></view>
-        <!-- 预览图片 -->
-        <block wx:for="{{imageList}}" wx:for-item="image" wx:key="*this">
-          <!-- <view class="preview"> -->
-          <image class="preview__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
-          <!-- </view> -->
-        </block>
-      </view>
+      <template is="upload-photo" data="{{imageList}}" />
     </view>
     <!-- 提交 -->
     <view class="repair-form__item repair-form__post">

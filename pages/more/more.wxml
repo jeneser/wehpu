@@ -8,7 +8,8 @@
   <!-- 功能列表 -->
   <view class="list">
     <template is="icon-list" data="{{href: '/pages/more/binding', lIcon: '/images/more/bind.png', text: '账号绑定'}}" />
-    <template is="icon-list" data="{{href: '/pages/more/feedback/feedback', lIcon: '/images/more/feedback.png', text: '意见反馈'}}" />
+    <template is="icon-list" data="{{href: '/pages/more/feedback/feedback', lIcon: '/images/more/feedback.png', text: '意见反馈'}}"
+    />
     <template is="icon-list" data="{{href: '/pages/more/about/about', lIcon: '/images/more/about.png', text: '关于我们'}}" />
   </view>
 </view>

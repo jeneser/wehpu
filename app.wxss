@@ -2,3 +2,7 @@
 @import "/template/head/head.wxss";
 @import "/template/button/button.wxss";
 @import "/template/list/list.wxss";
+@import "/template/upload/upload.wxss";
+@import "/template/help/help.wxss";
+@import "/template/tip/tip.wxss";
+@import "/template/loading/loading.wxss";
