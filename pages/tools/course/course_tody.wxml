@@ -17,19 +17,19 @@
   <!-- 今日课程列表 -->
   <view wx:if="{{todyCourse.length !== 0}}" class="course-list">
     <!-- 上午 -->
-    <template is="classify-head" data="{{title: '今日上午'}}" />
+    <template is="head-classify" data="{{title: '今日上午'}}" />
     <block wx:for="{{todyCourse}}" wx:key="*this">
-      <template is="course-card" data="{{...item}}" />
+      <template is="card-course" data="{{...item}}" />
     </block>
     <!-- 下午 -->
-    <template is="classify-head" data="{{title: '今日下午'}}" />
+    <template is="head-classify" data="{{title: '今日下午'}}" />
     <block wx:for="{{todyCourse}}" wx:key="*this">
-      <template is="course-card" data="{{...item}}" />
+      <template is="card-course" data="{{...item}}" />
     </block>
     <!-- 晚上 -->
-    <template is="classify-head" data="{{title: '今日晚上'}}" />
+    <template is="head-classify" data="{{title: '今日晚上'}}" />
     <block wx:for="{{todyCourse}}" wx:key="*this">
-      <template is="course-card" data="{{...item}}" />
+      <template is="card-course" data="{{...item}}" />
     </block>
   </view>
   <!-- 暂无课程 -->

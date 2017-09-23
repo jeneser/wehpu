@@ -3,5 +3,5 @@
 
 <!-- 公告详情 -->
 <view class="notice-details">
-  <template is="article-card" data="{{...noticeDetails}}" />
+  <template is="card-article" data="{{...noticeDetails}}" />
 </view>

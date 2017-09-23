@@ -3,5 +3,5 @@
 
 <!-- 话题详情 -->
 <view class="topic-details">
-  <template is="article-card" data="{{...topicDetails}}" />
+  <template is="card-article" data="{{...topicDetails}}" />
 </view>

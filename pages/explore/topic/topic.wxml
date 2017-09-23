@@ -4,6 +4,6 @@
 <!-- 往期话题 -->
 <view class="topic">
   <block wx:for="{{topicList}}" wx:key="*this">
-    <template is="basis-card" data="{{...item}}" />
+    <template is="card-basis" data="{{...item}}" />
   </block>
 </view>

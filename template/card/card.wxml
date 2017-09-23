@@ -2,51 +2,51 @@
 <import src="/template/placeholder/placeholder.wxml" />
 
 <!-- 基础卡片 -->
-<template name="basis-card">
-  <navigator class="basis-card" url="{{href}}">
-    <view class="basis-card__content">
-      <text class="basis-card__title">{{title}}</text>
-      <view class="basis-card__meta">
-        <image wx:if="{{icon}}" class="basis-card__l-icon" src="/images/{{icon}}.png"></image>
-        <text wx:if="{{time}}" class="basis-card__time">{{time}}</text>
-        <text wx:if="{{description}}" class="basis-card__description">{{description}}</text>
+<template name="card-basis">
+  <navigator class="card-basis" url="{{href}}">
+    <view class="card-basis__content">
+      <text class="card-basis__title">{{title}}</text>
+      <view class="card-basis__meta">
+        <image wx:if="{{icon}}" class="card-basis__l-icon" src="/images/{{icon}}.png"></image>
+        <text wx:if="{{time}}" class="card-basis__time">{{time}}</text>
+        <text wx:if="{{description}}" class="card-basis__description">{{description}}</text>
       </view>
     </view>
   </navigator>
 </template>
 
 <!-- 课表卡片 -->
-<template name="course-card">
-  <view class="course-card">
-    <view class="course-card__l">
-      <text class="course-card__name">{{name}}</text>
-      <text class="course-card__room">{{room}}</text>
-      <text class="course-card__place">{{place}}</text>
+<template name="card-course">
+  <view class="card-course">
+    <view class="card-course__l">
+      <text class="card-course__name">{{name}}</text>
+      <text class="card-course__room">{{room}}</text>
+      <text class="card-course__place">{{place}}</text>
     </view>
-    <view class="course-card__m">
-      <text class="course-card__count">{{count}}</text>
-      <text class="course-card__teacher">{{teacher}}</text>
+    <view class="card-course__m">
+      <text class="card-course__count">{{count}}</text>
+      <text class="card-course__teacher">{{teacher}}</text>
     </view>
-    <view class="course-card__r">
-      <text class="course-card__state {{state ? 'course-card__state--on' : 'course-card__state--off'}}">{{state ? '即将上课' : '已经下课'}}</text>
-      <text class="course-card__time">{{time}}</text>
+    <view class="card-course__r">
+      <text class="card-course__state {{state ? 'card-course__state--on' : 'card-course__state--off'}}">{{state ? '即将上课' : '已经下课'}}</text>
+      <text class="card-course__time">{{time}}</text>
     </view>
   </view>
 </template>
 
 <!-- 附加图片卡片 -->
-<template name="image-card">
+<template name="card-image">
   <navigator src="{{href}}">
-    <view class="image-card">
-      <image class="image-card__cover" src="{{cover}}"></image>
-      <view class="image-card__info">
-        <text class="image-card__title">{{title}}</text>
-        <view class="image-card__meta">
-          <view class="image-card__from">
-            <image class="image-card__ic-from" src="/images/ic_from.png"></image>
-            <text class="image-card__author">{{author}}</text>
+    <view class="card-image">
+      <image class="card-image__cover" src="{{cover}}"></image>
+      <view class="card-image__info">
+        <text class="card-image__title">{{title}}</text>
+        <view class="card-image__meta">
+          <view class="card-image__from">
+            <image class="card-image__ic-from" src="/images/ic_from.png"></image>
+            <text class="card-image__author">{{author}}</text>
           </view>
-          <view class="image-card__time">{{time}}</view>
+          <view class="card-image__time">{{time}}</view>
         </view>
       </view>
     </view>
@@ -54,18 +54,18 @@
 </template>
 
 <!-- 文章详情卡片 -->
-<template name="article-card">
-  <view class="article-card">
-    <view class="article-card__head">
-      <view class="article-card__title">{{title}}</view>
+<template name="card-article">
+  <view class="card-article">
+    <view class="card-article__head">
+      <view class="card-article__title">{{title}}</view>
     </view>
-    <view class="article-card__content">
+    <view class="card-article__content">
       <text>{{content}}</text>
     </view>
-    <view class="article-card__foot">
-      <text class="article-card__from">{{from}}</text>
-      <button class="article-card__share" open-type="share">
-        <image class="article-card__ic-share" src="/images/ic_share.png"></image>
+    <view class="card-article__foot">
+      <text class="card-article__from">{{from}}</text>
+      <button class="card-article__share" open-type="share">
+        <image class="card-article__ic-share" src="/images/ic_share.png"></image>
       </button>
     </view>
   </view>

@@ -1,11 +1,11 @@
 /* 基础提示 */
-.basic-tip {
+.tip-basic {
   margin-top: 15rpx;
   text-align: center;
   font-size: 9pt;
   font-weight: bold;
   color: #999;
 }
-.basic-tip__open-help {
+.tip-basic__open-help {
   color: #0099ff;
 }

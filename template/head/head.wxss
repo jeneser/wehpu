@@ -1,10 +1,10 @@
 /* 通用分类标头 */
-.classify-head {
+.head-classify {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.classify-head__title {
+.head-classify__title {
   display: inline-block;
   margin-left: 15rpx;
   padding-left: 20rpx;
@@ -14,14 +14,14 @@
   color: #000;
   border-left: solid #cc3333 10rpx;
 }
-.classify-head__r-icon {
+.head-classify__r-icon {
   display: inline-block;
   width: 16rpx;
   height: 28rpx;
   margin-left: 15rpx;
   line-height: 1;
 }
-.classify-head__more {
+.head-classify__more {
   color: #cc3333;
   font-size: 12pt;
   font-weight: bold;

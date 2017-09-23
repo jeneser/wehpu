@@ -20,10 +20,10 @@
   <view class="main">
     <!-- 热门话题 -->
     <view class="topic">
-      <template is="classify-head" data="{{title: '热门话题', href: '/pages/explore/topic/topic'}}" />
+      <template is="head-classify" data="{{title: '热门话题', href: '/pages/explore/topic/topic'}}" />
       <!-- 话题列表 -->
       <block wx:if="{{topicList.length !== 0}}" wx:for="{{topicList}}" wx:key="*this">
-        <template is="basis-card" data="{{...item}}" />
+        <template is="card-basis" data="{{...item}}" />
       </block>
       <block wx:if="{{topicList.length === 0}}">
         <template is="placeholder-basic" data="{{bg: '/images/placeholder/bg_no_data.png', text: '暂无话题'}}"/>

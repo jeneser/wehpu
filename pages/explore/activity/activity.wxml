@@ -4,6 +4,6 @@
 <!-- 校园活动 -->
 <view class="activity">
   <block wx:for="{{activityList}}" wx:key="*this">
-    <template is="image-card" data="{{...item}}" />
+    <template is="card-image" data="{{...item}}" />
   </block>
 </view>

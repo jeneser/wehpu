@@ -4,6 +4,6 @@
 <!-- 文件下载 -->
 <view class="download">
   <block wx:for="{{downloadList}}" wx:key="*this">
-    <template is="thumbnail-list" data="{{...item}}" />
+    <template is="list-thumbnail" data="{{...item}}" />
   </block>
 </view>

@@ -15,7 +15,7 @@
           maxlength="12" confirm-type="done" auto-focus="true" placeholder="学号或一卡通号" bindfocus="inputFocus" bindblur="inputBlur"></input>
         <image class="input-group__scan" src="/images/ic_scan.png" bindtap="showTip"></image>
       </view>
-      <template is="basic-tip" data="{{text: '接下来进行VPN认证和教务认证,离完成还差一步'}}" />
+      <template is="tip-basic" data="{{text: '接下来进行VPN认证和教务认证,离完成还差一步'}}" />
       <template is="button-pairs" data="{{lText: '暂不认证', rText: '下一步', lTapHandle: 'navigateCancel', rTapHandle: 'navigateNext'}}"
       />
     </view>
@@ -30,7 +30,7 @@
         <input class="input-group__input {{jwcPassWordFocus ? 'input-active' : ''}}" id="jwcPassWord" type="password" confirm-type="done"
           placeholder="教务处密码" bindfocus="inputFocus" bindblur="inputBlur"></input>
       </view>
-      <template is="basic-tip" data="{{text: '即将完成账号认证, ', help: '需要帮助?'}}" />
+      <template is="tip-basic" data="{{text: '即将完成账号认证, ', help: '需要帮助?'}}" />
       <template is="button-pairs" data="{{lText: '上一步', rText: '开始认证', lTapHandle: 'navigateCancel', rTapHandle: 'navigateNext'}}"
       />
     </view>

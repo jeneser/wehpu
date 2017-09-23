@@ -24,6 +24,6 @@
     </view>
   </view>
   <!-- 帮助 -->
-  <template is="basic-tip" data="{{text: '余额不准确, ', help: '需要帮助?'}}" />
+  <template is="tip-basic" data="{{text: '余额不准确, ', help: '需要帮助?'}}" />
   <template is="help" data="{{...help}}" />
 </view>

@@ -1,5 +1,5 @@
 /* 基础卡片 */
-.basis-card {
+.card-basis {
   min-height: 180rpx;
   margin-top: 45rpx;
   margin-bottom: 45rpx;
@@ -9,27 +9,27 @@
   border-radius: 2rpx;
   overflow: hidden;
 }
-.basis-card__title {
+.card-basis__title {
   display: block;
   padding-bottom: 15rpx;
   color: #000;
   font-size: 13pt;
   font-weight: bold;
 }
-.basis-card__meta {
+.card-basis__meta {
   display: flex;
   align-items: center;
 }
-.basis-card__l-icon {
+.card-basis__l-icon {
   width: 35rpx;
   height: 35rpx;
   margin-right: 15rpx;
 }
-.basis-card__description {
+.card-basis__description {
   color: #999;
   font-size: 10pt;
 }
-.basis-card__time {
+.card-basis__time {
   flex: 1;
   color: #999;
   font-size: 11pt;
@@ -39,7 +39,7 @@
 }
 
 /* 课表卡片 */
-.course-card {
+.card-course {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
@@ -53,36 +53,36 @@
   border-radius: 2rpx;
   overflow: hidden;
 }
-.course-card__name {
+.card-course__name {
   display: block;
   color: #000;
   font-size: 10pt;
 }
-.course-card__room {
+.card-course__room {
   display: block;
   padding: 30rpx 0 15rpx 0;
   color: #cc3333;
   font-size: 20pt;
   font-weight: bold;
 }
-.course-card__place {
+.card-course__place {
   display: block;
   color: #999;
   font-size: 9pt;
 }
-.course-card__count {
+.card-course__count {
   display: block;
   padding: 30rpx 0 15rpx 0;
   color: #000;
   font-size: 20pt;
   font-weight: bold;
 }
-.course-card__teacher {
+.card-course__teacher {
   display: block;
   color: #999;
   font-size: 9pt;
 }
-.course-card__state {
+.card-course__state {
   display: block;
   padding: 10rpx 20rpx;
   margin: 30rpx 0 15rpx 0;
@@ -90,13 +90,13 @@
   color: #fff;
   border-radius: 50rpx;
 }
-.course-card__state--on {
+.card-course__state--on {
   background-color: #cc3333;
 }
-.course-card__state--off {
+.card-course__state--off {
   background-color: #999;
 }
-.course-card__time {
+.card-course__time {
   display: block;
   margin-left: 15rpx;
   color: #999;
@@ -104,7 +104,7 @@
 }
 
 /* 附加图片卡片 */
-.image-card {
+.card-image {
   box-sizing: border-box;
   margin-bottom: 45rpx;
   padding-bottom: 15rpx;
@@ -112,56 +112,56 @@
   box-shadow: 0 0 40rpx #ddd;
   overflow: hidden;
 }
-.image-card__cover {
+.card-image__cover {
   width: 100%;
   min-height: 280rpx;
   max-height: 340rpx;
 }
-.image-card__title {
+.card-image__title {
   font-size: 12pt;
   font-weight: bold;
   color: #000;
 }
-.image-card__info {
+.card-image__info {
   padding: 15rpx 20rpx;
 }
-.image-card__meta {
+.card-image__meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 15rpx;
   font-size: 9pt;
 }
-.image-card__from {
+.card-image__from {
   display: flex;
   align-items: center;
   color: #000;
 }
-.image-card__ic-from {
+.card-image__ic-from {
   width: 35rpx;
   height: 35rpx;
   margin-right: 15rpx;
 }
-.image-card__time {
+.card-image__time {
   color: #999;
 }
 
 /* 文章详情卡片 */
-.article-card {
+.card-article {
   margin-top: 15rpx;
   padding: 45rpx;
   background-color: #fff;
   border-radius: 10rpx;
   box-shadow: 0 0 60rpx #ccc;
 }
-.article-card__head {
+.card-article__head {
   padding-top: 15rpx;
   padding-bottom: 45rpx;
   font-size: 16pt;
   font-weight: bold;
   border-bottom: solid 1rpx #eee;
 }
-.article-card__content {
+.card-article__content {
   max-height: 670rpx;
   padding-top: 45rpx;
   font-size: 12pt;
@@ -170,7 +170,7 @@
   line-height: 2;
   overflow-y: scroll;
 }
-.article-card__foot {
+.card-article__foot {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -178,11 +178,11 @@
   padding-top: 35rpx;
   border-top: solid 1rpx #eee;
 }
-.article-card__from {
+.card-article__from {
   font-size: 10pt;
   color: #666;
 }
-.article-card__share {
+.card-article__share {
   display: flex;
   align-items: center;
   margin: 0;
