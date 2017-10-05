@@ -46,7 +46,7 @@
     <navigator class="list-avatar__item" url="{{href}}">
       <image class="list-avatar__avatar" src="{{avatar}}"></image>
       <view class="list-avatar__meta">
-        <text class="list-avatar__nickname">{{nickname}}</text>
+        <text class="list-avatar__nickName">{{nickName}}</text>
         <text class="list-avatar__bind">{{bind ? '已绑定' : '未绑定'}}</text>
       </view>
       <image class="list-avatar__r-icon" src="/images/more/arrow_right.png"></image>

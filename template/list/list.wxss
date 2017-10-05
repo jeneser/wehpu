@@ -115,6 +115,7 @@
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;
+  background-color: #eee;
 }
 .list-avatar__meta {
   flex: 1;
@@ -122,7 +123,7 @@
   flex-direction: column;
   padding-left: 30rpx;
 }
-.list-avatar__nickname {
+.list-avatar__nickName {
   padding-bottom: 10rpx;
   font-size: 13pt;
   font-weight: bold;
