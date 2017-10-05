@@ -47,9 +47,9 @@ App({
           if (!this.store.token) {
             // 用户登录
             this.login();
-            // 检查绑定信息
-            this.checkBind();
           }
+          // 检查绑定信息
+          this.checkBind();
         } else {
           wx.showToast({
             title: '无网络连接',
@@ -67,9 +67,9 @@ App({
         if (!this.store.token) {
           // 用户登录
           this.login();
-          // 检查绑定信息
-          this.checkBind();
         }
+        // 检查绑定信息
+        this.checkBind();
       } else {
         wx.showToast({
           title: '无网络连接',

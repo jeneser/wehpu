@@ -61,3 +61,30 @@
   width: 74rpx;
   height: 74rpx;
 }
+
+/* 动画 */
+@keyframes slideIn {
+  from {
+    transform: translateX(1000rpx);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-1000rpx);
+  }
+}
+
+.animation-slideIn {
+  animation: .3s ease-in slideIn;
+}
+
+.animation-slideOut {
+  animation: .3s ease-in slideOut;
+}

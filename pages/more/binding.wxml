@@ -2,44 +2,42 @@
 <import src="/template/button/button.wxml" />
 <import src="/template/help/help.wxml" />
 <import src="/template/tip/tip.wxml" />
-<import src="/template/loading/loading.wxml" />
 
-<!-- 认证 -->
+<!-- 绑定 -->
 <view class="binding">
 
   <!-- 第一步 -->
-  <!-- <view class="step-one">
+  <view class="step-one animation-slideIn {{step !== 1 ? 'animation-slideOut' : ''}}" wx:if="{{step === 1}}">
     <view class="form-one">
       <view class="input-group">
         <input class="input-group__input {{studentIdFocus ? 'input-active' : ''}}" id="studentId" value="{{studentId}}" type="number"
-          maxlength="12" confirm-type="done" auto-focus="true" placeholder="学号或一卡通号" bindfocus="inputFocus" bindblur="inputBlur"></input>
-        <image class="input-group__scan" src="/images/ic_scan.png" bindtap="showTip"></image>
+          maxlength="12" confirm-type="done" auto-focus="true" placeholder="学号或一卡通号" bindfocus="inputFocus" bindblur="inputBlur" bindinput="keyInput"></input>
+        <image class="input-group__scan" src="/images/ic_scan.png" bindtap="scanStudentId"></image>
       </view>
       <template is="tip-basic" data="{{text: '接下来进行VPN认证和教务认证,离完成还差一步'}}" />
       <template is="button-pairs" data="{{lText: '暂不认证', rText: '下一步', lTapHandle: 'navigateCancel', rTapHandle: 'navigateNext'}}"
       />
     </view>
-  </view> -->
+  </view>
 
   <!-- 第二步 -->
-  <!-- <view class="step-two">
+  <view class="step-two animation-slideIn" wx:if="{{step === 2}}">
     <view class="form-two">
       <view class="input-group">
-        <input class="input-group__input {{vpnPassWordFocus ? 'input-active' : ''}}" id="vpnPassWord" type="password" confirm-type="done"
-          auto-focus="true" placeholder="校外访问VPN密码" bindfocus="inputFocus" bindblur="inputBlur"></input>
-        <input class="input-group__input {{jwcPassWordFocus ? 'input-active' : ''}}" id="jwcPassWord" type="password" confirm-type="done"
-          placeholder="教务处密码" bindfocus="inputFocus" bindblur="inputBlur"></input>
+        <input class="input-group__input {{vpnPassWordFocus ? 'input-active' : ''}}" id="vpnPassWord" type="password" value="" confirm-type="done"
+          auto-focus="true" placeholder="校外访问VPN密码" bindfocus="inputFocus" bindblur="inputBlur" bindinput="keyInput"></input>
+        <input class="input-group__input {{jwcPassWordFocus ? 'input-active' : ''}}" id="jwcPassWord" type="password" value="" confirm-type="done"
+          placeholder="教务处密码" bindfocus="inputFocus" bindblur="inputBlur" bindinput="keyInput"></input>
       </view>
       <template is="tip-basic" data="{{text: '即将完成账号认证, ', help: '需要帮助?'}}" />
-      <template is="button-pairs" data="{{lText: '上一步', rText: '开始认证', lTapHandle: 'navigateCancel', rTapHandle: 'navigateNext'}}"
+      <template is="button-pairs" data="{{lText: '上一步', rText: '开始认证', lTapHandle: 'navigatePre', rTapHandle: 'bind'}}"
       />
     </view>
-    <template wx:if="{{loading}}" is="loading-custom" data="{{text: '认证中'}}" />
     <template is="help" data="{{...help}}" />
-  </view> -->
+  </view>
 
   <!-- 认证成功 -->
-  <view class="succeed">
+  <view class="succeed animation-slideIn" wx:if="{{step === 3}}">
     <view class="succeed__item">
       <text class="succeed__vpn">VPN账户</text>
       <image class="succeed__state" src="/images/ic_succeed.png"></image>
