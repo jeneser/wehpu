@@ -24,9 +24,9 @@
   <view class="step-two animation-slideIn" wx:if="{{step === 2}}">
     <view class="form-two">
       <view class="input-group">
-        <input class="input-group__input {{vpnPassWordFocus ? 'input-active' : ''}}" id="vpnPassWord" type="password" value="" confirm-type="done"
+        <input class="input-group__input {{vpnPassWordFocus ? 'input-active' : ''}} {{vpnPassWordErr ? '' : 'input-error'}}" id="vpnPassWord" type="password" value="" confirm-type="done"
           auto-focus="true" placeholder="校外访问VPN密码" bindfocus="inputFocus" bindblur="inputBlur" bindinput="keyInput"></input>
-        <input class="input-group__input {{jwcPassWordFocus ? 'input-active' : ''}}" id="jwcPassWord" type="password" value="" confirm-type="done"
+        <input class="input-group__input {{jwcPassWordFocus ? 'input-active' : ''}} {{jwcPassWordErr ? '' : 'input-error'}}" id="jwcPassWord" type="password" value="" confirm-type="done"
           placeholder="教务处密码" bindfocus="inputFocus" bindblur="inputBlur" bindinput="keyInput"></input>
       </view>
       <template is="tip-basic" data="{{text: '即将完成账号认证, ', help: '需要帮助?'}}" />
@@ -46,6 +46,6 @@
       <text class="succeed__jwc">教务处账户</text>
       <image class="succeed__state" src="/images/ic_succeed.png"></image>
     </view>
-    <template is="button-secondary" data="{{text: '解除绑定', tapHandle: 'unbind'}}" />
+    <template is="button-secondary" data="{{text: '重新绑定', tapHandle: 'rebind'}}" />
   </view>
 </view>

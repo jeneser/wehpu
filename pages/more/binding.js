@@ -8,7 +8,8 @@ Page({
     studentIdFocus: false,
     vpnPassWordFocus: false,
     jwcPassWordFocus: false,
-    loading: false,
+    vpnPassWordErr: true,
+    jwcPassWordErr: true,
     step: 1,
     help: {
       helpStatus: false,
@@ -51,9 +52,15 @@ Page({
       this.setData({
         vpnPassWordFocus: true
       });
+      this.setData({
+        vpnPassWordErr: true
+      });
     } else if (e.target.id === 'jwcPassWord') {
       this.setData({
         jwcPassWordFocus: true
+      });
+      this.setData({
+        jwcPassWordErr: true
       });
     }
   },
@@ -61,7 +68,6 @@ Page({
   // 失去焦点
   inputBlur: function(e) {
     if (e.target.id === 'studentId') {
-      console.log(this.data.studentId);
       this.setData({
         studentIdFocus: false
       });
@@ -125,11 +131,9 @@ Page({
       showCancel: false,
       success: operation => {
         if (operation.confirm) {
-          console.log('用户点击确定');
           wx.scanCode({
             onlyFromCamera: true,
             success: scanRes => {
-              console.log(scanRes);
               this.setData({
                 studentId: scanRes.result
               });
@@ -160,17 +164,19 @@ Page({
         duration: 2000
       });
     } else {
-      // wx.showLoading({
-      //   title: '认证中',
-      //   mask: true
-      // })
+      // 加载中
+      wx.showLoading({
+        title: '认证中',
+        mask: true
+      });
+
       // 发起网络请求
       wx.request({
         url: app.api + '/users/binding',
         method: 'POST',
         header: {
           'content-type': 'application/x-www-form-urlencoded',
-          'Authorization': 'Bearer ' + app.store.token
+          Authorization: 'Bearer ' + app.store.token
         },
         data: {
           studentId: studentId,
@@ -178,23 +184,81 @@ Page({
           jwcPassWord: jwcPassWord
         },
         success: bindingState => {
+          var bindingState = bindingState.data;
           console.log(bindingState);
-          // this.setData({
-          //   step: 3
-          // });
+
+          wx.hideLoading();
+
+          if (
+            bindingState.statusCode === 201 ||
+            bindingState.statusCode === 200
+          ) {
+            // 更新store和storage
+            app.store.bind = true;
+            wx.setStorage({
+              key: bind,
+              data: true
+            });
+
+            wx.showToast({
+              title: '绑定成功',
+              icon: 'success',
+              duration: 2000
+            });
+            this.setData({
+              step: 3
+            });
+            setTimeout(() => {
+              wx.redirectTo({
+                url: 'more'
+              });
+            }, 1000);
+          } else if (bindingState.statusCode === 400) {
+            wx.showToast({
+              title: '密码输入有误',
+              icon: '/images/fail.png',
+              duration: 2000
+            });
+
+            // 密码错误提示
+            this.setData({
+              vpnPassWordErr: bindingState.data.vpn
+            });
+            this.setData({
+              jwcPassWordErr: bindingState.data.jwc
+            });
+          } else {
+            wx.showToast({
+              title: '服务器繁忙',
+              icon: '/images/fail.png',
+              duration: 2000
+            });
+          }
+        },
+        fail: () => {
+          wx.hideLoading();
+          wx.showToast({
+            title: '服务器繁忙',
+            icon: '/images/fail.png',
+            duration: 2000
+          });
         }
       });
     }
   },
 
   // 解除绑定
-  unbind: function() {
+  rebind: function() {
     wx.showModal({
       title: '提示',
-      content: '确定要解除绑定吗?',
+      content: '确定要重新绑定吗?',
       success: operation => {
         if (operation.confirm) {
-          console.log('用户点击确定');
+          // 修改bind
+          app.store.bind = false;
+          this.setData({
+            step: 1
+          });
         }
       }
     });

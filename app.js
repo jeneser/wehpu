@@ -43,13 +43,7 @@ App({
           networkType !== 'none' &&
           networkType !== 'unknown'
         ) {
-          // 检查是否有token
-          if (!this.store.token) {
-            // 用户登录
-            this.login();
-          }
-          // 检查绑定信息
-          this.checkBind();
+          this.checkInfo();
         } else {
           wx.showToast({
             title: '无网络连接',
@@ -63,13 +57,7 @@ App({
     // 监听网络连接
     wx.onNetworkStatusChange(networkStatus => {
       if (networkStatus.isConnected && networkStatus.networkType !== '2g') {
-        // 检查是否有token
-        if (!this.store.token) {
-          // 用户登录
-          this.login();
-        }
-        // 检查绑定信息
-        this.checkBind();
+        this.checkInfo();
       } else {
         wx.showToast({
           title: '无网络连接',
@@ -80,9 +68,44 @@ App({
     });
   },
 
+  // 检查app信息
+  checkInfo: function() {
+    // 检查是否有token
+    if (!this.store.token) {
+      // 用户登录
+      this.login();
+    }
+    // 检查绑定信息
+    this.checkBind();
+
+    // 获取第三方服务器用户信息
+    // 检查Token是否有效
+    if (this.store.bind === true && this.store.token) {
+      //发起网络请求
+      wx.request({
+        url: this.api + '/users/userInfo',
+        method: 'GET',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded',
+          Authorization: 'Bearer ' + this.store.token
+        },
+        success: requestRes => {
+          var requestRes = requestRes.data;
+          var userInfo = requestRes.data;
+          console.log(requestRes);
+
+          if (requestRes.statusCode === 200) {
+            // 存储用户基本信息
+            this.setStore('studentId', userInfo.studentId);
+          }
+        }
+      });
+    }
+  },
+
   // 检查绑定信息
   checkBind: function() {
-    if (this.store.bind === false) {
+    if (this.store.bind === false || this.store.bind === undefined) {
       wx.redirectTo({
         url: '/pages/more/binding'
       });
@@ -126,7 +149,10 @@ App({
 
               // 200 已存在并返回成功
               // 201 不存在新建并返回成功
-              if (loginState.code === 200 || loginState.code === 201) {
+              if (
+                loginState.statusCode === 200 ||
+                loginState.statusCode === 201
+              ) {
                 // 保存数据
                 this.setStore('version', this.version);
                 this.setStore('token', loginState.data.token);
@@ -138,6 +164,13 @@ App({
 
                 console.log(this.store);
               }
+            },
+            fail: () => {
+              wx.showToast({
+                title: '服务器繁忙',
+                icon: '/images/fail.png',
+                duration: 2000
+              });
             }
           });
         } else {

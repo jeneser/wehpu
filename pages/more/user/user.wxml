@@ -4,7 +4,7 @@
 <!-- 用户信息 -->
 <view class="userinfo">
   <template is="list-basic" data="{{lText: '头像', avatar: userInfo.avatar}}" />
-  <template is="list-basic" data="{{lText: '昵称', rText: userInfo.nickname}}" />
+  <template is="list-basic" data="{{lText: '昵称', rText: userInfo.nickName}}" />
   <template is="list-basic" data="{{lText: '姓名', rText: userInfo.name}}" />
   <template is="list-basic" data="{{lText: '学号', rText: userInfo.studentId}}" />
   <template is="list-basic" data="{{lText: '寝室', rText: userInfo.dormitory}}" />

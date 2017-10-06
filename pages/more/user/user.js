@@ -1,12 +1,40 @@
+var app = getApp();
+
 Page({
   data: {
     userInfo: {
-      avatar: '/images/more/face.png',
-      nickname: 'jeneser',
-      name: '王亚哲',
-      studentId: '311509040120',
-      dormitory: '兰五-636',
-      bind: 0
+      avatar: '/images/ic_avatar.png',
+      nickName: '',
+      name: '',
+      studentId: '',
+      dormitory: ''
+    },
+    bind: false
+  },
+  onLoad: function() {
+    // 获取用户基本信息
+    this.getUserInfo();
+  },
+  getUserInfo: function() {
+    var store = app.store;
+    console.log(store)
+
+    if (JSON.stringify(store) !== '{}') {
+      var userInfo = {
+        avatar: store.avatarUrl,
+        name: '王亚哲',
+        nickName: store.nickName,
+        studentId: store.studentId,
+        dormitory: '兰五-636'
+      };
+
+      // 更新数据
+      this.setData({
+        userInfo: userInfo
+      });
+      this.setData({
+        bind: store.bind
+      });
     }
   }
 });

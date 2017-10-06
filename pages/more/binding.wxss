@@ -46,6 +46,9 @@
 .input-placeholder {
   color: #ddd;
 }
+.input-error {
+  border-color: #ff0000;
+}
 
 /* 认证成功 */
 .succeed__item {
@@ -72,19 +75,6 @@
   }
 }
 
-@keyframes slideOut {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-1000rpx);
-  }
-}
-
 .animation-slideIn {
   animation: .3s ease-in slideIn;
-}
-
-.animation-slideOut {
-  animation: .3s ease-in slideOut;
 }
