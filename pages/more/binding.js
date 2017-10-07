@@ -196,7 +196,7 @@ Page({
             // 更新store和storage
             app.store.bind = true;
             wx.setStorage({
-              key: bind,
+              key: 'bind',
               data: true
             });
 

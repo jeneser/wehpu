@@ -22,10 +22,10 @@ Page({
     if (JSON.stringify(store) !== '{}') {
       var userInfo = {
         avatar: store.avatarUrl,
-        name: '王亚哲',
+        name: store.name,
         nickName: store.nickName,
         studentId: store.studentId,
-        dormitory: '兰五-636'
+        dormitory: '--'
       };
 
       // 更新数据

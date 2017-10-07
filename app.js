@@ -97,6 +97,16 @@ App({
           if (requestRes.statusCode === 200) {
             // 存储用户基本信息
             this.setStore('studentId', userInfo.studentId);
+            this.setStore('name', userInfo.name);
+          } else if (requestRes.statusCode === 403) {
+            // token失效，重新登录
+            this.login();
+          } else {
+            wx.showToast({
+              title: '未知错误',
+              image: '/images/fail.png',
+              duration: 2000
+            });
           }
         }
       });

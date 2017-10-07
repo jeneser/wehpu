@@ -8,21 +8,25 @@
   <!-- 首页功能导航 -->
   <view class="tools">
     <block wx:for="{{tools}}" wx:key="id">
-      <navigator class="tools__item" url="{{item.url}}">
+      <navigator class="tools__item" url="{{item.url}}" wx:if="{{bind === true}}">
         <image class="tools__icon" src="/images/tools/{{item.id}}.png"></image>
         <text class="tools__name">{{item.name}}</text>
       </navigator>
+      <view class="tools__item" wx:if="{{bind === false}}" bindtap="tapDisabledItem">
+        <image class="tools__icon" src="/images/tools/{{item.id}}.png"></image>
+        <text class="tools__name">{{item.name}}</text>
+      </view>
     </block>
   </view>
   <!-- 课表信息 -->
   <view class="main">
     <view class="course-list">
       <!-- 分类头部 -->
-      <template is="head-classify" data="{{title: '我的课程', href: '/pages/tools/course/course_tody'}}" />
+      <template is="head-classify" data="{{title: '我的课程', href: '/pages/tools/course/course'}}" wx:if="{{bind === true}}" />
+      <template is="head-classify" data="{{title: '我的课程', href: '/pages/more/binding'}}" wx:if="{{bind === false}}" />
       <!-- 暂无课程 -->
       <block wx:if="{{currentCourse.length === 0 && bind}}">
-        <template is="placeholder-basic" data="{{href: '/pages/more/binding', text: '暂无课程', bg: '/images/placeholder/bg_no_data.png'}}"
-        />
+        <template is="placeholder-basic" data="{{text: '暂无课程', bg: '/images/placeholder/bg_no_data.png'}}" />
       </block>
       <!-- 课程列表 -->
       <block wx:if="{{currentCourse.length !== 0 && bind}}" wx:for="{{currentCourse}}" wx:key="*this">

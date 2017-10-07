@@ -11,8 +11,7 @@
     "pages/tools/score/score",
     "pages/tools/score/score_all",
     "pages/tools/cet/cet",
-    "pages/tools/course/course_tody",
-    "pages/tools/course/course_all",
+    "pages/tools/course/course",
 
     "pages/explore/explore",
     "pages/explore/activity/activity",
