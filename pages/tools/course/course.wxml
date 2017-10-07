@@ -1,0 +1,11 @@
+<!-- 导入模板 -->
+<import src="/template/placeholder/placeholder.wxml" />
+
+<!-- 今日课程 -->
+<view class="course">
+  <!-- 暂无课程 -->
+  <block wx:if="{{todyCourse.length === 0}}">
+    <template is="placeholder-basic" data="{{href: '/pages/more/binding', text: '暂无课程', bg: '/images/placeholder/bg_no_data.png'}}"
+    />
+  </block>
+</view>
