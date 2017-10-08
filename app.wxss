@@ -7,3 +7,4 @@
 @import "/template/tip/tip.wxss";
 @import "/template/loading/loading.wxss";
 @import "/template/placeholder/placeholder.wxss";
+@import "/template/course/course.wxss";

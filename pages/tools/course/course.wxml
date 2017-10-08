@@ -1,14 +1,21 @@
+<!-- 导入模板 -->
+<import src="/template/course/course.wxml" />
+
 <view class="course">
   <!-- 头部周次 -->
   <view class="course__head">
-    <view class="course__weekly">6周</view>
-    <view class="course__week actived">周一</view>
-    <view class="course__week">周二</view>
-    <view class="course__week">周三</view>
-    <view class="course__week">周四</view>
-    <view class="course__week">周五</view>
-    <view class="course__week">周六</view>
-    <view class="course__week">周日</view>
+    <view class="course__weekly">
+      <view class="section">
+        <picker bindchange="bindPickerChange" value="{{currentWeekly}}" range="{{weeklyArray}}">
+          <view class="picker">
+            {{weeklyArray[currentWeekly]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <block wx:for="{{week}}" wx:key="*this">
+      <view class="course__week {{week[today] === item ? 'course__week--today' : ''}}">{{item}}</view>
+    </block>
   </view>
   <!-- 主体部分 -->
   <view class="course__main">
@@ -28,53 +35,69 @@
       <view class="course__time-slot">12</view>
     </view>
     <!-- 周一至周日课程 -->
+    <!-- 周一 -->
     <view class="course__section course__mon">
-      <view class="course__item course__time-slot-12">
-        <view class="course__name">数据库系统原理</view>
-        <view class="course__place">@计算机110</view>
-      </view>
-      <view class="course__item course__time-slot-34">
-        <view class="course__name">数据库系统原理</view>
-        <view class="course__place">@计算机110</view>
-      </view>
-      <view class="course__item course__time-slot-56">
-        <view class="course__name">数据库系统原理</view>
-        <view class="course__place">@计算机110</view>
-      </view>
-      <view class="course__item course__time-slot-910">
-        <view class="course__name">数据库系统原理</view>
-        <view class="course__place">@计算机110</view>
-      </view>
+      <block wx:for="{{mon}}" wx:key="{{weekly + name}}">
+        <template is="course-item" data="{{current: item.current, name: item.name, place: item.place, position: item.time,colorNum: item.color}}"
+        />
+      </block>
     </view>
+    <!-- 周二 -->
     <view class="course__section course__tue">
-      <view class="course__item">
-        <view class="course__name">数据库系统原理</view>
-        <view class="course__place">@计算机110</view>
-      </view>
+      <block wx:for="{{tue}}" wx:key="{{weekly + name}}">
+        <template is="course-item" data="{{current: item.current, name: item.name, place: item.place, position: item.time,colorNum: item.color}}"
+        />
+      </block>
     </view>
+    <!-- 周三 -->
     <view class="course__section course__wed">
-      <view class="course__item course__time-slot-78">
-        <view class="course__name">数据库系统原理</view>
-        <view class="course__place">@计算机110</view>
-      </view>
+      <block wx:for="{{wed}}" wx:key="{{weekly + name}}">
+        <template is="course-item" data="{{current: item.current, name: item.name, place: item.place, position: item.time,colorNum: item.color}}"
+        />
+      </block>
     </view>
+    <!-- 周四 -->
     <view class="course__section course__thu">
-      <view class="course__item course__time-slot-12">
-        <view class="course__name">数据库系统原理</view>
-        <view class="course__place">@计算机110</view>
-      </view>
-      <view class="course__item course__time-slot-910">
-        <view class="course__name">数据库系统原理</view>
-        <view class="course__place">@计算机110</view>
-      </view>
+      <block wx:for="{{thu}}" wx:key="{{weekly + name}}">
+        <template is="course-item" data="{{current: item.current, name: item.name, place: item.place, position: item.time,colorNum: item.color}}"
+        />
+      </block>
     </view>
+    <!-- 周五 -->
     <view class="course__section course__fri">
-      <view class="course__item course__time-slot-56">
-        <view class="course__name">数据库系统原理</view>
-        <view class="course__place">@计算机110</view>
+      <block wx:for="{{fri}}" wx:key="{{weekly + name}}">
+        <template is="course-item" data="{{current: item.current, name: item.name, place: item.place, position: item.time,colorNum: item.color}}"
+        />
+      </block>
+    </view>
+    <!-- 周六 -->
+    <view class="course__section course__sat"></view>
+    <!-- 周日 -->
+    <view class="course__section course__sun"></view>
+  </view>
+</view>
+
+<!-- 详细信息 -->
+<view class="course-detail" id="course-detail" wx:if="{{detailStatus}}" bindtap="hideDetail">
+  <view class="course-detail__box">
+    <image class="course-detail__close" id="close-detail" src="/images/ic_clear.png" bindtap="hideDetail"></image>
+    <view class="course-detail__content">
+      <view class="course-detail__name">数据库系统原理</view>
+      <view class="course-detail__place">
+        <image class="course-detail__icon" src="/images/ic_course_place.png"></image>
+        <view class="course-detail__title">教室</view>
+        <view class="course-detail__item">计算机110</view>
+      </view>
+      <view class="course-detail__weekly">
+        <image class="course-detail__icon" src="/images/ic_course_weekly.png"></image>
+        <view class="course-detail__title">周数</view>
+        <view class="course-detail__item">1-12周</view>
+      </view>
+      <view class="course-detail__teacher">
+        <image class="course-detail__icon" src="/images/ic_course_teacher.png"></image>
+        <view class="course-detail__title">老师</view>
+        <view class="course-detail__item">张磊</view>
       </view>
     </view>
-    <view class="course__section course__sat"></view>
-    <view class="course__section course__sun"></view>
   </view>
 </view>

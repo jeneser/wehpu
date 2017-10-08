@@ -1,0 +1,57 @@
+/* 课程信息 */
+.course__item {
+  box-sizing: border-box;
+  position: absolute;
+  height: 310rpx;
+  margin-top: 10rpx;
+  padding: 8rpx 5rpx;
+  font-size: 10pt;
+  color: #fff;
+  /* background-color: #99ccff; */
+  border-radius: 15rpx;
+}
+
+/* 定位槽 */
+.course__time-slot-1-2 {
+  top: 0;
+}
+.course__time-slot-3-4 {
+  top: 320rpx;
+}
+.course__time-slot-5-6 {
+  top: 640rpx;
+}
+.course__time-slot-7-8 {
+  top: 960rpx;
+}
+.course__time-slot-9-10 {
+  top: 1280rpx;
+}
+
+/* 颜色填充 */
+.course__color-1 {
+  background-color: #99ccff;
+}
+.course__color-2 {
+  background-color: #ff9999;
+}
+.course__color-3 {
+  background-color: #ffcc99;
+}
+.course__color-4 {
+  background-color: #cc99ff;
+}
+.course__color-5 {
+  background-color: #ccccff;
+}
+
+/* 当前周层叠置上 */
+.course__item--current {
+  z-index: 1;
+}
+
+/* 非当前 */
+.course__item--notcurrent {
+  color: #999;
+  background-color: #f7f7f7;
+}

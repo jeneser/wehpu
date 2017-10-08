@@ -1,0 +1,8 @@
+<!-- 课表贴 -->
+<template name="course-item">
+  <view class="course__item course__time-slot-{{position}} course__color-{{colorNum}} {{current ? 'course__item--current' : 'course__item--notcurrent'}}" bindtap="showDetail">
+    <view class="course__flag" wx:if="{{!current}}">[非本周]</view>
+    <view class="course__name">{{name}}</view>
+    <view class="course__place" wx:if="{{current}}">@{{place}}</view>
+  </view>
+</template>

@@ -1,6 +1,3 @@
-.course {
-}
-
 /* 头部周次 */
 .course__head {
   position: fixed;
@@ -11,7 +8,7 @@
   flex-wrap: nowrap;
   height: 100rpx;
   background-color: #f7f7f7;
-  z-index: 9;
+  z-index: 8;
 }
 .course__weekly,
 .course__week {
@@ -39,7 +36,7 @@
   flex-wrap: nowrap;
   justify-content: center;
   margin-top: 100rpx;
-  z-index: 8;
+  z-index: 7;
 }
 .course__left {
   box-sizing: border-box;
@@ -47,6 +44,7 @@
   padding-left: 10rpx;
   margin-right: 8rpx;
   font-size: 11pt;
+  font-weight: bold;
   background-color: #f7f7f7;
 }
 .course__section {
@@ -65,36 +63,62 @@
   height: 160rpx;
 }
 
-.actived {
-  background-color: #ccffff;
+.course__week--today {
+  background-color: #33ffff;
 }
 
-/* 课程信息 */
-.course__item {
-  box-sizing: border-box;
-  position: absolute;
-  height: 310rpx;
-  margin-top: 10rpx;
-  padding: 8rpx 5rpx;
-  font-size: 10pt;
-  color: #fff;
-  background-color: #99ccff;
-  border-radius: 15rpx;
-}
-
-/* 定位槽 */
-.course__time-slot-12 {
+/* 详细信息 */
+/* 帮助 */
+.course-detail {
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9;
 }
-.course__time-slot-34 {
-  top: 320rpx;
+.course-detail__box {
+  position: relative;
+  width: 80%;
+  padding: 45rpx;
+  background-color: #fff;
+  border-radius: 5rpx;
+  z-index: 10;
 }
-.course__time-slot-56 {
-  top: 640rpx;
+.course-detail__close {
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+  width: 45rpx;
+  height: 45rpx;
 }
-.course__time-slot-78 {
-  top: 960rpx;
+.course-detail__content {
+  padding: 15rpx;
 }
-.course__time-slot-910 {
-  top: 1280rpx;
+.course-detail__name {
+  font-size: 13pt;
+  color: #000;
+  font-weight: bold;
+}
+.course-detail__icon {
+  width: 45rpx;
+  height: 45rpx;
+}
+.course-detail__place,
+.course-detail__weekly,
+.course-detail__teacher {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 45rpx;
+  font-size: 12pt;
+  font-weight: 400;
+}
+.course-detail__title {
+  color: #999;
+  margin: 0 15rpx;
 }
