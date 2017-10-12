@@ -1,7 +1,8 @@
 <!-- 导入模板 -->
 <import src="/template/course/course.wxml" />
+<import src="/template/placeholder/placeholder.wxml" />
 
-<view class="course">
+<view wx:if="{{courseStatus}}" class="course">
   <!-- 头部周次 -->
   <view class="course__head">
     <view class="course__weekly">
@@ -37,66 +38,84 @@
     <!-- 周一至周日课程 -->
     <!-- 周一 -->
     <view class="course__section course__mon">
-      <block wx:for="{{mon}}" wx:key="{{weekly + name}}">
-        <template is="course-item" data="{{current: item.current, name: item.name, place: item.place, position: item.time,colorNum: item.color}}"
+      <block wx:for="{{mon}}" wx:key="{{weekly + name + rel}}">
+        <template is="course-item" data="{{current: item.current, course: item, name: item.name, place: item.place, position: item.time, colorNum: item.rel}}"
         />
       </block>
     </view>
     <!-- 周二 -->
     <view class="course__section course__tue">
-      <block wx:for="{{tue}}" wx:key="{{weekly + name}}">
-        <template is="course-item" data="{{current: item.current, name: item.name, place: item.place, position: item.time,colorNum: item.color}}"
+      <block wx:for="{{tue}}" wx:key="{{weekly + name + rel}}">
+        <template is="course-item" data="{{current: item.current, course: item,  name: item.name, place: item.place, position: item.time, colorNum: item.rel}}"
         />
       </block>
     </view>
     <!-- 周三 -->
     <view class="course__section course__wed">
-      <block wx:for="{{wed}}" wx:key="{{weekly + name}}">
-        <template is="course-item" data="{{current: item.current, name: item.name, place: item.place, position: item.time,colorNum: item.color}}"
+      <block wx:for="{{wed}}" wx:key="{{weekly + name + rel}}">
+        <template is="course-item" data="{{current: item.current, course: item,  name: item.name, place: item.place, position: item.time, colorNum: item.rel}}"
         />
       </block>
     </view>
     <!-- 周四 -->
     <view class="course__section course__thu">
-      <block wx:for="{{thu}}" wx:key="{{weekly + name}}">
-        <template is="course-item" data="{{current: item.current, name: item.name, place: item.place, position: item.time,colorNum: item.color}}"
+      <block wx:for="{{thu}}" wx:key="{{weekly + name + rel}}">
+        <template is="course-item" data="{{current: item.current, course: item,  name: item.name, place: item.place, position: item.time, colorNum: item.rel}}"
         />
       </block>
     </view>
     <!-- 周五 -->
     <view class="course__section course__fri">
-      <block wx:for="{{fri}}" wx:key="{{weekly + name}}">
-        <template is="course-item" data="{{current: item.current, name: item.name, place: item.place, position: item.time,colorNum: item.color}}"
+      <block wx:for="{{fri}}" wx:key="{{weekly + name + rel}}">
+        <template is="course-item" data="{{current: item.current, course: item,  name: item.name, place: item.place, position: item.time, colorNum: item.rel}}"
         />
       </block>
     </view>
     <!-- 周六 -->
-    <view class="course__section course__sat"></view>
+    <view class="course__section course__sat">
+      <block wx:for="{{sat}}" wx:key="{{weekly + name + rel}}">
+        <template is="course-item" data="{{current: item.current, course: item,  name: item.name, place: item.place, position: item.time, colorNum: item.rel}}"
+        />
+      </block>
+    </view>
     <!-- 周日 -->
-    <view class="course__section course__sun"></view>
+    <view class="course__section course__sun">
+      <block wx:for="{{sun}}" wx:key="{{weekly + name + rel}}">
+        <template is="course-item" data="{{current: item.current, course: item,  name: item.name, place: item.place, position: item.time, colorNum: item.rel}}"
+        />
+      </block>
+    </view>
   </view>
 </view>
+
+<!-- 暂无课程 -->
+<block wx:if="{{!courseStatus}}">
+  <template is="placeholder-fullpage" data="{{bg:'/images/placeholder/bg_no_data.png'}}" />
+</block>
 
 <!-- 详细信息 -->
 <view class="course-detail" id="course-detail" wx:if="{{detailStatus}}" bindtap="hideDetail">
   <view class="course-detail__box">
     <image class="course-detail__close" id="close-detail" src="/images/ic_clear.png" bindtap="hideDetail"></image>
-    <view class="course-detail__content">
-      <view class="course-detail__name">数据库系统原理</view>
+    <view wx:if="{{courseDetail}}" class="course-detail__content">
+      <view class="course-detail__name">
+        <view>{{courseDetail.name}}</view>
+        <view class="course-detail__flag" wx:if="{{!courseDetail.current}}">[非本周]</view>
+      </view>
       <view class="course-detail__place">
         <image class="course-detail__icon" src="/images/ic_course_place.png"></image>
         <view class="course-detail__title">教室</view>
-        <view class="course-detail__item">计算机110</view>
+        <view class="course-detail__item">{{courseDetail.place}}</view>
       </view>
       <view class="course-detail__weekly">
         <image class="course-detail__icon" src="/images/ic_course_weekly.png"></image>
         <view class="course-detail__title">周数</view>
-        <view class="course-detail__item">1-12周</view>
+        <view class="course-detail__item">{{courseDetail.weekly}}</view>
       </view>
       <view class="course-detail__teacher">
         <image class="course-detail__icon" src="/images/ic_course_teacher.png"></image>
         <view class="course-detail__title">老师</view>
-        <view class="course-detail__item">张磊</view>
+        <view class="course-detail__item">{{courseDetail.teacher}}</view>
       </view>
     </view>
   </view>

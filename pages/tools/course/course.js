@@ -3,6 +3,7 @@ var app = getApp();
 Page({
   data: {
     week: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+    _week: ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'],
     weeklyArray: [
       '1周',
       '2周',
@@ -39,144 +40,28 @@ Page({
     today: 0,
     // 当前周
     currentWeekly: 0,
-    // 课表详情Flag
-    detailStatus: false,
-    // 周一课程
-    mon: [
-      {
-        name: '操作系统',
-        place: '计算机110',
-        time: '1-2',
-        weekly: [1, 12],
-        teacher: '张磊',
-        color: 1
-      },
-      {
-        name: '电子商务/电子政务',
-        place: '计算机202',
-        time: '3-4',
-        weekly: [1, 6],
-        teacher: '赵宗渠',
-        color: 2
-      },
-      {
-        name: '矿山信息化',
-        place: '计算机110',
-        time: '3-4',
-        weekly: [11, 12],
-        teacher: '赵文涛',
-        color: 3
-      },
-      {
-        name: '矿山信息化',
-        place: '计算机110',
-        time: '3-4',
-        weekly: [14, 15],
-        teacher: '赵文涛',
-        color: 3
-      },
-      {
-        name: '无线网络技术',
-        place: '计算机107',
-        time: '5-6',
-        weekly: [1, 6],
-        teacher: '贾慧娟',
-        color: 4
-      }
-    ],
-    tue: [
-      {
-        name: '数据库系统原理',
-        place: '计算机110',
-        time: '1-2',
-        weekly: [8, 12],
-        teacher: '刘小燕',
-        color: 1
-      },
-      {
-        name: '数据库系统原理',
-        place: '计算机110',
-        time: '1-2',
-        weekly: [14, 16],
-        teacher: '刘小燕',
-        color: 1
-      },
-      {
-        name: 'PKI原理与技术',
-        place: '计算机102',
-        time: '3-4',
-        weekly: [1, 8],
-        teacher: '张静',
-        color: 2
-      },
-      {
-        name: '路由与交换技术',
-        place: '计算机106',
-        time: '9-10',
-        weekly: [1, 9],
-        teacher: '陈彦良',
-        color: 3
-      }
-    ],
-    wed: [
-      {
-        name: '数据库系统原理',
-        place: '计算机110',
-        time: '1-2',
-        weekly: [8, 12],
-        teacher: '刘小燕',
-        color: 1
-      },
-      {
-        name: '数据库系统原理',
-        place: '计算机110',
-        time: '1-2',
-        weekly: [14, 16],
-        teacher: '刘小燕',
-        color: 1
-      },
-      {
-        name: '无线网络技术',
-        place: '计算机107',
-        time: '3-4',
-        weekly: [1, 6],
-        teacher: '贾慧娟',
-        color: 4
-      },
-      {
-        name: '电子商务/电子政务',
-        place: '计算机202',
-        time: '5-6',
-        weekly: [1, 6],
-        teacher: '赵宗渠',
-        color: 2
-      },
-      {
-        name: '矿山信息化',
-        place: '计算机110',
-        time: '5-6',
-        weekly: [11, 12],
-        teacher: '赵文涛',
-        color: 3
-      },
-      {
-        name: '矿山信息化',
-        place: '计算机110',
-        time: '5-6',
-        weekly: [14, 15],
-        teacher: '赵文涛',
-        color: 3
-      }
-    ],
+    // 分段课程
+    mon: [],
+    tue: [],
+    wed: [],
     thu: [],
     fri: [],
     sat: [],
-    sun: []
+    sun: [],
+    oth: [],
+    // 课表状态
+    courseStatus: false,
+    courseDetail: '',
+    // 课表详情Flag
+    detailStatus: false
   },
   onLoad: function() {
+    // 设置日期
     this.setDate();
-    this.checkCourse();
+    // 获取课表
+    this.getCourse();
   },
+
   // 设置日期
   setDate: function() {
     var date = new Date();
@@ -192,34 +77,135 @@ Page({
       currentWeekly: currentWeekly
     });
   },
+
+  // 获取课程
+  getCourse: function() {
+    // 加载中
+    wx.showLoading({
+      title: '获取课表中',
+      mask: true
+    });
+    // 从缓存中获取
+    if (app.store.courses) {
+      this.updateView(app.store.courses);
+      console.log(this.data);
+    } else {
+      //发起网络请求
+      wx.request({
+        url: app.api + '/courses/course',
+        method: 'GET',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded',
+          Authorization: 'Bearer ' + app.store.token
+        },
+        success: requestRes => {
+          var _requestRes = requestRes.data;
+          console.log(requestRes);
+
+          if (
+            _requestRes.statusCode === 200 ||
+            _requestRes.statusCode === 201
+          ) {
+            var _courses = {
+              mon: _requestRes.data.mon,
+              tue: _requestRes.data.tue,
+              wed: _requestRes.data.wed,
+              thu: _requestRes.data.thu,
+              fri: _requestRes.data.fri,
+              sat: _requestRes.data.sat,
+              sun: _requestRes.data.sun,
+              oth: _requestRes.data.oth
+            };
+
+            this.updateView(_courses);
+            this.setStorage('courses', _courses);
+            console.log(_courses);
+          }
+        },
+        fail: () => {
+          wx.hideLoading();
+          wx.showToast({
+            title: '未知错误',
+            icon: '/images/fail.png',
+            duration: 2000
+          });
+        }
+      });
+    }
+  },
+
   // 判断是否为当前周次课程
   checkCourse: function() {
-    this.data.mon.forEach((element, index) => {
-      var _currentWeekly = this.data.currentWeekly;
-      var _weekly = element.weekly;
+    var _currentWeekly = this.data.currentWeekly + 1;
+    var param = {};
 
-      var current =
-        (_currentWeekly > _weekly[0] || _currentWeekly === _weekly[0]) &&
-        (_currentWeekly < _weekly[1] || _currentWeekly === _weekly[1]);
+    this.data._week.forEach(_weekEle => {
+      // 展开周次
+      this.data[_weekEle].forEach((element, index) => {
+        var _weekly = element.weekly;
 
-      var param = {};
-      param['mon[' + index + '].current'] = current;
-      this.setData(param);
+        // 判断区间
+        if (
+          _weekly !== '' &&
+          Object.prototype.toString.call(_weekly) === '[object Array]'
+        ) {
+          // 区分并判断持续周数为1，2，n的情况
+          var current =
+            _weekly.find(_weeklyEle => {
+              return _weeklyEle.length !== 1
+                ? (_currentWeekly > _weeklyEle[0] ||
+                    _currentWeekly === _weeklyEle[0]) &&
+                    (_currentWeekly < _weeklyEle[1] ||
+                      _currentWeekly === _weeklyEle[1])
+                : _currentWeekly === _weeklyEle[0];
+            }) !== undefined
+              ? true
+              : false;
+
+          // 更新数据和视图
+          param[_weekEle + '[' + index + '].current'] = current;
+          this.setData(param);
+        }
+      });
     });
+  },
 
-    console.log(this.data.mon);
+  // 更新课表视图
+  updateView: function(data) {
+    this.setData({
+      courseStatus: true
+    });
+    this.setData(data);
+    this.checkCourse();
+    wx.hideLoading();
+  },
+
+  // 设置缓存
+  setStorage: function(key, data) {
+    // 更新缓存
+    wx.setStorage({
+      key: key,
+      data: data
+    });
   },
 
   bindPickerChange: function(e) {
+    console.log('bindPickerChange' + this.data.currentWeekly);
     this.setData({
-      currentWeekly: e.detail.value
+      currentWeekly: parseInt(e.detail.value)
     });
     this.checkCourse();
   },
+
   // 帮助
-  showDetail: function() {
+  showDetail: function(event) {
+    var data = event.currentTarget.dataset.course;
+    // 格式化周次
+    data.weekly = data.weekly.join(' ').replace(/,/g, '-');
+
     this.setData({
-      detailStatus: true
+      detailStatus: true,
+      courseDetail: data
     });
   },
   hideDetail: function(e) {

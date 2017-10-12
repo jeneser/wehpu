@@ -32,6 +32,7 @@
 
 /* 主体部分 */
 .course__main {
+  position: relative;
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
@@ -68,7 +69,6 @@
 }
 
 /* 详细信息 */
-/* 帮助 */
 .course-detail {
   position: fixed;
   top: 0;
@@ -100,6 +100,9 @@
   padding: 15rpx;
 }
 .course-detail__name {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 30rpx;
   font-size: 13pt;
   color: #000;
   font-weight: bold;
@@ -121,4 +124,7 @@
 .course-detail__title {
   color: #999;
   margin: 0 15rpx;
+}
+.course-detail__flag {
+  color: #999;
 }
