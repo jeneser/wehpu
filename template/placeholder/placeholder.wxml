@@ -14,6 +14,6 @@
 <template name="placeholder-fullpage">
   <view class="placeholder-fullpage">
     <image class="placeholder-fullpage__bg" src="{{bg}}"></image>
-    <text class="placeholder-fullpage__tip">{{text}}</text>
+    <text wx:if="{{text}}" class="placeholder-fullpage__tip">{{text}}</text>
   </view>
 </template>
