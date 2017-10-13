@@ -1,16 +1,80 @@
+/* 操作菜单 */
+.course__menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  height: 150rpx;
+  padding: 30rpx 0;
+  background-color: #fff;
+  z-index: 8;
+}
+.course__opt {
+  padding: 25rpx 35rpx;
+  font-size: 12pt;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6rpx;
+}
+.course__edit {
+  background-color: #ffcc33;
+}
+.course__other {
+  background-color: #66cc66;
+}
+.course__help {
+  background-color: #ff9933;
+}
+
+/* 菜单上滑 */
+@keyframes slidUp {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -50rpx;
+  }
+  100% {
+    top: -100rpx;
+  }
+}
+
+/* 菜单下滑 */
+@keyframes slidDown {
+  0% {
+    top: -100rpx;
+  }
+  50% {
+    top: -50rpx;
+  }
+  100% {
+    top: 0;
+  }
+}
+
 /* 头部周次 */
 .course__head {
   position: fixed;
-  top: 0;
+  top: -150rpx;
   left: 0;
   right: 0;
-  display: flex;
-  flex-wrap: nowrap;
-  height: 100rpx;
   background-color: #f7f7f7;
   z-index: 8;
 }
-.course__weekly,
+.slid-up {
+  animation: 0.4s slidUp;
+  top: -150rpx;
+}
+.slid-down {
+  animation: 0.2s slidDown;
+  top: 0;
+}
+.course__weekly {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100rpx;
+}
+.course__week--current,
 .course__week {
   display: flex;
   align-items: center;
@@ -22,7 +86,7 @@
   font-size: 11pt;
   font-weight: bold;
 }
-.course__weekly {
+.course__week--current {
   flex: 1;
   padding-left: 10rpx;
 }
@@ -66,65 +130,4 @@
 
 .course__week--today {
   background-color: #33ffff;
-}
-
-/* 详细信息 */
-.course-detail {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 9;
-}
-.course-detail__box {
-  position: relative;
-  width: 80%;
-  padding: 45rpx;
-  background-color: #fff;
-  border-radius: 5rpx;
-  z-index: 10;
-}
-.course-detail__close {
-  position: absolute;
-  top: 30rpx;
-  right: 30rpx;
-  width: 45rpx;
-  height: 45rpx;
-}
-.course-detail__content {
-  padding: 15rpx;
-}
-.course-detail__name {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: 30rpx;
-  font-size: 13pt;
-  color: #000;
-  font-weight: bold;
-}
-.course-detail__icon {
-  width: 45rpx;
-  height: 45rpx;
-}
-.course-detail__place,
-.course-detail__weekly,
-.course-detail__teacher {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 45rpx;
-  font-size: 12pt;
-  font-weight: 400;
-}
-.course-detail__title {
-  color: #999;
-  margin: 0 15rpx;
-}
-.course-detail__flag {
-  color: #999;
 }

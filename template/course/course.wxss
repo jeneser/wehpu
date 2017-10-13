@@ -55,3 +55,67 @@
   color: #999;
   background-color: #f7f7f7;
 }
+
+/* 详细信息 */
+.course-detail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9;
+}
+.course-detail__box {
+  position: relative;
+  width: 80%;
+  max-height: 80%;
+  padding: 45rpx 45rpx 15rpx 45rpx;
+  background-color: #fff;
+  border-radius: 5rpx;
+  overflow-y: scroll;
+  z-index: 10;
+}
+.course-detail__close {
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+  width: 45rpx;
+  height: 45rpx;
+}
+.course-detail__content {
+  margin-bottom: 30rpx;
+  padding: 15rpx;
+}
+.course-detail__name {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 30rpx;
+  font-size: 13pt;
+  color: #000;
+  font-weight: bold;
+}
+.course-detail__icon {
+  width: 45rpx;
+  height: 45rpx;
+}
+.course-detail__place,
+.course-detail__weekly,
+.course-detail__teacher {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 30rpx;
+  font-size: 12pt;
+  font-weight: 400;
+}
+.course-detail__title {
+  color: #999;
+  margin: 0 15rpx;
+}
+.course-detail__flag {
+  color: #999;
+}

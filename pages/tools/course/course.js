@@ -40,7 +40,7 @@ Page({
     today: 0,
     // 当前周
     currentWeekly: 0,
-    // 分段课程
+    // 课程数据
     mon: [],
     tue: [],
     wed: [],
@@ -49,12 +49,29 @@ Page({
     sat: [],
     sun: [],
     oth: [],
-    // 课表状态
+    // 课表数据状态
     courseStatus: false,
-    courseDetail: '',
     // 课表详情Flag
-    detailStatus: false
+    detailStatus: false,
+    // 课表详情数据
+    courseDetail: [],
+    // 菜单状态
+    menuStatus: false,
+    // touch事件flag
+    startY: '',
+    currentY: '',
+    // 帮助
+    help: {
+      helpStatus: false,
+      faqList: [
+        {
+          question: '1.课表不正确?',
+          answer: 'wehpu在每学期开学之前将自动更新课表。如果你在当前学期发现课表不不正确，请反馈给我们。'
+        }
+      ]
+    }
   },
+
   onLoad: function() {
     // 设置日期
     this.setDate();
@@ -189,6 +206,7 @@ Page({
     });
   },
 
+  // 更改picker
   bindPickerChange: function(e) {
     console.log('bindPickerChange' + this.data.currentWeekly);
     this.setData({
@@ -197,21 +215,90 @@ Page({
     this.checkCourse();
   },
 
-  // 帮助
-  showDetail: function(event) {
-    var data = event.currentTarget.dataset.course;
+  // 课表详情
+  showDetail: function(e) {
+    var data = e.currentTarget.dataset.course;
     // 格式化周次
     data.weekly = data.weekly.join(' ').replace(/,/g, '-');
 
+    // 更新视图
     this.setData({
       detailStatus: true,
-      courseDetail: data
+      courseDetail: new Array(data)
     });
   },
+
   hideDetail: function(e) {
     if (e.target.id === 'course-detail' || e.target.id === 'close-detail') {
       this.setData({
         detailStatus: false
+      });
+    }
+  },
+
+  // touch start
+  handleTouchstart: function(e) {
+    this.data.startY = e.touches[0].pageY;
+    // 始终隐藏菜单
+    if (this.data.menuStatus) {
+      this.setData({
+        menuStatus: false
+      });
+    }
+  },
+
+  // move
+  handleTouchmove: function(e) {
+    var currentY = e.touches[0].pageY;
+    // 监听上下滑动距离大于100并限定执行一次
+    if (!this.data.currentY) {
+      if (currentY - this.data.startY > 100) {
+        this.data.currentY = currentY;
+        // 更新视图
+        this.setData({
+          menuStatus: true
+        });
+      }
+    }
+  },
+
+  // 清除本次事件
+  handleTouchend: function(e) {
+    this.data.currentY = '';
+  },
+
+  // 关闭菜单
+  handleOpt: function(e) {
+    // 隐藏菜单
+    if (this.data.menuStatus) {
+      this.setData({
+        menuStatus: false
+      });
+    }
+    // 响应操作
+    if (e.target.id === 'other') {
+      // 更新视图
+      this.setData({
+        detailStatus: true,
+        courseDetail: this.data.oth
+      });
+    } else if (e.target.id === 'help') {
+      this.showHelp();
+    } else {
+      return;
+    }
+  },
+
+  // 帮助
+  showHelp: function() {
+    this.setData({
+      'help.helpStatus': true
+    });
+  },
+  hideHelp: function(e) {
+    if (e.target.id === 'help' || e.target.id === 'close-help') {
+      this.setData({
+        'help.helpStatus': false
       });
     }
   }

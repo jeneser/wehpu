@@ -1,8 +1,60 @@
 <!-- 课表贴 -->
 <template name="course-item">
-  <view class="course__item course__time-slot-{{position}} course__color-{{colorNum}} {{current ? 'course__item--current' : 'course__item--notcurrent'}}" data-course="{{course}}" bindtap="showDetail">
+  <view class="course__item course__time-slot-{{position}} course__color-{{colorNum}} {{current ? 'course__item--current' : 'course__item--notcurrent'}}"
+    data-course="{{course}}" bindtap="showDetail">
     <view class="course__flag" wx:if="{{!current}}">[非本周]</view>
     <view class="course__name">{{name}}</view>
     <view class="course__place" wx:if="{{current}}">@{{place}}</view>
+  </view>
+</template>
+
+<!-- 详细信息 -->
+<template name="course-detail">
+  <view class="course-detail" id="course-detail" bindtap="hideDetail">
+    <view class="course-detail__box">
+      <image class="course-detail__close" id="close-detail" src="/images/ic_clear.png" bindtap="hideDetail"></image>
+      <!-- <view wx:if="{{courseDetail.name}}" class="course-detail__content">
+        <view class="course-detail__name">
+          <view>{{courseDetail.name}}</view>
+          <view class="course-detail__flag" wx:if="{{!courseDetail.current}}">[非本周]</view>
+        </view>
+        <view class="course-detail__place">
+          <image class="course-detail__icon" src="/images/ic_course_place.png"></image>
+          <view class="course-detail__title">教室</view>
+          <view class="course-detail__item">{{courseDetail.place}}</view>
+        </view>
+        <view class="course-detail__weekly">
+          <image class="course-detail__icon" src="/images/ic_course_weekly.png"></image>
+          <view class="course-detail__title">周数</view>
+          <view class="course-detail__item">{{courseDetail.weekly}}</view>
+        </view>
+        <view class="course-detail__teacher">
+          <image class="course-detail__icon" src="/images/ic_course_teacher.png"></image>
+          <view class="course-detail__title">老师</view>
+          <view class="course-detail__item">{{courseDetail.teacher}}</view>
+        </view>
+      </view> -->
+      <view wx:for="{{courseDetail}}" wx:key="{{*this}}" class="course-detail__content">
+        <view class="course-detail__name">
+          <view>{{item.name}}</view>
+          <view class="course-detail__flag" wx:if="{{!item.current}}">[非本周]</view>
+        </view>
+        <view class="course-detail__place" wx:if="{{item.place}}">
+          <image class="course-detail__icon" src="/images/ic_course_place.png"></image>
+          <view class="course-detail__title">教室</view>
+          <view class="course-detail__item">{{item.place}}</view>
+        </view>
+        <view class="course-detail__weekly" wx:if="{{item.weekly}}">
+          <image class="course-detail__icon" src="/images/ic_course_weekly.png"></image>
+          <view class="course-detail__title">周数</view>
+          <view class="course-detail__item">{{item.weekly}}</view>
+        </view>
+        <view class="course-detail__teacher" wx:if="{{item.teacher}}">
+          <image class="course-detail__icon" src="/images/ic_course_teacher.png"></image>
+          <view class="course-detail__title">老师</view>
+          <view class="course-detail__item">{{item.teacher}}</view>
+        </view>
+      </view>
+    </view>
   </view>
 </template>
