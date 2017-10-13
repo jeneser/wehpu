@@ -46,3 +46,100 @@
   margin-left: 45rpx;
   background-color: #0099ff;
 }
+
+/* 拨号按钮 */
+@keyframes fadeIn {
+  0% {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  25% {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  75% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+@keyframes stretch {
+  0% {
+    margin-bottom: 10rpx;
+  }
+  50% {
+    margin-bottom: 30rpx;
+  }
+  100% {
+    margin-bottom: 60rpx;
+  }
+}
+
+@keyframes slidUp {
+  0% {
+    bottom: -200rpx;
+  }
+  50% {
+    bottom: 0rpx;
+  }
+  100% {
+    bottom: 45rpx;
+  }
+}
+
+.button-dial {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed;
+  animation: .6s slidUp;
+  bottom: 45rpx;
+  right: 45rpx;
+  z-index: 10;
+}
+.button-dial__mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 9;
+  animation: 0.4s fadeIn;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.button-dial__icon {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  box-shadow: 4rpx 4rpx 45rpx #999;
+  z-index: 10;
+}
+.button-dial__icon--on {
+  transform: rotate(45deg);
+  box-shadow: 0 0 0 #999;
+}
+
+.button-dial__menu {
+  display: flex;
+  flex-direction: column;
+  margin-right: 25rpx;
+  z-index: 10;
+}
+.button-dial__item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  animation: 0.2s stretch;
+  margin-bottom: 60rpx;
+  font-size: 13pt;
+  font-weight: 400;
+  color: #fff;
+}
+.button-dial__r-ic {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 30rpx;
+}
