@@ -2,7 +2,6 @@
   "pages": [
     "pages/index/index",
 
-    "pages/tools/more/more",
     "pages/tools/seat/seat",
     "pages/tools/repair/repair",
     "pages/tools/library/library",
