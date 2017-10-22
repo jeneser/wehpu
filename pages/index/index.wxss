@@ -3,11 +3,15 @@
 }
 
 /* 工具导航 */
+.tools-swiper {
+  height: 400rpx;
+  background: #fff;
+}
 .tools {
   display: flex;
   flex-flow: row wrap;
   align-content: flex-start;
-  padding: 15rpx 15rpx 45rpx;
+  padding-bottom: 60rpx;
   background: #fff;
 }
 .tools__item {
@@ -17,7 +21,6 @@
   align-items: center;
   box-sizing: border-box;
   width: 25%;
-  height: 180rpx;
 }
 .tools__icon {
   display: block;
@@ -32,5 +35,5 @@
 
 /* 主体部分 */
 .main {
-  padding: 45rpx 30rpx;
+  padding-top: 30rpx;
 }
