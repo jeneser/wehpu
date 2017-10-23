@@ -50,7 +50,7 @@
 .card-image__cover {
   width: 100%;
   min-height: 280rpx;
-  max-height: 340rpx;
+  max-height: 300rpx;
 }
 .card-image__title {
   font-size: 12pt;

@@ -5,7 +5,7 @@
 <!-- index -->
 <view class="index">
   <!-- 首页功能导航 -->
-  <swiper class="tools-swiper" indicator-dots="true">
+  <swiper class="tools-swiper" indicator-dots="true" indicator-color="#ddd" indicator-active-color="#999">
     <swiper-item wx:for="{{tools}}" wx:key="*this">
       <view class="tools">
         <block wx:for="{{tools[index]}}" wx:key="id">

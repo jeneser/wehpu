@@ -1,0 +1,13 @@
+<!-- 导入模板 -->
+<import src="/template/card/card.wxml" />
+
+<view class="news">
+  <!-- <view class="classify">
+    <view class="classify__item classify__hot-news">理工要闻</view>
+    <view class="classify__item classify__logistics">后勤公告</view>
+    <view class="classify__item classify__lecture">讲座信息</view>
+  </view> -->
+  <block wx:for="{{newsList}}" wx:key="*this">
+    <template is="card-basis" data="{{...item}}" />
+  </block>
+</view>

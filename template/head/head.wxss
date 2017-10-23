@@ -3,6 +3,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 30rpx;
+  background-color: #fff;
 }
 .head-classify__title {
   display: inline-block;

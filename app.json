@@ -18,11 +18,9 @@
 
     "pages/explore/explore",
     "pages/explore/activity/activity",
-    "pages/explore/notice/notice_details",
-    "pages/explore/notice/notice",
+    "pages/explore/news/news_details",
+    "pages/explore/news/news",
     "pages/explore/download/download",
-    "pages/explore/topic/topic",
-    "pages/explore/topic/topic_details",
 
     "pages/more/more",
     "pages/more/binding",

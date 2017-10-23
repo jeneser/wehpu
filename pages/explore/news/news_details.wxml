@@ -2,6 +2,6 @@
 <import src="/template/card/card.wxml" />
 
 <!-- 公告详情 -->
-<view class="notice-details">
-  <template is="card-article" data="{{...noticeDetails}}" />
+<view class="news-details">
+  <template is="card-article" data="{{...newsDetails}}" />
 </view>

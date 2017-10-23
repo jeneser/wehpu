@@ -9,8 +9,8 @@
     <navigator class="classify__item" url="/pages/explore/activity/activity">
       <text class="classify__activity">校园活动</text>
     </navigator>
-    <navigator class="classify__item" url="/pages/explore/notice/notice">
-      <text class="classify__job">通知公告</text>
+    <navigator class="classify__item" url="/pages/explore/news/news">
+      <text class="classify__job">新闻聚合</text>
     </navigator>
     <navigator class="classify__item" url="/pages/explore/download/download">
       <text class="classify__download">文件下载</text>
@@ -18,15 +18,15 @@
   </view>
   <!-- 主体部分 -->
   <view class="main">
-    <!-- 热门话题 -->
+    <!-- 热门活动 -->
     <view class="topic">
-      <template is="head-classify" data="{{title: '热门话题', href: '/pages/explore/topic/topic'}}" />
-      <!-- 话题列表 -->
-      <block wx:if="{{topicList.length !== 0}}" wx:for="{{topicList}}" wx:key="*this">
-        <template is="card-basis" data="{{...item}}" />
+      <template is="head-classify" data="{{title: '热门活动', href: 'pages/explore/activity/activity'}}" />
+      <!-- 活动列表 -->
+      <block wx:if="{{activityList.length !== 0}}" wx:for="{{activityList}}" wx:key="*this">
+        <template is="card-image" data="{{...item}}" />
       </block>
-      <block wx:if="{{topicList.length === 0}}">
-        <template is="placeholder-basic" data="{{bg: '/images/placeholder/bg_no_data.png', text: '暂无话题'}}"/>
+      <block wx:if="{{activityList.length === 0}}">
+        <template is="placeholder-basic" data="{{bg: '/images/placeholder/bg_no_data.png', text: '暂无活动'}}"/>
       </block>
     </view>
   </view>

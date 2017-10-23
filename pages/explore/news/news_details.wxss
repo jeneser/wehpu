@@ -1,4 +1,4 @@
-.notice-details {
+.news-details {
   padding: 30rpx;
   background-color: #fff;
 }

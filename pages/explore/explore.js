@@ -1,21 +1,20 @@
 Page({
   data: {
-    topicList: [
-      // {
-      //   title: '人丑一定要多去读读书吗？',
-      //   description: '今天讨论一个特别严肃的话题，人丑一定要多去读读书吗？今天讨论一个特别严肃的话题，人丑一定要多去读读书吗？',
-      //   href: '/pages/explore/topic/topic_details'
-      // },
-      // {
-      //   title: '人丑一定要多去读读书吗？',
-      //   description: '今天讨论一个特别严肃的话题，人丑一定要多去读读书吗？今天讨论一个特别严肃的话题，人丑一定要多去读读书吗？',
-      //   href: '/pages/explore/topic/topic_details'
-      // },
-      // {
-      //   title: '人丑一定要多去读读书吗？',
-      //   description: '今天讨论一个特别严肃的话题，人丑一定要多去读读书吗？今天讨论一个特别严肃的话题，人丑一定要多去读读书吗？',
-      //   href: '/pages/explore/topic/topic_details'
-      // }
+    activityList: [
+      {
+        href: '',
+        cover: '/images/cover/cover_1.jpg',
+        title: '世界这么大,我们出去走走吧!',
+        author: '创意俱乐部',
+        time: '9月17日'
+      },
+      {
+        href: '',
+        cover: '/images/cover/cover_1.jpg',
+        title: '世界这么大,我们出去走走吧!',
+        author: '创意俱乐部',
+        time: '9月17日'
+      }
     ]
   }
 });

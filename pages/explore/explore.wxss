@@ -1,5 +1,4 @@
 .explore {
-  min-height: 1400rpx;
   background-color: #f7f7f7;
 }
 
@@ -40,6 +39,8 @@
 
 /* 主题部分 */
 .main {
-  margin-top: 15rpx;
-  padding: 45rpx 30rpx;
+  box-sizing: border-box;
+  margin-top: 30rpx;
+  padding: 30rpx;
+  background-color: #fff;
 }
