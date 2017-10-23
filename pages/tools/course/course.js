@@ -109,7 +109,7 @@ Page({
     } else {
       //发起网络请求
       wx.request({
-        url: app.api + '/courses/course',
+        url: app.api + '/tools/courses',
         method: 'GET',
         header: {
           'content-type': 'application/x-www-form-urlencoded',

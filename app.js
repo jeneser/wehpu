@@ -8,7 +8,7 @@ App({
   // 本学期开学时间
   schoolYear: '2017-9-4',
   // API
-  api: 'http://66.112.214.183:4000/api',
+  api: 'https://wehpu.jeneser.wang/api',
 
   onLaunch: function() {
     // 尝试读取storage，并更新store
