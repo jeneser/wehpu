@@ -7,5 +7,6 @@
     <text class="app__repository">https://github.com/hpufe/wehpu</text>
     <text class="app__contact">联系邮箱</text>
     <text class="app__email">jeneserwang@gmail.com</text>
+    <text class="app__donation">捐赠致谢</text>
   </view>
 </view>
