@@ -15,43 +15,6 @@
   </navigator>
 </template>
 
-<!-- 课表卡片 -->
-<template name="card-course">
-  <view class="card-course">
-
-    <view class="card-course__head">
-      <view class="card-course__today">今日课程</view>
-      <view class="card-course__sections">今天有2节课</view>
-    </view>
-
-    <view class="card-course__item">
-      <view class="card-course__section">1-2</view>
-      <view class="card-course__info">
-        <view class="card-course__name">数据库系统原理</view>
-        <view class="card-course__place">计算机105</view>
-      </view>
-    </view>
-
-    <view class="card-course__item">
-      <view class="card-course__section">1-2</view>
-      <view class="card-course__info">
-        <view class="card-course__name">数据库系统原理</view>
-        <view class="card-course__place">计算机105</view>
-      </view>
-    </view>
-
-    <view class="card-course__item">
-        <view class="card-course__section">1-2</view>
-        <view class="card-course__info">
-          <view class="card-course__name">数据库系统原理</view>
-          <view class="card-course__place">计算机105</view>
-        </view>
-      </view>
-
-
-  </view>
-</template>
-
 <!-- 附加图片卡片 -->
 <template name="card-image">
   <navigator src="{{href}}">

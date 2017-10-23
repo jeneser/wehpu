@@ -6,7 +6,6 @@
 }
 .head-classify__title {
   display: inline-block;
-  margin-left: 15rpx;
   padding-left: 20rpx;
   line-height: 1;
   font-size: 13pt;

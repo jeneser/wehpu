@@ -38,48 +38,50 @@ Page({
         },
         {
           id: 'cet',
-          name: '座位预约',
-          url: '/pages/tools/seat/seat'
+          name: '四六级',
+          url: '/pages/tools/cet/cet'
         },
         {
-          id: 'cet',
+          id: 'physical',
           name: '体测查询',
-          url: '/pages/tools/seat/seat'
+          url: '/pages/tools/physical/physical'
         }
       ],
       [
         {
-          id: 'card',
-          name: '一卡通',
-          url: '/pages/tools/card/card'
+          id: 'seat',
+          name: '座位预约',
+          url: '/pages/tools/seat/seat'
         },
         {
-          id: 'repair',
-          name: '报修',
-          url: '/pages/tools/repair/repair'
+          id: 'evaluation',
+          name: '学生评教',
+          url: '/pages/tools/evaluation/evaluation'
+        },
+        {
+          id: 'calendar',
+          name: '校历',
+          url: '/pages/tools/calendar/calendar'
+        },
+        {
+          id: 'gpa',
+          name: '绩点计算',
+          url: '/pages/tools/gpa/gpa'
         }
       ]
     ],
     // 当前课程
-    currentCourse: [
+    todayCourse: [
       {
         name: '数据库系统原理',
-        room: '202',
-        place: '计算机综合楼',
-        count: '2',
-        teacher: '刘老师',
-        time: '8:00-10:00',
-        state: 1
+        place: '计算机105',
+        section: '1-2'
       },
       {
-        name: '数据库系统原理',
-        room: '202',
-        place: '计算机综合楼',
-        count: '2',
-        teacher: '刘老师',
-        time: '8:00-10:00',
-        state: 0
-      }
+        name: '操作系统',
+        place: '计算机101',
+        section: '3-4'
+      },
     ]
   },
   onLoad: function() {

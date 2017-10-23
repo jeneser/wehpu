@@ -1,6 +1,5 @@
 <!-- 导入模板 -->
-<import src="/template/card/card.wxml" />
-<import src="/template/head/head.wxml" />
+<import src="/template/list/list.wxml" />
 <import src="/template/placeholder/placeholder.wxml" />
 
 <!-- index -->
@@ -24,23 +23,13 @@
   </swiper>
   <!-- 课表信息 -->
   <view class="main">
-    <view class="course-list">
-      <!-- 分类头部 -->
-      <template is="head-classify" data="{{title: '今日课程', href: '/pages/tools/course/course'}}" wx:if="{{bind === true}}" />
-      <template is="head-classify" data="{{title: '今日课程', href: '/pages/more/binding'}}" wx:if="{{bind === false}}" />
-      <!-- 暂无课程 -->
-      <block wx:if="{{currentCourse.length === 0 && bind}}">
-        <template is="placeholder-basic" data="{{text: '暂无课程', bg: '/images/placeholder/bg_no_data.png'}}" />
-      </block>
-      <!-- 课程列表 -->
-      <!-- <block wx:if="{{currentCourse.length !== 0 && bind}}" wx:for="{{currentCourse}}" wx:key="*this"> -->
-        <template is="card-course" data="{{...item}}" />
-      <!-- </block> -->
-      <!-- 未绑定 -->
-      <block wx:if="{{!bind}}">
-        <template is="placeholder-basic" data="{{href: '/pages/more/binding', text: '未绑定', bg: '/images/placeholder/bg_no_login.png'}}"
-        />
-      </block>
-    </view>
+    <!-- 暂无课程 -->
+    <template wx:if="{{todayCourse.length === 0 && bind}}" is="placeholder-basic" data="{{text: '暂无课程', bg: '/images/placeholder/bg_no_data.png'}}"
+    />
+    <!-- 课程列表 -->
+    <template wx:elif="{{todayCourse.length !== 0}}" is="list-course" data="{{courses: todayCourse}}" />
+    <!-- 未绑定 -->
+    <template wx:else is="placeholder-basic" data="{{href: '/pages/more/binding', text: '未绑定', bg: '/images/placeholder/bg_no_login.png'}}"
+    />
   </view>
 </view>

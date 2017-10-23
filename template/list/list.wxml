@@ -1,3 +1,5 @@
+<import src="/template/head/head.wxml" />
+
 <!-- 基础列表 -->
 <template name="list-basic">
   <navigator wx:if="{{href}}" class="list-basic__item" url="{{href}}">
@@ -51,5 +53,21 @@
       </view>
       <image class="list-avatar__r-icon" src="/images/more/arrow_right.png"></image>
     </navigator>
+  </view>
+</template>
+
+<!-- 课表列表 -->
+<template name="list-course">
+  <view class="list-course">
+    <!-- 分类头部 -->
+    <template is="head-classify" data="{{title: '今日课程', href: '/pages/tools/course/course'}}" />
+    <!-- 列表项 -->
+    <view class="list-course__item" wx:for="{{courses}}" wx:key="{{item.name}}">
+      <view class="list-course__section">{{item.section}}</view>
+      <view class="list-course__info">
+        <view class="list-course__name">{{item.name}}</view>
+        <view class="list-course__place">{{item.place}}</view>
+      </view>
+    </view>
   </view>
 </template>

@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #fff;
 }
 .placeholder-fullpage__bg,
 .placeholder-basic__bg {
@@ -14,12 +15,6 @@
 .placeholder-basic__tip {
   font-size: 13pt;
   color: #999;
-}
-
-/* 基础占位 */
-.placeholder-basic {
-  min-height: 520rpx;
-  margin-bottom: 15%;
 }
 
 /* 全屏占位 */

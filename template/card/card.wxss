@@ -38,56 +38,6 @@
   overflow: hidden; */
 }
 
-/* 课表卡片 */
-.card-course {
-  padding: 30rpx 45rpx;
-  background-color: #fff;
-}
-/* 头部 */
-.card-course__head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 30rpx;
-}
-.card-course__today {
-  color: #cc3333;
-  font-size: 13pt;
-  font-weight: bold;
-}
-.card-course__sections {
-  color: #999;
-  font-size: 10pt;
-}
-/* 内容项 */
-.card-course__item {
-  display: flex;
-  padding: 30rpx 0;
-  border-bottom: dotted 4rpx #eee;
-}
-.card-course__section {
-  display: flex;
-  flex: 1.2;
-  align-items: center;
-  font-size: 16pt;
-  color: #000;
-  font-weight: 400;
-}
-.card-course__info {
-  flex: 4;
-}
-.card-course__name {
-  font-size: 13pt;
-  font-weight: 400;
-  color: #000;
-}
-.card-course__place {
-  margin-top: 15rpx;
-  font-size: 11pt;
-  font-weight: 400;
-  color: #999;
-}
-
 /* 附加图片卡片 */
 .card-image {
   box-sizing: border-box;
