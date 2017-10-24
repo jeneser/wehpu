@@ -1,14 +1,11 @@
 <!-- 导入模板 -->
 <import src="/template/card/card.wxml" />
 <import src="/template/help/help.wxml" />
-<import src="/template/button/button.wxml" />
 
 <!-- 成绩查询 -->
 <view class="score">
   <!-- 成绩卡片 -->
   <template is="card-score" data="{{...score}}" />
-  <!-- 查看所有 -->
-  <template is="button-primary" data="{{text: '查看历年成绩', href: '/pages/tools/score/score_all'}}" />
   <!-- 帮助 -->
   <template is="help" data="{{...help}}" />
 </view>

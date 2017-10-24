@@ -34,7 +34,7 @@ Page({
           mark: 90
         }
       ],
-      updateTime: '9/18 21:14 更新'
+      updateTime: '教务处状态ok'
     },
     help: {
       helpStatus: false,
