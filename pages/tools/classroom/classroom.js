@@ -8,7 +8,9 @@ Page({
     ],
     weeklyIndex: [0, 0],
     lesson: ['第一大节', '第二大节', '第三大节', '第四大节', '第五大节'],
-    lessonIndex: 0
+    lessonIndex: 0,
+    // 结果
+    result: []
   },
   bindPickerChange: function(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value);
@@ -35,6 +37,13 @@ Page({
       success: function(res) {
         console.log(res.name);
       }
+    });
+  },
+
+  // 查询
+  handleSubmit: function() {
+    this.setData({
+      result: [['3104', '3104', '3104'], ['3104', '3104', '3104']]
     });
   }
 });

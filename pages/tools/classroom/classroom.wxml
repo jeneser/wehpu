@@ -1,6 +1,7 @@
 <!-- 空教室 -->
 <view class="classroom">
-  <view class="classroom-form">
+  <!-- 查询表单 -->
+  <view wx:if="{{result.length === 0}}" class="classroom-form">
     <!-- 位置 -->
     <view class="classroom-form__item">
       <picker class="classroom-form__picker" bindchange="bindPickerChange" value="{{locationIndex}}" range="{{location}}">
@@ -30,6 +31,25 @@
         </view>
       </picker>
     </view>
-    <button class="classroom-form__submit" bindtap="">立即查询</button>
+    <button class="classroom-form__submit" bindtap="handleSubmit">立即查询</button>
+  </view>
+  <!-- 结果页面 -->
+  <view wx:else class="classroom-result">
+    <!-- 位置 -->
+    <view class="classroom-result__place">
+      <image class="classroom-result__ic-place" src="/images/ic_location.png"></image>
+      <view>三号教学楼</view>
+    </view>
+    <!-- 空闲教室列表 -->
+    <view class="classroom-list">
+      <view class="classroom-list__item" wx:for="{{result}}" wx:key="*this">
+        <view class="classroom-list__floor">
+          <image class="ic-floor" src="/images/floor/{{index}}-F.png"></image>
+        </view>
+        <view class="classroom-list__rooms">
+          <view class="classroom-list__room" wx:for="{{item}}" wx:key="*this">{{item}}</view>
+        </view>
+      </view>
+    </view>
   </view>
 </view>
