@@ -1,6 +1,6 @@
 Page({
   data: {
-    activityList: [
+    topicList: [
       {
         href: '',
         cover: '/images/cover/cover_1.jpg',

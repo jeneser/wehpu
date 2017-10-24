@@ -18,15 +18,49 @@
   </view>
   <!-- 主体部分 -->
   <view class="main">
-    <!-- 热门活动 -->
+    <!-- 热门话题 -->
     <view class="topic">
-      <template is="head-classify" data="{{title: '热门活动', href: 'pages/explore/activity/activity'}}" />
-      <!-- 活动列表 -->
-      <block wx:if="{{activityList.length !== 0}}" wx:for="{{activityList}}" wx:key="*this">
-        <template is="card-image" data="{{...item}}" />
-      </block>
-      <block wx:if="{{activityList.length === 0}}">
-        <template is="placeholder-basic" data="{{bg: '/images/placeholder/bg_no_data.png', text: '暂无活动'}}"/>
+      <template is="head-classify" data="{{title: '热门话题'}}" />
+      <!-- 话题列表 -->
+      <view class="topic-list">
+
+        <view class="topic-list__item">
+          <view class="topic-list__meta">
+            <view class="topic-list__title">我轻轻的向你招手挥挥衣袖</view>
+            <view class="topic-list__tag">头条</view>
+          </view>
+          <image class="topic-list__cover" src="/images/cover/cover_1.jpg"></image>
+        </view>
+        <view class="topic-list__item">
+          <view class="topic-list__meta">
+            <view class="topic-list__title">我的向你招手挥挥衣袖你招手挥挥衣袖</view>
+            <view class="topic-list__tag">头条</view>
+          </view>
+          <!-- <image class="topic-list__cover" src="/images/cover/cover_1.jpg"></image> -->
+        </view>
+        <view class="topic-list__item">
+          <view class="topic-list__meta">
+            <view class="topic-list__title">我轻轻的向你招手挥挥衣袖</view>
+            <view class="topic-list__tag">头条</view>
+          </view>
+          <image class="topic-list__cover" src="/images/cover/cover_1.jpg"></image>
+        </view>
+        <view class="topic-list__item">
+          <view class="topic-list__meta">
+            <view class="topic-list__title">我轻轻的向你招手挥挥衣袖</view>
+            <view class="topic-list__tag">头条</view>
+          </view>
+          <image class="topic-list__cover" src="/images/cover/cover_1.jpg"></image>
+        </view>
+
+        <view class="topic-list__change">
+          <image class="topic-list__ic-change" src="/images/ic_refresh.png"></image>
+          <view class="">换一换</view>
+        </view>
+
+      </view>
+      <block wx:if="{{topicList.length === 0}}">
+        <template is="placeholder-basic" data="{{bg: '/images/placeholder/bg_no_data.png', text: '无更多话题'}}" />
       </block>
     </view>
   </view>
