@@ -60,7 +60,7 @@
 <template name="list-course">
   <view class="list-course">
     <!-- 分类头部 -->
-    <template is="head-classify" data="{{title: '今日课程', href: '/pages/tools/course/course'}}" />
+    <template is="head-classify" data="{{title: '今日课程'}}" />
     <!-- 列表项 -->
     <view class="list-course__item" wx:for="{{courses}}" wx:key="{{item.name}}">
       <view class="list-course__section">{{item.section}}</view>
@@ -68,6 +68,7 @@
         <view class="list-course__name">{{item.name}}</view>
         <view class="list-course__place">{{item.place}}</view>
       </view>
+      <view class="list-course__time">8:00</view>
     </view>
   </view>
 </template>

@@ -140,35 +140,42 @@
 
 /* 课表列表 */
 .list-course {
-  padding: 30rpx;
+  padding: 45rpx 30rpx;
   background-color: #fff;
 }
 .list-course__item {
   display: flex;
-  margin-top: 15rpx;
-  padding: 30rpx 0;
-  border-bottom: dotted 4rpx #eee;
+  align-items: center;
+  padding: 30rpx;
+  border-top: solid 1rpx #eee;
 }
 .list-course__section {
   display: flex;
+  align-self: flex-start;
   flex: 1;
-  align-items: center;
-  margin-left: 30rpx;
-  font-size: 16pt;
+  font-size: 13pt;
   color: #000;
-  font-weight: 400;
+  font-weight: bold;
 }
 .list-course__info {
   flex: 4;
 }
 .list-course__name {
   font-size: 13pt;
-  font-weight: 400;
+  font-weight: bold;
   color: #000;
 }
 .list-course__place {
-  margin-top: 15rpx;
-  font-size: 11pt;
-  font-weight: 400;
+  margin-top: 10rpx;
+  font-size: 9pt;
+  font-weight: bold;
   color: #999;
+}
+.list-course__time {
+  padding: 2rpx 10rpx;
+  font-size: 9pt;
+  font-weight: bold;
+  color: #fff;
+  background-color: #33cc66;
+  border-radius: 10rpx;
 }

@@ -5,14 +5,14 @@
 /* 工具导航 */
 .tools-swiper {
   height: 400rpx;
-  background: #fff;
+  background: #f7f7f7;
 }
 .tools {
   display: flex;
   flex-flow: row wrap;
   align-content: flex-start;
   padding-bottom: 60rpx;
-  background: #fff;
+  background: #f7f7f7;
 }
 .tools__item {
   display: flex;
@@ -31,6 +31,7 @@
 .tools__name {
   display: block;
   font-size: 11pt;
+  font-weight: bold;
 }
 
 /* 主体部分 */
