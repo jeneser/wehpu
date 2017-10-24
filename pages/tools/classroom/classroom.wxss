@@ -34,3 +34,10 @@
   background-color: #0099ff;
   border-radius: 50rpx;
 }
+
+/* 提交 */
+.classroom-form__submit {
+  margin-top: 120rpx;
+  color: #fff;
+  background-color: #0099ff;
+}
