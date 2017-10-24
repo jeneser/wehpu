@@ -55,11 +55,6 @@ Page({
     detailStatus: false,
     // 课表详情数据
     courseDetail: [],
-    // 菜单状态
-    menuStatus: false,
-    // touch事件flag
-    startY: '',
-    currentY: '',
     // 帮助
     help: {
       helpStatus: false,
@@ -236,57 +231,18 @@ Page({
     }
   },
 
-  // touch start
-  handleTouchstart: function(e) {
-    this.data.startY = e.touches[0].pageY;
-    // 始终隐藏菜单
-    if (this.data.menuStatus) {
-      this.setData({
-        menuStatus: false
-      });
-    }
+  // 当前周
+  setCurrent: function() {
+    this.setDate();
+    this.checkCourse();
   },
 
-  // move
-  handleTouchmove: function(e) {
-    var currentY = e.touches[0].pageY;
-    // 监听上下滑动距离大于100并限定执行一次
-    if (!this.data.currentY) {
-      if (currentY - this.data.startY > 100) {
-        this.data.currentY = currentY;
-        // 更新视图
-        this.setData({
-          menuStatus: true
-        });
-      }
-    }
-  },
-
-  // 清除本次事件
-  handleTouchend: function(e) {
-    this.data.currentY = '';
-  },
-
-  // 关闭菜单
-  handleOpt: function(e) {
-    // 隐藏菜单
-    if (this.data.menuStatus) {
-      this.setData({
-        menuStatus: false
-      });
-    }
-    // 响应操作
-    if (e.target.id === 'other') {
-      // 更新视图
-      this.setData({
-        detailStatus: true,
-        courseDetail: this.data.oth
-      });
-    } else if (e.target.id === 'help') {
-      this.showHelp();
-    } else {
-      return;
-    }
+  // 其他课程
+  seeOther: function() {
+    this.setData({
+      detailStatus: true,
+      courseDetail: this.data.oth
+    });
   },
 
   // 帮助

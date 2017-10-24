@@ -1,73 +1,11 @@
-/* 操作菜单 */
-.course__menu {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  box-sizing: border-box;
-  height: 150rpx;
-  padding: 30rpx 0;
-  background-color: #fff;
-  z-index: 8;
-}
-.course__opt {
-  padding: 25rpx 35rpx;
-  font-size: 12pt;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 6rpx;
-}
-.course__edit {
-  background-color: #ffcc33;
-}
-.course__other {
-  background-color: #66cc66;
-}
-.course__help {
-  background-color: #ff9933;
-}
-
-/* 菜单上滑 */
-@keyframes slidUp {
-  0% {
-    top: 0;
-  }
-  50% {
-    top: -50rpx;
-  }
-  100% {
-    top: -100rpx;
-  }
-}
-
-/* 菜单下滑 */
-@keyframes slidDown {
-  0% {
-    top: -100rpx;
-  }
-  50% {
-    top: -50rpx;
-  }
-  100% {
-    top: 0;
-  }
-}
-
 /* 头部周次 */
 .course__head {
   position: fixed;
-  top: -150rpx;
+  top: 0;
   left: 0;
   right: 0;
   background-color: #f7f7f7;
   z-index: 8;
-}
-.slid-up {
-  animation: 0.4s slidUp;
-  top: -150rpx;
-}
-.slid-down {
-  animation: 0.2s slidDown;
-  top: 0;
 }
 .course__weekly {
   display: flex;
@@ -118,7 +56,6 @@
   flex: 2;
   margin-right: 8rpx;
   font-weight: bold;
-  /* background-color: #f7f7f7; */
 }
 .course__time-slot {
   box-sizing: border-box;
@@ -128,6 +65,38 @@
   height: 160rpx;
 }
 
+/* 今日 */
 .course__week--today {
-  background-color: #33ffff;
+  background-color: #99ccff;
+}
+
+/* 底部 */
+.foot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100rpx;
+  padding: 0 45rpx;
+  background-color: #f7f7f7;
+  z-index: 9;
+}
+.foot__Weekly {
+  display: flex;
+  align-items: center;
+  font-size: 11pt;
+  color: #000;
+  font-weight: bold;
+}
+.foot__ic-up {
+  width: 45rpx;
+  height: 45rpx;
+}
+.foot__ic-add,
+.foot__ic-sync {
+  width: 45rpx;
+  height: 45rpx;
 }
