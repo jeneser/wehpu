@@ -41,10 +41,10 @@
 /* 附加图片卡片 */
 .card-image {
   box-sizing: border-box;
-  margin-bottom: 45rpx;
+  margin: 45rpx 0;
   padding-bottom: 15rpx;
-  border-radius: 8rpx;
-  box-shadow: 0 0 40rpx #ddd;
+  border-radius: 4rpx;
+  box-shadow: 0 0 30rpx #ddd;
   overflow: hidden;
 }
 .card-image__cover {

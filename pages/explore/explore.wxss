@@ -8,19 +8,14 @@
   justify-content: space-around;
   align-items: center;
   box-sizing: border-box;
-  padding: 45rpx;
-  background-color: #fff;
+  padding: 30rpx;
+  background-color: #f7f7f7;
 }
 .classify__item {
   display: flex;
   align-items: center;
   box-sizing: border-box;
   margin: 15rpx 0;
-  box-shadow: 0 0 2rpx 4rpx #eee;
-}
-.classify__activity,
-.classify__job,
-.classify__download {
   padding: 25rpx 35rpx;
   font-size: 12pt;
   color: #fff;
@@ -46,10 +41,12 @@
 }
 
 /* 话题列表 */
-.topic-list__item {
+.topic-list__item,
+.topic-list__headline {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex: 1;
   padding: 30rpx 0;
   border-top: solid 1rpx #eee;
 }
@@ -69,10 +66,19 @@
 .topic-list__tag {
   margin-top: 15rpx;
   font-size: 9pt;
-  /* font-weight: bold; */
   color: #999;
 }
-
+/* 头条 */
+.topic-list__headline {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.topic-list__cover--full {
+  width: 100%;
+  height: 280rpx;
+  margin-top: 15rpx;
+  margin-right: 0;
+}
 /* 换一换 */
 .topic-list__change {
   display: flex;

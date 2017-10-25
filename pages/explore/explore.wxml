@@ -6,15 +6,9 @@
 <view class="explore">
   <!-- 分类导航 -->
   <view class="classify">
-    <navigator class="classify__item" url="/pages/explore/activity/activity">
-      <text class="classify__activity">校园活动</text>
-    </navigator>
-    <navigator class="classify__item" url="/pages/explore/news/news">
-      <text class="classify__job">新闻聚合</text>
-    </navigator>
-    <navigator class="classify__item" url="/pages/explore/download/download">
-      <text class="classify__download">文件下载</text>
-    </navigator>
+    <navigator class="classify__item classify__activity" url="/pages/explore/activity/activity">校园活动</navigator>
+    <navigator class="classify__item classify__job" url="/pages/explore/news/news">新闻聚合</navigator>
+    <navigator class="classify__item classify__download" url="/pages/explore/download/download">文件下载</navigator>
   </view>
   <!-- 主体部分 -->
   <view class="main">
@@ -23,41 +17,26 @@
       <template is="head-classify" data="{{title: '热门话题'}}" />
       <!-- 话题列表 -->
       <view class="topic-list">
-
-        <view class="topic-list__item">
-          <view class="topic-list__meta">
-            <view class="topic-list__title">我轻轻的向你招手挥挥衣袖</view>
-            <view class="topic-list__tag">头条</view>
-          </view>
-          <image class="topic-list__cover" src="/images/cover/cover_1.jpg"></image>
-        </view>
-        <view class="topic-list__item">
-          <view class="topic-list__meta">
-            <view class="topic-list__title">我的向你招手挥挥衣袖你招手挥挥衣袖</view>
-            <view class="topic-list__tag">头条</view>
-          </view>
-          <!-- <image class="topic-list__cover" src="/images/cover/cover_1.jpg"></image> -->
-        </view>
-        <view class="topic-list__item">
-          <view class="topic-list__meta">
-            <view class="topic-list__title">我轻轻的向你招手挥挥衣袖</view>
-            <view class="topic-list__tag">头条</view>
-          </view>
-          <image class="topic-list__cover" src="/images/cover/cover_1.jpg"></image>
-        </view>
-        <view class="topic-list__item">
-          <view class="topic-list__meta">
-            <view class="topic-list__title">我轻轻的向你招手挥挥衣袖</view>
-            <view class="topic-list__tag">头条</view>
-          </view>
-          <image class="topic-list__cover" src="/images/cover/cover_1.jpg"></image>
-        </view>
-
+        <!-- 话题项 -->
+        <block wx:for="{{topicList}}" wx:key="*this">
+          <navigator url="" wx:if="{{index !== 0}}" class="topic-list__item">
+            <view class="topic-list__meta">
+              <view class="topic-list__title">{{item.title}}</view>
+              <view class="topic-list__tag">{{item.tag}}</view>
+            </view>
+            <image class="topic-list__cover" src="{{item.cover}}"></image>
+          </navigator>
+          <navigator url="" wx:else class="topic-list__headline">
+            <view class="topic-list__title">{{item.title}}</view>
+            <image class="topic-list__cover topic-list__cover--full" src="{{item.cover}}"></image>
+            <view class="topic-list__tag">{{item.tag}}</view>
+          </navigator>
+        </block>
+        <!-- 换一换 -->
         <view class="topic-list__change">
           <image class="topic-list__ic-change" src="/images/ic_refresh.png"></image>
           <view class="">换一换</view>
         </view>
-
       </view>
       <block wx:if="{{topicList.length === 0}}">
         <template is="placeholder-basic" data="{{bg: '/images/placeholder/bg_no_data.png', text: '无更多话题'}}" />
