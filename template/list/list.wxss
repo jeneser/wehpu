@@ -108,9 +108,7 @@
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  padding-bottom: 45rpx;
   background-color: #fff;
-  border-bottom: solid 1rpx #eee;
 }
 .list-avatar__avatar {
   width: 100rpx;

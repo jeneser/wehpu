@@ -1,7 +1,7 @@
 Page({
   data: {
     items: [
-      { id: 'help', name: 'help', value: '资讯求助', checked: 'true' },
+      { id: 'help', name: 'help', value: '咨询求助', checked: 'true' },
       { id: 'bug', name: 'bug', value: 'bug问题' },
       { id: 'suggest', name: 'suggest', value: '意见建议' }
     ],

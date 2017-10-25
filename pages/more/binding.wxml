@@ -46,6 +46,6 @@
       <text class="succeed__jwc">教务处账户</text>
       <image class="succeed__state" src="/images/ic_succeed.png"></image>
     </view>
-    <template is="button-secondary" data="{{text: '重新绑定', tapHandle: 'rebind'}}" />
+    <button class="succeed__rebind" bindtap="rebind">重新绑定</button>
   </view>
 </view>

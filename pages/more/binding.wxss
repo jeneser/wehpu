@@ -64,6 +64,11 @@
   width: 74rpx;
   height: 74rpx;
 }
+.succeed__rebind {
+  margin-top: 120rpx;
+  color: #fff;
+  background-color: #0099ff;
+}
 
 /* 动画 */
 @keyframes slideIn {
