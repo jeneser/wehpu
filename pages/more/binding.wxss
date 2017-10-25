@@ -1,41 +1,29 @@
 /* 认证 */
 .binding {
   padding: 60rpx;
-  background-color: #fff;
-}
-.step-one,
-.form-one,
-.step-two,
-.form-two {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 .form-one,
 .form-two {
-  margin-top: 20%;
+  margin-top: 10%;
 }
-.input-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+/* 表单组 */
+.input-group__item {
   position: relative;
 }
 .input-group__input {
-  flex: 1;
   height: 80rpx;
-  min-height: 80rpx;
   margin-bottom: 45rpx;
-  padding: 0 100rpx 0 30rpx;
+  padding: 0 80rpx 0 30rpx;
   font-size: 13pt;
   border: solid 1rpx #ddd;
-  border-radius: 45rpx;
+  border-radius: 5rpx;
   z-index: 8;
 }
-.input-group__scan {
+.input-group__r-icon {
   position: absolute;
   top: 20rpx;
-  right: 40rpx;
+  right: 30rpx;
   width: 42rpx;
   height: 42rpx;
   z-index: 9;
@@ -48,6 +36,28 @@
 }
 .input-error {
   border-color: #ff0000;
+}
+
+/* 按钮 */
+.input-group__next,
+.succeed__rebind {
+  margin-top: 120rpx;
+  color: #fff;
+  background-color: #0099ff;
+}
+.input-group__cancel {
+  margin-top: 60rpx;
+}
+
+.input-group__cancel--hover {
+  color: #0099ff;
+  border: 1px solid #0099ff;
+}
+
+/* 重置 */
+button[plain] {
+  color: #eee;
+  border: 1px solid #eee;
 }
 
 /* 认证成功 */
@@ -64,11 +74,6 @@
   width: 74rpx;
   height: 74rpx;
 }
-.succeed__rebind {
-  margin-top: 120rpx;
-  color: #fff;
-  background-color: #0099ff;
-}
 
 /* 动画 */
 @keyframes slideIn {
@@ -81,5 +86,5 @@
 }
 
 .animation-slideIn {
-  animation: .3s ease-in slideIn;
+  animation: 0.3s ease-in slideIn;
 }

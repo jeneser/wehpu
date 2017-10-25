@@ -23,8 +23,8 @@ Page({
           answer: '初始密码或者已更改的密码。初始密码为学号/一卡通号。'
         },
         {
-          question: '3.忘记密码?',
-          answer: '请联系学校教务处管理员。'
+          question: '3.无法认证?',
+          answer: '请避开网络高峰期。若有疑问请联系客服人员或提交反馈给我们。'
         }
       ]
     }
@@ -108,7 +108,7 @@ Page({
     if (!studentId || studentId.length < 12) {
       wx.showToast({
         title: '请正确填写学号',
-        image: '/images/fail.png',
+        image: '/images/common/fail.png',
         duration: 2000
       });
     } else {
@@ -160,7 +160,7 @@ Page({
     if (!vpnPassWord || !jwcPassWord) {
       wx.showToast({
         title: '请正确填写密码',
-        image: '/images/fail.png',
+        image: '/images/common/fail.png',
         duration: 2000
       });
     } else {
@@ -215,8 +215,8 @@ Page({
             }, 1000);
           } else if (bindingState.statusCode === 400) {
             wx.showToast({
-              title: '密码输入有误',
-              icon: '/images/fail.png',
+              title: '请正确填写密码',
+              image: '/images/common/fail.png',
               duration: 2000
             });
 
@@ -230,7 +230,7 @@ Page({
           } else {
             wx.showToast({
               title: '服务器繁忙',
-              icon: '/images/fail.png',
+              icon: '/images/common/fail.png',
               duration: 2000
             });
           }
@@ -239,7 +239,7 @@ Page({
           wx.hideLoading();
           wx.showToast({
             title: '服务器繁忙',
-            icon: '/images/fail.png',
+            icon: '/images/common/fail.png',
             duration: 2000
           });
         }

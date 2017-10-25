@@ -49,7 +49,7 @@ App({
         } else {
           wx.showToast({
             title: '无网络连接',
-            image: '/images/fail.png',
+            image: '/images/common/fail.png',
             duration: 2000
           });
         }
@@ -63,7 +63,7 @@ App({
       } else {
         wx.showToast({
           title: '无网络连接',
-          image: '/images/fail.png',
+          image: '/images/common/fail.png',
           duration: 2000
         });
       }
@@ -106,7 +106,7 @@ App({
           } else {
             wx.showToast({
               title: '未知错误',
-              image: '/images/fail.png',
+              image: '/images/common/fail.png',
               duration: 2000
             });
           }
@@ -180,7 +180,7 @@ App({
             fail: () => {
               wx.showToast({
                 title: '服务器繁忙',
-                icon: '/images/fail.png',
+                icon: '/images/common/fail.png',
                 duration: 2000
               });
             }

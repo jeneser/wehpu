@@ -13,7 +13,7 @@
 }
 .help__box {
   position: relative;
-  width: 80%;
+  width: 72.5%;
   padding: 45rpx;
   background-color: #fff;
   border-radius: 5rpx;
@@ -29,7 +29,7 @@
   color: #999;
 }
 .help__answer {
-  font-size: 11pt;
+  font-size: 10pt;
   font-weight: bold;
   color: #ccc;
 }

@@ -138,7 +138,7 @@ Page({
           wx.hideLoading();
           wx.showToast({
             title: '未知错误',
-            icon: '/images/fail.png',
+            icon: '/images/common/fail.png',
             duration: 2000
           });
         }

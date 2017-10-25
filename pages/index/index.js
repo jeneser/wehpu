@@ -101,7 +101,7 @@ Page({
   tapDisabledItem: function() {
     wx.showToast({
       title: '未绑定',
-      image: '/images/fail.png',
+      image: '/images/common/fail.png',
       duration: 2000
     });
   }
