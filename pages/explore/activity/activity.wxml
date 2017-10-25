@@ -1,10 +1,8 @@
 <!-- 导入模板 -->
-<import src="/template/head/head.wxml" />
 <import src="/template/card/card.wxml" />
 
 <!-- 校园活动 -->
 <view class="activity">
-  <template is="head-classify" data="{{title: '近期校园活动'}}" />
   <block wx:for="{{activityList}}" wx:key="*this">
     <template is="card-image" data="{{...item}}" />
   </block>

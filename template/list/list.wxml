@@ -72,3 +72,15 @@
     </view>
   </view>
 </template>
+
+<!-- 文章列表 -->
+<template name="list-article">
+  <view class="list-article">
+    <view class="list-article__title">{{title}}</view>
+    <view wx:if="{{description}}" class="list-article__description">{{description}}</view>
+    <view class="list-article__meta">
+      <view wx:if="{{tag}}" class="list-article__tag">{{tag}}</view>
+      <view wx:if="{{time}}" class="list-article__time">{{time}} </view>
+    </view>
+  </view>
+</template>

@@ -1,7 +1,3 @@
-.explore {
-  background-color: #f7f7f7;
-}
-
 /* 分类导航 */
 .classify {
   display: flex;
@@ -35,8 +31,7 @@
 /* 主题部分 */
 .main {
   box-sizing: border-box;
-  margin-top: 15rpx;
-  padding: 30rpx;
+  padding: 15rpx 45rpx 45rpx;
   background-color: #fff;
 }
 
@@ -46,9 +41,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex: 1;
   padding: 30rpx 0;
-  border-top: solid 1rpx #eee;
+  border-bottom: solid 1rpx #eee;
 }
 .topic-list__cover {
   width: 200rpx;
@@ -84,8 +78,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30rpx;
-  border-top: solid 1rpx #eee;
+  padding: 45rpx;
   font-size: 11pt;
   font-weight: bold;
   color: #999;

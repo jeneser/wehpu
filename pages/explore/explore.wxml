@@ -1,6 +1,5 @@
 <!-- 导入模板 -->
 <import src="/template/card/card.wxml" />
-<import src="/template/head/head.wxml" />
 <import src="/template/placeholder/placeholder.wxml" />
 
 <view class="explore">
@@ -14,7 +13,6 @@
   <view class="main">
     <!-- 热门话题 -->
     <view class="topic">
-      <template is="head-classify" data="{{title: '热门话题'}}" />
       <!-- 话题列表 -->
       <view class="topic-list">
         <!-- 话题项 -->

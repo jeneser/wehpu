@@ -1,29 +1,11 @@
 /* 通用分类标头 */
 .head-classify {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 30rpx;
-  background-color: #fff;
 }
 .head-classify__title {
-  display: inline-block;
-  padding-left: 20rpx;
-  line-height: 1;
-  font-size: 13pt;
+  font-size: 9pt;
   font-weight: bold;
-  color: #000;
-  border-left: solid #cc3333 10rpx;
-}
-.head-classify__r-icon {
-  display: inline-block;
-  width: 16rpx;
-  height: 28rpx;
-  margin-left: 15rpx;
-  line-height: 1;
-}
-.head-classify__more {
-  color: #cc3333;
-  font-size: 12pt;
-  font-weight: bold;
+  color: #999;
 }

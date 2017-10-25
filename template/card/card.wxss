@@ -41,7 +41,7 @@
 /* 附加图片卡片 */
 .card-image {
   box-sizing: border-box;
-  margin: 45rpx 0;
+  margin-bottom: 45rpx;
   padding-bottom: 15rpx;
   border-radius: 4rpx;
   box-shadow: 0 0 30rpx #ddd;

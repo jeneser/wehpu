@@ -6,9 +6,5 @@
 <template name="head-classify">
   <view class="head-classify">
     <text class="head-classify__title">{{title}}</text>
-    <navigator wx:if="{{href}}" class="head-classify__nav" url="{{href}}">
-      <text class="head-classify__more">更多</text>
-      <image class="head-classify__r-icon" src="/images/arrow_right_red.png"></image>
-    </navigator>
   </view>
 </template>

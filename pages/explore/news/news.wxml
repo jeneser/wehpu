@@ -1,13 +1,16 @@
 <!-- 导入模板 -->
-<import src="/template/card/card.wxml" />
+<import src="/template/list/list.wxml" />
 
-<view class="news">
-  <!-- <view class="classify">
-    <view class="classify__item classify__hot-news">理工要闻</view>
-    <view class="classify__item classify__logistics">后勤公告</view>
-    <view class="classify__item classify__lecture">讲座信息</view>
-  </view> -->
+
+<view class="classify">
+  <view class="classify__item classify__item--active">要闻</view>
+  <view class="classify__item">后勤</view>
+  <view class="classify__item">讲座</view>
+  <view class="classify__item">招聘</view>
+  <view class="classify__item">其他</view>
+</view>
+<view class="news-list">
   <block wx:for="{{newsList}}" wx:key="*this">
-    <template is="card-basis" data="{{...item}}" />
+    <template is="list-article" data="{{...item}}" />
   </block>
 </view>

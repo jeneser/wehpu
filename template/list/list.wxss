@@ -180,3 +180,40 @@
   background-color: #33cc66;
   border-radius: 10rpx;
 }
+
+/* 文章列表 */
+.list-article {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx 0;
+  border-top: solid 1rpx #eee;
+}
+.list-article__title {
+  margin-bottom: 15rpx;
+  font-size: 12pt;
+  font-weight: bold;
+  color: #000;
+}
+.list-article__description {
+  font-size: 10pt;
+  color: #999;
+}
+.list-article__meta {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 15rpx;
+  font-size: 9pt;
+  color: #999;
+}
+.list-article__time,
+.list-article__tag {
+  margin-right: 15rpx;
+}
+.list-article__tag {
+  padding: 4rpx 8rpx;
+  color: #fff;
+  background-color: #0099ff;
+  border-radius: 4rpx;
+}
+
