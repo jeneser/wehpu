@@ -65,11 +65,12 @@
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  padding: 45rpx 0;
+  padding: 45rpx 0 30rpx 0;
   margin-left: 150rpx;
   border-bottom: solid 1rpx #eee;
 }
 .list-thumbnail__image {
+  align-self: flex-start;
   width: 120rpx;
   height: 120rpx;
   margin-left: -150rpx;
@@ -82,19 +83,19 @@
 }
 .list-thumbnail__title {
   padding-bottom: 15rpx;
-  font-size: 12pt;
+  font-size: 11pt;
   font-weight: bold;
   color: #000;
 }
 .list-thumbnail__time {
-  font-size: 10pt;
+  font-size: 9pt;
   color: #999;
   font-weight: bold;
 }
 .list-thumbnail__r-icon {
-  width: 60rpx;
-  height: 60rpx;
-  margin-left: 15rpx;
+  width: 64rpx;
+  height: 64rpx;
+  margin-left: 30rpx;
 }
 
 /* 头像列表 */
