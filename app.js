@@ -14,10 +14,10 @@ App({
     // 尝试读取storage，并更新store
     try {
       var storageInfo = wx.getStorageInfoSync();
-      console.log(storageInfo);
+
       if (storageInfo && storageInfo.keys.length) {
         if (wx.getStorageSync('version') === this.version) {
-          // 遍历本地缓存
+          // 遍历本地缓存更新store
           storageInfo.keys.forEach(key => {
             var value = wx.getStorageSync(key);
             if (value !== undefined) {
@@ -31,30 +31,24 @@ App({
         }
       }
     } catch (e) {
-      console.warn('读取缓存失败');
+      // console.warn('读取缓存失败');
+      wx.showToast({
+        title: '未知错误',
+        image: '/images/common/fail.png',
+        duration: 2000
+      });
     }
 
-    console.log(this.store.version);
-
-    // 获取网络状态
-    wx.getNetworkType({
-      success: networkStatus => {
-        var networkType = networkStatus.networkType;
-        if (
-          networkType !== '2g' &&
-          networkType !== 'none' &&
-          networkType !== 'unknown'
-        ) {
-          this.checkInfo();
-        } else {
-          wx.showToast({
-            title: '无网络连接',
-            image: '/images/common/fail.png',
-            duration: 2000
-          });
-        }
-      }
-    });
+    // 检查app信息
+    if (this.util.getNetworkStatus()) {
+      this.checkInfo();
+    } else {
+      wx.showToast({
+        title: '无网络连接',
+        image: '/images/common/fail.png',
+        duration: 2000
+      });
+    }
 
     // 监听网络连接
     wx.onNetworkStatusChange(networkStatus => {
@@ -80,8 +74,7 @@ App({
     // 检查绑定信息
     this.checkBind();
 
-    // 获取第三方服务器用户信息
-    // 检查Token是否有效
+    // 获取用户信息，检查Token是否有效
     if (this.store.bind === true && this.store.token) {
       //发起网络请求
       wx.request({
@@ -92,15 +85,15 @@ App({
           Authorization: 'Bearer ' + this.store.token
         },
         success: requestRes => {
-          var requestRes = requestRes.data;
-          var userInfo = requestRes.data;
-          console.log(requestRes);
+          var _requestRes = requestRes.data;
+          var userInfo = _requestRes.data;
+          // console.log(_requestRes);
 
-          if (requestRes.statusCode === 200) {
+          if (_requestRes.statusCode === 200) {
             // 存储用户基本信息
             this.setStore('studentId', userInfo.studentId);
             this.setStore('name', userInfo.name);
-          } else if (requestRes.statusCode === 403) {
+          } else if (_requestRes.statusCode === 403) {
             // token失效，重新登录
             this.login();
           } else {
@@ -131,8 +124,6 @@ App({
         if (loginRes.code) {
           // 获取微信用户信息
           this.getUserInfo(loginRes.code);
-        } else {
-          console.log('获取用户登录态失败！' + res.errMsg);
         }
       }
     });
@@ -157,36 +148,44 @@ App({
               iv: userInfo.iv
             },
             success: loginState => {
-              var loginState = loginState.data;
+              var _loginState = loginState.data;
 
-              // 200 已存在并返回成功
-              // 201 不存在新建并返回成功
+              // 200/201 已存在返回成功/不存在新建并返回成功
               if (
-                loginState.statusCode === 200 ||
-                loginState.statusCode === 201
+                _loginState.statusCode === 200 ||
+                _loginState.statusCode === 201
               ) {
-                // 保存数据
+                // 更新版本存储数据
                 this.setStore('version', this.version);
-                this.setStore('token', loginState.data.token);
-                this.setStore('bind', loginState.data.bind);
+                this.setStore('token', _loginState.data.token);
+                this.setStore('bind', _loginState.data.bind);
 
                 // 保存用户基本信息
                 this.setStore('nickName', userInfo.userInfo.nickName);
                 this.setStore('avatarUrl', userInfo.userInfo.avatarUrl);
-
-                console.log(this.store);
+                // console.log(this.store);
+              } else {
+                wx.showToast({
+                  title: '登陆失败',
+                  icon: '/images/common/fail.png',
+                  duration: 2000
+                });
               }
             },
             fail: () => {
               wx.showToast({
-                title: '服务器繁忙',
+                title: '未知错误',
                 icon: '/images/common/fail.png',
                 duration: 2000
               });
             }
           });
         } else {
-          console.log('获取用户信息失败！' + res.errMsg);
+          wx.showToast({
+            title: '未知错误',
+            icon: '/images/common/fail.png',
+            duration: 2000
+          });
         }
       },
       fail: err => {
@@ -196,13 +195,13 @@ App({
           showCancel: false,
           success: res => {
             if (res.confirm) {
-              console.log('用户点击确定');
+              // 引导用户授权
               wx.openSetting({
                 success: res => {
                   if (res.authSetting['scope.userInfo']) {
+                    // 重新登陆
                     this.login();
                   }
-                  console.log(res.authSetting);
                 }
               });
             }
