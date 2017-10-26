@@ -1,6 +1,7 @@
 var app = getApp();
 
 Page({
+  util: require('../../utils/util'),
   data: {
     studentId: '',
     vpnPassWord: '',
@@ -151,12 +152,13 @@ Page({
     });
   },
 
-  // 认证并绑定
+  // 认证并认证
   bind: function() {
     var studentId = this.data.studentId;
     var vpnPassWord = this.data.vpnPassWord;
     var jwcPassWord = this.data.jwcPassWord;
 
+    // 不能留空
     if (!vpnPassWord || !jwcPassWord) {
       wx.showToast({
         title: '请正确填写密码',
@@ -185,7 +187,7 @@ Page({
         },
         success: bindingState => {
           var bindingState = bindingState.data;
-          console.log(bindingState);
+          // console.log(bindingState);
 
           wx.hideLoading();
 
@@ -199,20 +201,21 @@ Page({
               key: 'bind',
               data: true
             });
-
+            // 认证成功
             wx.showToast({
-              title: '绑定成功',
+              title: '认证成功',
               icon: 'success',
               duration: 2000
             });
             this.setData({
               step: 3
             });
+            // 重定向
             setTimeout(() => {
-              wx.redirectTo({
-                url: 'more'
+              wx.reLaunch({
+                url: '/pages/index/index'
               });
-            }, 1000);
+            }, 2000);
           } else if (bindingState.statusCode === 400) {
             wx.showToast({
               title: '请正确填写密码',
@@ -230,28 +233,37 @@ Page({
           } else {
             wx.showToast({
               title: '服务器繁忙',
-              icon: '/images/common/fail.png',
+              image: '/images/common/fail.png',
               duration: 2000
             });
           }
         },
         fail: () => {
           wx.hideLoading();
-          wx.showToast({
-            title: '服务器繁忙',
-            icon: '/images/common/fail.png',
-            duration: 2000
-          });
+
+          if (this.util.getNetworkStatus()) {
+            wx.showToast({
+              title: '未知错误',
+              image: '/images/common/fail.png',
+              duration: 2000
+            });
+          } else {
+            wx.showToast({
+              title: '无网络连接',
+              image: '/images/common/fail.png',
+              duration: 2000
+            });
+          }
         }
       });
     }
   },
 
-  // 解除绑定
+  // 重新认证
   rebind: function() {
     wx.showModal({
       title: '提示',
-      content: '确定要重新绑定吗?',
+      content: '确定要重新认证吗?',
       success: operation => {
         if (operation.confirm) {
           // 修改bind
