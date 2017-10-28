@@ -12,7 +12,7 @@
 .app__logo {
   width: 144rpx;
   height: 144rpx;
-  margin-top: 10%;
+  margin-top: 8%;
 }
 .app__name {
   margin: 30rpx 0 15rpx 0;
@@ -34,9 +34,9 @@
   color: #999;
 }
 .app__repository,
-.app__email,
+.app__qq-group,
 .app__donation {
-  margin-bottom: 45rpx;
+  margin-bottom: 30rpx;
   font-size: 9pt;
   font-weight: bold;
   color: #3399ff;
@@ -51,4 +51,14 @@
   width: 45rpx;
   height: 45rpx;
   margin-right: 15rpx;
+}
+.copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 30rpx;
+  font-size: 9pt;
+  font-weight: bold;
+  color: #ddd;
 }

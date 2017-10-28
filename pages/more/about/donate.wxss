@@ -1,0 +1,58 @@
+/* 捐赠 */
+.pay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 45rpx;
+  background-color: #f7f7f7;
+}
+.pay__tip {
+  font-size: 9pt;
+  color: #999;
+}
+.pay__qrcode {
+  margin: 45rpx 0;
+  width: 400rpx;
+  height: 400rpx;
+}
+.pay__wechatpay-qrcode {
+  border: solid 1rpx #ffcc33;
+}
+.pay__alipay-qrcode {
+  border: solid 1rpx #66cc66;
+}
+.pay__foot {
+  display: flex;
+  align-items: center;
+  font-size: 10pt;
+  font-weight: bold;
+}
+.pay__mode {
+  padding-right: 30rpx;
+  border-right: solid 2rpx #ddd;
+}
+.pay__save-qrcode {
+  padding-left: 30rpx;
+  border-left: solid 2rpx #ddd;
+}
+
+/* 致谢 */
+.thank {
+  padding: 45rpx;
+}
+.thank__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 0;
+  font-size: 11pt;
+  color: #000;
+  font-weight: bold;
+  border-top: solid 1rpx #eee;
+}
+.thank__donor {
+  margin-right: 45rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

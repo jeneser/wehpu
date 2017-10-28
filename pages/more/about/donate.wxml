@@ -1,0 +1,22 @@
+<import src="/template/head/head.wxml" />
+
+<view class="donate">
+  <view class="pay">
+    <view class="pay__tip">扫二维码捐助我，请随意打赏</view>
+    <image wx:if="{{mode === 'wechatpay'}}" class="pay__qrcode pay__wechatpay-qrcode" src="/images/more/wechatpay_qrcode.png"></image>
+    <image wx:if="{{mode === 'alipay'}}" class="pay__qrcode pay__alipay-qrcode" src="/images/more/alipay_qrcode.png"></image>
+    <view class="pay__foot">
+      <text wx:if="{{mode !== 'alipay'}}" id="alipay" class="pay__mode" bindtap="switchMode">使用支付宝</text>
+      <text wx:if="{{mode !== 'wechatpay'}}" id="wechatpay" class="pay__mode" bindtap="switchMode">使用微信支付</text>
+      <text id="save" class="pay__save-qrcode" bindtap="saveQr">保存二维码</text>
+    </view>
+  </view>
+  <view class="thank">
+    <template is="head-classify" data="{{title: '感谢你们的慷慨捐赠'}}" />
+    <!-- 捐助列表 -->
+    <view class="thank__item" wx:for="{{donorList}}" wx:key="*this">
+      <view class="thank__donor">{{item.donor}}</view>
+      <view class="thank__money">￥{{item.money}}</view>
+    </view>
+  </view>
+</view>
