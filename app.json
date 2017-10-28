@@ -26,7 +26,8 @@
     "pages/more/user/user",
     "pages/more/feedback/feedback",
     "pages/more/about/about",
-    "pages/more/about/donate"
+    "pages/more/about/donate",
+    "pages/more/about/opensource"
   ],
   "window": {
     "navigationBarTextStyle": "black",

@@ -6,7 +6,7 @@ Page({
     donorList: [
       {
         donor: '可爱的二哈',
-        money: '20'
+        money: '10'
       },
       {
         donor: '可爱的二哈',
@@ -14,7 +14,7 @@ Page({
       },
       {
         donor: '可爱的二哈',
-        money: '20'
+        money: '2'
       }
     ]
   },
@@ -27,9 +27,10 @@ Page({
     }
   },
   // 保存二维码
-  saveQr: function(e) {
+  saveQr: function() {
     var path = '/images/more/' + this.data.mode + '_qrcode.png';
 
+    console.log(path);
     wx.saveImageToPhotosAlbum({
       filePath: path,
       success: () => {

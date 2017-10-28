@@ -1,0 +1,33 @@
+.opensource {
+  padding: 45rpx;
+}
+/* 说明 */
+.opensource__about {
+  display: flex;
+  flex-direction: column;
+  font-size: 11pt;
+  font-weight: bold;
+  color: #000;
+}
+.opensource__statement,
+.opensource__thank {
+  margin-bottom: 30rpx;
+}
+.opensource__repo {
+  margin: 45rpx 0 60rpx 0;
+  padding: 15rpx;
+  font-weight: bold;
+  color: #3399ff;
+  background-color: #eee;
+  border-left: solid 4rpx #3399ff;
+}
+
+/* 协议 */
+.opensource__license {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  font-size: 9pt;
+  color: #999;
+  font-weight: bold;
+}

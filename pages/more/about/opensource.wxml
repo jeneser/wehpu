@@ -1,0 +1,29 @@
+<import src="/template/head/head.wxml" />
+
+<view class="opensource">
+  <template is="head-classify" data="{{title: '关于开源'}}" />
+  <view class="opensource__about">
+    <text class="opensource__statement">开源是一种精神，开源创造无限可能。开源是自由的，而不是免费的。Free(自由) is not free(免费)。源码仅作为交流学习使用，请勿用于商业用途。</text>
+    <text class="opensource__thank">我们毫不犹豫的选择开放所有源码。感谢@jeneser</text>
+    <text class="opensource__repo">Github: https://github.com/hpufe/wehpu</text>
+  </view>
+
+  <template is="head-classify" data="{{title: '开源协议'}}" />
+  <view class="opensource__license">
+    <text>MIT License</text>
+    <text>Copyright (c) 2017 HPU-FE</text>
+    <text>Copyright (c) 2017 Yazhe(jeneser) Wang</text>
+    <text>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation
+      files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use,
+      copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to
+      whom the Software is furnished to do so, subject to the following conditions:</text>
+    <text>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the
+      Software.
+    </text>
+    <text>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+      WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS
+      OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+      OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    </text>
+  </view>
+</view>

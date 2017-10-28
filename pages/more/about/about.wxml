@@ -1,19 +1,25 @@
 <view class="about">
   <view class="app">
     <image class="app__logo" src="/images/logo.png"></image>
-    <text class="app__name">wehpu</text>
-    <text class="app__version">v{{version}}</text>
-    <text class="app__contact">QQ群</text>
-    <text class="app__qq-group" data-content="653267424" bindtap="setClipboardData">653267424</text>
-    <text class="app__github">GitHub</text>
-    <text class="app__repository" data-content="https://github.com/hpufe/wehpu" bindtap="setClipboardData">https://github.com/hpufe/wehpu</text>
-    <navigator url="donate" class="app__donation">
-      <image src="/images/more/donate.png" class="ic-donation"></image>
-      <text>捐赠致谢</text>
-    </navigator>
-    <view class="copyright">
-      <text>HPU-FE Labs</text>
-      <text>MIT Copyright (c) 2017 Jeneser</text>
+    <view class="app__info">
+      <text class="app__name">Wehpu </text>
+      <text class="app__version"> {{version}}</text>
     </view>
+  </view>
+  <view class="menu-list">
+    <navigator url="opensource" class="menu-list__item">
+      <text>开源协议</text>
+      <image class="menu-list__r-icon" src="/images/more/arrow_right.png"></image>
+    </navigator>
+    <navigator url="donate" class="menu-list__item">
+      <text>捐赠致谢</text>
+      <image class="menu-list__r-icon" src="/images/more/arrow_right.png"></image>
+    </navigator>
+  </view>
+
+  <!-- 版权 -->
+  <view class="copyright">
+    <text class="qq-group">QQ群 653267424</text>
+    <text>MIT Copyright (c) 2017 Jeneser HPU-FE</text>
   </view>
 </view>
