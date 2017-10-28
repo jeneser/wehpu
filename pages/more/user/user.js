@@ -17,7 +17,7 @@ Page({
   },
   getUserInfo: function() {
     var store = app.store;
-    console.log(store)
+    // console.log(store)
 
     if (JSON.stringify(store) !== '{}') {
       var userInfo = {

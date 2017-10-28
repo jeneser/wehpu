@@ -40,15 +40,24 @@ App({
     }
 
     // 检查app信息
-    if (this.util.getNetworkStatus()) {
-      this.checkInfo();
-    } else {
-      wx.showToast({
-        title: '无网络连接',
-        image: '/images/common/fail.png',
-        duration: 2000
-      });
-    }
+    wx.getNetworkType({
+      success: networkStatus => {
+        var networkType = networkStatus.networkType;
+        if (
+          networkType !== '2g' &&
+          networkType !== 'none' &&
+          networkType !== 'unknown'
+        ) {
+          this.checkInfo();
+        } else {
+          wx.showToast({
+            title: '无网络连接',
+            image: '/images/common/fail.png',
+            duration: 2000
+          });
+        }
+      }
+    });
 
     // 监听网络连接
     wx.onNetworkStatusChange(networkStatus => {

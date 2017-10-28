@@ -1,7 +1,6 @@
 var app = getApp();
 
 Page({
-  util: require('../../utils/util'),
   data: {
     studentId: '',
     vpnPassWord: '',
@@ -241,19 +240,28 @@ Page({
         fail: () => {
           wx.hideLoading();
 
-          if (this.util.getNetworkStatus()) {
-            wx.showToast({
-              title: '未知错误',
-              image: '/images/common/fail.png',
-              duration: 2000
-            });
-          } else {
-            wx.showToast({
-              title: '无网络连接',
-              image: '/images/common/fail.png',
-              duration: 2000
-            });
-          }
+          wx.getNetworkType({
+            success: networkStatus => {
+              var networkType = networkStatus.networkType;
+              if (
+                networkType !== '2g' &&
+                networkType !== 'none' &&
+                networkType !== 'unknown'
+              ) {
+                wx.showToast({
+                  title: '未知错误',
+                  image: '/images/common/fail.png',
+                  duration: 2000
+                });
+              } else {
+                wx.showToast({
+                  title: '无网络连接',
+                  image: '/images/common/fail.png',
+                  duration: 2000
+                });
+              }
+            }
+          });
         }
       });
     }
