@@ -3,7 +3,7 @@
 
 <!-- 反馈 -->
 <view class="feedback">
-  <form class="feedback-form" bindsubmit="formSubmit">
+  <view class="feedback-form" bindsubmit="formSubmit">
     <!-- 反馈类型 -->
     <view class="feedback-form__item">
       <view class="feedback-form__title">
@@ -22,7 +22,7 @@
         <text class="feedback-form__text">问题描述</text>
         <text class="feedback-form__required">*</text>
       </view>
-      <textarea class="content" name="textarea" maxlength="300" auto-height="true" cursor-spacing="45" placeholder="请详细描述你的问题,可附图"
+      <textarea class="content" name="textarea" value="" maxlength="300" auto-height="true" cursor-spacing="45" placeholder="请详细描述你的问题,可附图"
         placeholder-style="color: #999;" />
       <!-- 图片上传 -->
       <template is="upload-photo" data="{{imageList}}" />
@@ -31,5 +31,5 @@
     <view class="feedback-form__item feedback-form__post">
       <button class="feedback-form__button--post" form-type="submit">提交反馈</button>
     </view>
-  </form>
+  </view>
 </view>

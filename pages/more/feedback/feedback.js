@@ -5,6 +5,7 @@ Page({
       { id: 'bug', name: 'bug', value: 'bug问题' },
       { id: 'suggest', name: 'suggest', value: '意见建议' }
     ],
+    content: '',
     imageList: []
   },
 
