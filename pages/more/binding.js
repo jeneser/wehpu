@@ -173,7 +173,7 @@ Page({
 
       // 发起网络请求
       wx.request({
-        url: app.api + '/users/binding',
+        url: app.api + '/bind',
         method: 'POST',
         header: {
           'content-type': 'application/x-www-form-urlencoded',
