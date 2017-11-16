@@ -12,5 +12,6 @@
   "editor.wordWrap": "wordWrapColumn",
   "html.format.indentInnerHtml": true,
   "html.format.endWithNewline": true,
-  "workbench.startupEditor": "newUntitledFile"
+  "workbench.startupEditor": "newUntitledFile",
+  "standard.enable": false
 }
