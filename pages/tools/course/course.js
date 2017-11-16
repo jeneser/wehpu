@@ -54,17 +54,7 @@ Page({
     // 课表详情Flag
     detailStatus: false,
     // 课表详情数据
-    courseDetail: [],
-    // 帮助
-    help: {
-      helpStatus: false,
-      faqList: [
-        {
-          question: '1.课表不正确?',
-          answer: 'wehpu在每学期开学之前将自动更新课表。如果你在当前学期发现课表不不正确，请反馈给我们。'
-        }
-      ]
-    }
+    courseDetail: []
   },
 
   onLoad: function() {
@@ -100,11 +90,11 @@ Page({
     // 从缓存中获取
     if (app.store.courses) {
       this.updateView(app.store.courses);
-      console.log(this.data);
+      // console.log(this.data);
     } else {
       //发起网络请求
       wx.request({
-        url: app.api + '/tools/courses',
+        url: app.api + '/course',
         method: 'GET',
         header: {
           'content-type': 'application/x-www-form-urlencoded',
@@ -112,7 +102,7 @@ Page({
         },
         success: requestRes => {
           var _requestRes = requestRes.data;
-          console.log(requestRes);
+          // console.log(requestRes);
 
           if (
             _requestRes.statusCode === 200 ||
@@ -130,8 +120,8 @@ Page({
             };
 
             this.updateView(_courses);
-            this.setStorage('courses', _courses);
-            console.log(_courses);
+            this.setStore('courses', _courses);
+            // console.log(_courses);
           }
         },
         fail: () => {
@@ -192,18 +182,21 @@ Page({
     wx.hideLoading();
   },
 
-  // 设置缓存
-  setStorage: function(key, data) {
-    // 更新缓存
+  // 更新store和storage
+  setStore: function(key, value) {
+    if (!key) {
+      return;
+    }
+    app.store[key] = value;
     wx.setStorage({
       key: key,
-      data: data
+      data: value
     });
   },
 
   // 更改picker
   bindPickerChange: function(e) {
-    console.log('bindPickerChange' + this.data.currentWeekly);
+    // console.log('bindPickerChange' + this.data.currentWeekly);
     this.setData({
       currentWeekly: parseInt(e.detail.value)
     });
@@ -243,19 +236,5 @@ Page({
       detailStatus: true,
       courseDetail: this.data.oth
     });
-  },
-
-  // 帮助
-  showHelp: function() {
-    this.setData({
-      'help.helpStatus': true
-    });
-  },
-  hideHelp: function(e) {
-    if (e.target.id === 'help' || e.target.id === 'close-help') {
-      this.setData({
-        'help.helpStatus': false
-      });
-    }
   }
 });

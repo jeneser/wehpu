@@ -2,7 +2,6 @@
 <import src="/template/course/course.wxml" />
 <import src="/template/button/button.wxml" />
 <import src="/template/placeholder/placeholder.wxml" />
-<import src="/template/help/help.wxml" />
 
 <view wx:if="{{courseStatus}}" class="course">
   <!-- 头部 -->
@@ -11,7 +10,7 @@
     <view class="course__weekly">
       <view class="course__week--current">{{weeklyArray[currentWeekly]}}</view>
       <block wx:for="{{week}}" wx:key="*this">
-        <view class="course__week {{week[today] === item ? 'course__week--today' : ''}}">{{item}}</view>
+        <text class="course__week {{week[today] === item ? 'course__week--today' : ''}}">{{item}}</text>
       </block>
     </view>
   </view>
@@ -19,18 +18,18 @@
   <view class="course__main">
     <!-- 左侧时间段 -->
     <view class="course__left">
-      <view class="course__time-slot">1</view>
-      <view class="course__time-slot">2</view>
-      <view class="course__time-slot">3</view>
-      <view class="course__time-slot">4</view>
-      <view class="course__time-slot">5</view>
-      <view class="course__time-slot">6</view>
-      <view class="course__time-slot">7</view>
-      <view class="course__time-slot">8</view>
-      <view class="course__time-slot">9</view>
-      <view class="course__time-slot">10</view>
-      <view class="course__time-slot">11</view>
-      <view class="course__time-slot">12</view>
+      <text class="course__time-slot">1</text>
+      <text class="course__time-slot">2</text>
+      <text class="course__time-slot">3</text>
+      <text class="course__time-slot">4</text>
+      <text class="course__time-slot">5</text>
+      <text class="course__time-slot">6</text>
+      <text class="course__time-slot">7</text>
+      <text class="course__time-slot">8</text>
+      <text class="course__time-slot">9</text>
+      <text class="course__time-slot">10</text>
+      <text class="course__time-slot">11</text>
+      <text class="course__time-slot">12</text>
     </view>
     <!-- 周一至周日课程 -->
     <!-- 周一 -->
@@ -88,14 +87,13 @@
     <image class="foot__current foot__ic-sync" src="/images/ic_sync.png" bindtap="setCurrent"></image>
     <picker bindchange="bindPickerChange" value="{{currentWeekly}}" range="{{weeklyArray}}">
       <view class="foot__Weekly">
-        <view>本学期第{{weeklyArray[currentWeekly]}}</view>
+        <text>本学期第{{weeklyArray[currentWeekly]}}</text>
         <image class="foot__ic-up" src="/images/ic_up.png"></image>
       </view>
     </picker>
     <image class="foot__other foot__ic-add" src="/images/ic_add.png" bindtap="seeOther"></image>
   </view>
 </view>
-
 
 <!-- 暂无课程 -->
 <block wx:if="{{!courseStatus}}">
@@ -104,6 +102,3 @@
 
 <!-- 详细信息 -->
 <template wx:if="{{detailStatus}}" is="course-detail" data="{{courseDetail}}" />
-
-<!-- 帮助 -->
-<template is="help" data="{{...help}}" />
