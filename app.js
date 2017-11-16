@@ -87,7 +87,7 @@ App({
     if (this.store.bind === true && this.store.token) {
       //发起网络请求
       wx.request({
-        url: this.api + '/users/userInfo',
+        url: this.api + '/user',
         method: 'GET',
         header: {
           'content-type': 'application/x-www-form-urlencoded',
@@ -146,7 +146,7 @@ App({
         if (userInfo.encryptedData && userInfo.iv) {
           //发起网络请求
           wx.request({
-            url: this.api + '/users/login',
+            url: this.api + '/login',
             method: 'POST',
             header: {
               'content-type': 'application/x-www-form-urlencoded'
