@@ -10,7 +10,7 @@
           <text class="classroom-form__value">{{location[locationIndex]}}</text>
         </view>
       </picker>
-      <image class="classroom-form__r-icon" src="/images/ic_location.png" bindtap="chooseLocation"></image>
+      <!-- <image class="classroom-form__r-icon" src="/images/ic_location.png" bindtap="chooseLocation"></image> -->
     </view>
     <!-- 周次 -->
     <view class="classroom-form__item">
@@ -42,12 +42,9 @@
     </view>
     <!-- 空闲教室列表 -->
     <view class="classroom-list">
-      <view class="classroom-list__item" wx:for="{{result}}" wx:key="*this">
-        <view class="classroom-list__floor">
-          <image class="ic-floor" src="/images/floor/{{index}}-F.png"></image>
-        </view>
+      <view class="classroom-list__item">
         <view class="classroom-list__rooms">
-          <view class="classroom-list__room" wx:for="{{item}}" wx:key="*this">{{item}}</view>
+          <view class="classroom-list__room" wx:for="{{result}}" wx:key="{{item.room}}">{{item.room}}</view>
         </view>
       </view>
     </view>

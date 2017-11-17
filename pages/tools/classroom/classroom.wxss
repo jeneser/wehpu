@@ -46,7 +46,7 @@
 .classroom-result__place {
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   margin-bottom: 45rpx;
   font-size: 13pt;
   color: #000;
@@ -60,7 +60,7 @@
 /* 结果项 */
 .classroom-list__item {
   display: flex;
-  margin-bottom: 80rpx;
+  margin-bottom: 45rpx;
 }
 .classroom-list__floor {
   font-size: 16pt;
@@ -72,7 +72,7 @@
   flex-wrap: wrap;
   text-align:center;  
   flex: 1;
-  margin-top: 60rpx;
+  margin-top: 30rpx;
   padding: 30rpx 0;
   border-top: solid 1rpx #eee;
   border-bottom: solid 1rpx #eee;
