@@ -43,48 +43,18 @@
 }
 
 /* 结果页面 */
-.classroom-result__place {
-  display: flex;
-  align-items: center;
-  /* justify-content: center; */
-  margin-bottom: 45rpx;
-  font-size: 13pt;
-  color: #000;
-  font-weight: bold;
-}
-.classroom-result__ic-place {
-  width: 64rpx;
-  height: 64rpx;
-  margin-right: 15rpx;
-}
-/* 结果项 */
-.classroom-list__item {
-  display: flex;
-  margin-bottom: 45rpx;
-}
-.classroom-list__floor {
-  font-size: 16pt;
-  color: #000;
-  font-weight: bold;
-}
 .classroom-list__rooms {
   display: flex;
   flex-wrap: wrap;
-  text-align:center;  
-  flex: 1;
-  margin-top: 30rpx;
-  padding: 30rpx 0;
+  padding: 45rpx 0;
   border-top: solid 1rpx #eee;
-  border-bottom: solid 1rpx #eee;
 }
 .classroom-list__room {
-  width: 20%;
+  box-sizing: border-box;
+  width: 25%;
   margin: 15rpx 0;
+  padding: 0 5rpx;
   font-size: 11pt;
   font-weight: bold;
   color: #000;
-}
-.ic-floor {
-  width: 100rpx;
-  height: 100rpx;
 }

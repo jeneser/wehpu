@@ -225,16 +225,31 @@ Page({
       },
       success: requestRes => {
         var _requestRes = requestRes.data;
-        console.log(_requestRes);
+        // console.log(_requestRes);
 
         wx.hideLoading();
         if (_requestRes.statusCode === 200) {
           // 更新视图
+          wx.setNavigationBarTitle({
+            title: this.data.location[this.data.locationIndex] + '空闲教室'
+          });
           this.setData({
             result: _requestRes.data
           });
           // 暂存本次查询地点
           this.setStore('usedBuilding', this.data.locationIndex);
+        } else if (_requestRes.statusCode === 404) {
+          wx.showToast({
+            title: '无结果',
+            icon: '/images/common/fail.png',
+            duration: 2000
+          });
+        } else {
+          wx.showToast({
+            title: '未知错误',
+            icon: '/images/common/fail.png',
+            duration: 2000
+          });
         }
       },
       fail: () => {
@@ -258,5 +273,5 @@ Page({
       key: key,
       data: value
     });
-  },
+  }
 });

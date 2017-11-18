@@ -35,16 +35,11 @@
   </view>
   <!-- 结果页面 -->
   <view wx:else class="classroom-result">
-    <!-- 位置 -->
-    <view class="classroom-result__place">
-      <image class="classroom-result__ic-place" src="/images/ic_location.png"></image>
-      <view>三号教学楼</view>
-    </view>
     <!-- 空闲教室列表 -->
     <view class="classroom-list">
-      <view class="classroom-list__item">
+      <view class="classroom-list__item" wx:for="{{result}}" wx:key="*this">
         <view class="classroom-list__rooms">
-          <view class="classroom-list__room" wx:for="{{result}}" wx:key="{{item.room}}">{{item.room}}</view>
+          <view class="classroom-list__room" wx:for="{{item}}" wx:for-item="same" wx:key="{{*this}}">{{same.room}}</view>
         </view>
       </view>
     </view>
