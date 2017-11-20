@@ -1,4 +1,11 @@
 .score {
-  padding: 45rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 30rpx;
+  max-height: 100%;
+  overflow-y: scroll;
   background-color: #f7f7f7;
 }

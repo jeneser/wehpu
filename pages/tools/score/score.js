@@ -1,41 +1,9 @@
+var app = getApp();
+
 Page({
   data: {
-    score: {
-      title: '本学期成绩',
-      userName: '王亚哲',
-      studentId: '311509040120',
-      scoreList: [
-        {
-          courseName: '计算机网络',
-          mark: 90
-        },
-        {
-          courseName: '线性代数a',
-          mark: 90
-        },
-        {
-          courseName: '计算机网络课程设计计算机网络课程设计',
-          mark: 90
-        },
-        {
-          courseName: '网络编程技术',
-          mark: 90
-        },
-        {
-          courseName: '中国近现代史纲要',
-          mark: 'A'
-        },
-        {
-          courseName: '二年级足球2',
-          mark: 90
-        },
-        {
-          courseName: '旅游景观鉴赏',
-          mark: 90
-        }
-      ],
-      updateTime: '教务处状态ok'
-    },
+    title: '本学期成绩',
+    scoreList: [],
     help: {
       helpStatus: false,
       faqList: [
@@ -47,6 +15,68 @@ Page({
       ]
     }
   },
+
+  onLoad: function() {
+    this.getScore();
+  },
+
+  onPullDownRefresh: function() {
+    this.getScore();
+    wx.stopPullDownRefresh();
+  },
+
+  // 获取成绩
+  getScore: function() {
+    // 加载中
+    wx.showLoading({
+      title: '获取中',
+      mask: true
+    });
+
+    //发起网络请求
+    wx.request({
+      url: app.api + '/score',
+      method: 'GET',
+      header: {
+        Authorization: 'Bearer ' + app.store.token
+      },
+      success: requestRes => {
+        var _requestRes = requestRes.data;
+        // console.log(_requestRes);
+
+        wx.hideLoading();
+        if (_requestRes.statusCode === 200) {
+          // 更新视图
+          this.setData({
+            scoreList: _requestRes.data
+          });
+          // 暂存本次查询地点
+          // this.setStore('usedBuilding', this.data.locationIndex);
+        } else if (_requestRes.statusCode === 404) {
+          wx.showToast({
+            title: '无结果',
+            icon: '/images/common/fail.png',
+            duration: 2000
+          });
+        } else {
+          wx.showToast({
+            title: '未知错误',
+            icon: '/images/common/fail.png',
+            duration: 2000
+          });
+        }
+      },
+      fail: () => {
+        wx.hideLoading();
+        wx.showToast({
+          title: '未知错误',
+          icon: '/images/common/fail.png',
+          duration: 2000
+        });
+      }
+    });
+  },
+
   // 帮助
   showHelp: function() {
     this.setData({

@@ -205,7 +205,7 @@ Page({
   handleSubmit: function() {
     // 加载中
     wx.showLoading({
-      title: '获取课表中',
+      title: '获取中',
       mask: true
     });
 

@@ -132,14 +132,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 45rpx 45rpx;
+  padding: 30rpx;
   background-color: #fff;
   box-shadow: 0 0 6rpx 6rpx #eee;
   border-radius: 4rpx;
   overflow: hidden;
 }
 .card-score__head {
-  margin-bottom: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding-bottom: 30rpx;
   border-bottom: solid 1rpx #eee;
 }
@@ -155,41 +157,25 @@
   color: #999;
 }
 .card-score__box {
-  min-height: 825rpx;
+  min-height: 520rpx;
 }
 .card-score__item {
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15rpx;
+  margin: 10rpx 0;
   padding: 30rpx 0;
   border-bottom: solid 1rpx #eee;
 }
-.card-score__item:last-child {
-  margin-bottom: 0;
-  border: none;
-}
 .card-score__course-name,
 .card-score__mark {
-  font-size: 12pt;
-  font-weight: bold;
-  color: #666;
+  font-size: 11pt;
+  font-weight: 500;
+  color: #333;
 }
 .card-score__mark {
   margin-left: 45rpx;
-}
-.card-score__foot {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 35rpx;
-  padding-top: 35rpx;
-  border-top: solid 1rpx #eee;
-}
-.card-score__update-time {
-  font-size: 10pt;
-  color: #666;
 }
 .card-score__share {
   display: flex;

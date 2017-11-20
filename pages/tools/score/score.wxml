@@ -5,7 +5,7 @@
 <!-- 成绩查询 -->
 <view class="score">
   <!-- 成绩卡片 -->
-  <template is="card-score" data="{{...score}}" />
+  <template is="card-score" data="{{title: title, scoreList: scoreList}}" />
   <!-- 帮助 -->
   <template is="help" data="{{...help}}" />
 </view>
