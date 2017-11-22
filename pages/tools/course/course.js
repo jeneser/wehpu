@@ -122,6 +122,13 @@ Page({
             this.updateView(_courses);
             this.setStore('courses', _courses);
             // console.log(_courses);
+          } else {
+            wx.hideLoading();
+            wx.showToast({
+              title: '获取课表失败',
+              icon: '/images/common/fail.png',
+              duration: 2000
+            });
           }
         },
         fail: () => {
