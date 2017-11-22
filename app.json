@@ -15,11 +15,8 @@
     "pages/tools/cet/cet",
     "pages/tools/course/course",
 
-    "pages/explore/explore",
-    "pages/explore/activity/activity",
-    "pages/explore/news/news_details",
-    "pages/explore/news/news",
-    "pages/explore/download/download",
+    "pages/news/news",
+    "pages/news/news_details",
 
     "pages/more/more",
     "pages/more/binding",
@@ -50,7 +47,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/explore/explore",
+        "pagePath": "pages/news/news",
         "iconPath": "images/tabBar/tabBar_find.png",
         "selectedIconPath": "images/tabBar/tabBar_find_selected.png",
         "text": "发现"

@@ -10,7 +10,7 @@
   margin: 15rpx;
   padding: 8rpx 45rpx;
   border: solid 2rpx #ddd;
-  border-radius: 30rpx;
+  border-radius: 10rpx;
   font-size: 10pt;
   font-weight: bold;
   color: #000;

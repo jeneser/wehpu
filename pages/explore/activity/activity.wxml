@@ -1,9 +1,0 @@
-<!-- 导入模板 -->
-<import src="/template/card/card.wxml" />
-
-<!-- 校园活动 -->
-<view class="activity">
-  <block wx:for="{{activityList}}" wx:key="*this">
-    <template is="card-image" data="{{...item}}" />
-  </block>
-</view>

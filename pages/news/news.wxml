@@ -6,8 +6,8 @@
   <view class="classify__item classify__item--active">要闻</view>
   <view class="classify__item">后勤</view>
   <view class="classify__item">讲座</view>
-  <view class="classify__item">招聘</view>
-  <view class="classify__item">其他</view>
+  <view class="classify__item">公告</view>
+  <view class="classify__item">图书馆</view>
 </view>
 <view class="news-list">
   <block wx:for="{{newsList}}" wx:key="*this">
