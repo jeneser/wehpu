@@ -84,3 +84,15 @@
     </view>
   </view>
 </template>
+
+<template name="list-book">
+  <!-- 图书卡片 -->
+  <view class="list-book">
+    <view class="list-book__head">
+      <text class="list-book__title">高级程序设计</text>
+      <text class="list-book__renew">续借</text>
+    </view>
+    <text class="list-book__place">剩余33天</text>
+    <text class="list-book__time">2017-10-24 至 2017-10-24</text>
+  </view>
+</template>

@@ -72,9 +72,5 @@
         <template is="placeholder-basic" data="{{bg: '/images/placeholder/bg_serach.png', text: '暂无成绩信息'}}" />
       </block>
     </view>
-    <!-- <view class="card-score__foot">
-      <text class="card-score__update-time">{{updateTime}}</text>
-      
-    </view> -->
   </view>
 </template>

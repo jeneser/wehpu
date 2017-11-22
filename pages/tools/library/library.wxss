@@ -1,0 +1,24 @@
+.library {
+  padding: 0 30rpx 30rpx 30rpx;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30rpx 0;
+  border-bottom: solid 1rpx #eee;
+}
+.search-bar__holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11pt;
+  font-weight: bold;
+  color: #999;
+}
+.search-bar__icon {
+  width: 45rpx;
+  height: 45rpx;
+  margin-right: 5rpx;
+}

@@ -1,7 +1,21 @@
 <!-- 导入模板 -->
 <import src="/template/placeholder/placeholder.wxml" />
+<import src="/template/list/list.wxml" />
 
 <!-- 图书馆 -->
 <view class="library">
-  <template is="placeholder-fullpage" data="{{bg: '/images/placeholder/bg_book.png', text: '图书馆系统升级,暂无法提供服务'}}" />
+  <template wx:if="{{0}}" is="placeholder-fullpage" data="{{bg: '/images/placeholder/bg_book.png', text: '图书馆系统升级,暂无法提供服务'}}" />
+
+  <!-- 顶部搜索 -->
+  <view class="search-bar">
+    <view class="search-bar__holder">
+      <image class="search-bar__icon" src="/images/common/search.png"></image>
+      <text class="search-bar__text">馆藏搜索</text>
+    </view>
+  </view>
+
+  <template is="list-book" />
+  <template is="list-book" />
+
+
 </view>

@@ -215,3 +215,39 @@
   border-radius: 4rpx;
 }
 
+/* 图书列表 */
+.list-book {
+  display: flex;
+  flex-direction: column;
+  padding: 45rpx 15rpx;
+  border-bottom: solid 1rpx #eee;
+}
+.list-book__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.list-book__title {
+  width: 65%;
+  margin-bottom: 15rpx;
+  font-size: 14pt;
+  font-weight: bold;
+  color: #000;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.list-book__renew {
+  padding: 5rpx 10rpx;
+  font-size: 11pt;
+  color: #0099ff;
+  border: solid 1rpx #0099ff;
+}
+.list-book__place,
+.list-book__time {
+  margin-bottom: 15rpx;
+  font-size: 9pt;
+  font-weight: 500;
+  color: #999;
+}
+
