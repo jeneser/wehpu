@@ -26,3 +26,9 @@
 .news-list {
   padding: 45rpx;
 }
+.news-list__foot {
+  text-align: center;
+  margin: 30rpx 0;
+  font-size: 9pt;
+  color: #999;
+}

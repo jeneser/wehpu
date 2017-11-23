@@ -19,5 +19,5 @@
 
 /* 全屏占位 */
 .placeholder-fullpage {
-  margin-top: 37.5%;
+  margin-top: 20%;
 }

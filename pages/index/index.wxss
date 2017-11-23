@@ -30,7 +30,7 @@
 }
 .tools__name {
   display: block;
-  font-size: 11pt;
+  font-size: 10pt;
   font-weight: bold;
 }
 
