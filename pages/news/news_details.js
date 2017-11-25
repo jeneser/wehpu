@@ -1,10 +1,97 @@
+var app = getApp();
+
 Page({
   data: {
-    newsDetails: {
-      title: '天空海一体化卫星重力反演和水下组合导航研究',
-      content:
-        '基于天空海一体化新技术的卫星重力反演和水下潜器精确导航是建设“航天/海洋强国”的核心问题，具有重要的科学价值、军事意义和经济价值。 （1）围绕“卫星数据处理和重力反演”开展了深入研究工作，旨在为我国首颗重力卫星观测数据的有效处理和地球重力场模型的精确建立提供理论借鉴和方法保障；开展了我国下一代重力卫星技术方案、观测模式及关键载荷精度指标的顶层设计和需求论证。 （2）融合卫星、航空等多源信息，构建新一代水下潜器惯性/重力/地形/水声组合导航系统。开展新一代GNSS-R测高/重力星座优化设计研究，提出改善水下潜器组合导航精度的理论和方法，突破高精度和高概率的重力匹配、地形辅助、水声定位等关键技术，力争实现高效、自主、长期、无源和隐蔽的水下潜器高精度导航。 主讲人：郑伟 主任/研究员 时间地点：2017 年 9 月 8 日（星期 五 ）9:30 测绘学院一楼会议室',
-      from: '来自校新闻网/二狗编辑'
+    classify: '',
+    id: '',
+    news: {},
+    loading: true,
+    pullDownFlag: true
+  },
+
+  onLoad: function(options) {
+    this.data.classify = options.classify;
+    this.data.id = options.id;
+
+    this.getNews(this.data.classify, this.data.id);
+  },
+
+  // 下拉刷新
+  onPullDownRefresh: function() {
+    var _pullDownFlag = this.data.pullDownFlag;
+
+    if (_pullDownFlag && !this.data.news.title) {
+      this.data.pullDownFlag = false;
+
+      this.getNews(this.data.classify, this.data.id);
+    }
+  },
+
+  getNews: function(classify, id) {
+    // 加载中
+    wx.showLoading({
+      title: '加载中',
+      mask: true
+    });
+
+    if (classify && id) {
+      wx.request({
+        url: app.api + '/rss/' + classify + '/' + id,
+        method: 'GET',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded',
+          Authorization: 'Bearer ' + app.store.token
+        },
+        success: res => {
+          console.log(res);
+          this.setData({
+            loading: false
+          });
+
+          var _requestRes = res.data;
+          if (_requestRes.statusCode === 200) {
+            this.setData({
+              news: _requestRes.data
+            });
+
+            // 更新导航标题
+            wx.setNavigationBarTitle({
+              title: this.data.news.title
+            });
+          } else if (_requestRes.statusCode === 404) {
+            this.setData({
+              loading: false
+            });
+          } else {
+            wx.showToast({
+              title: '新闻走丢了',
+              image: '/images/common/fail.png',
+              duration: 2000
+            });
+          }
+        },
+        fail: () => {
+          wx.showToast({
+            title: '新闻走丢了',
+            image: '/images/common/fail.png',
+            duration: 2000
+          });
+        },
+        complete: () => {
+          wx.hideLoading();
+          wx.stopPullDownRefresh();
+          this.data.pullDownFlag = true;
+        }
+      });
+    } else {
+      this.setData({
+        loading: false
+      });
+      wx.showToast({
+        title: '新闻走丢了',
+        image: '/images/common/fail.png',
+        duration: 2000
+      });
     }
   }
 });

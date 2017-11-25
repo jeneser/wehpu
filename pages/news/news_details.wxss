@@ -1,4 +1,10 @@
 .news-details {
-  padding: 30rpx;
-  background-color: #fff;
+  padding: 45rpx;
+  /* background-color: #fff; */
+}
+.news-details__foot {
+  text-align: center;
+  margin: 30rpx 0;
+  font-size: 9pt;
+  color: #999;
 }

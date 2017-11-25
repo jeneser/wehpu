@@ -11,7 +11,7 @@
 
 <view class="news-list">
   <block wx:for="{{newsList[classifyActived].list}}" wx:key="*this">
-    <template is="list-article" data="{{...item}}" />
+    <template is="list-article" data="{{...item, classify: classifyActived}}" />
   </block>
 
   <!-- 暂无 -->

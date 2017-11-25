@@ -56,18 +56,36 @@ Page({
       }
     },
     // 每次请求数
-    perCount: 5
+    perCount: 5,
+    pullDownFlag: true
   },
 
   onLoad: function() {
     this.getRss(this.data.classifyActived);
   },
 
-  // 页面上拉
+  // 上拉加载更多
   onReachBottom: function() {
     setTimeout(() => {
       this.loadMoreRss(this.data.classifyActived);
     }, 1000);
+  },
+
+  // 下拉刷新
+  onPullDownRefresh: function() {
+    var _pullDownFlag = this.data.pullDownFlag;
+
+    if (_pullDownFlag) {
+      var _classifyActived = this.data.classifyActived;
+
+      this.data.pullDownFlag = false;
+
+      this.data.newsList[_classifyActived].empty = false;
+      this.data.newsList[_classifyActived].start = 0;
+      this.data.newsList[_classifyActived].list = [];
+
+      this.getRss(_classifyActived);
+    }
   },
 
   // 获取新闻
@@ -128,15 +146,13 @@ Page({
         },
         complete: () => {
           wx.hideLoading();
+          wx.stopPullDownRefresh();
+          this.data.pullDownFlag = true;
         }
       });
-    } else {
-      wx.showToast({
-        title: '无更多新闻',
-        image: '/images/common/fail.png',
-        duration: 2000
-      });
     }
+
+    wx.hideLoading();
   },
 
   // 加载更多
@@ -149,10 +165,20 @@ Page({
   changeClassify: function(e) {
     var id = e.currentTarget.id;
 
-    this.setData({
-      classifyActived: id
-    });
+    if (this.data.classifyActived === id) {
+      return;
+    } else {
+      // 更新视图
+      this.setData({
+        classifyActived: id
+      });
+    }
 
-    this.getRss(id);
+    // 屏蔽多余请求
+    if (this.data.newsList[id].list.length) {
+      return;
+    } else {
+      this.getRss(id);
+    }
   }
 });

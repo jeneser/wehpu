@@ -75,14 +75,14 @@
 
 <!-- 文章列表 -->
 <template name="list-article">
-  <view class="list-article">
+  <navigator class="list-article" url="news_details?classify={{classify}}&id={{_id}}">
     <view class="list-article__title">{{title}}</view>
     <view wx:if="{{description}}" class="list-article__description">{{description}}</view>
     <view class="list-article__meta">
-      <view wx:if="{{tag}}" class="list-article__tag">{{tag}}</view>
+      <!-- <view wx:if="{{tag}}" class="list-article__tag">{{tag}}</view> -->
       <view wx:if="{{time}}" class="list-article__time">{{time}} </view>
     </view>
-  </view>
+  </navigator>
 </template>
 
 <template name="list-book">

@@ -1,0 +1,28 @@
+<!-- 基础提示 -->
+<template name="details-common">
+  <view class="details-common">
+    <view wx:if="{{!href}}" class="details-common__head">
+      <view class="details-common__title">{{title}}</view>
+      <view class="details-common__meta">
+        <text wx:if="{{tag}}" class="details-common__tag">{{tag}}</text>
+        <text wx:if="{{time}}" class="details-common__time">{{time}}</text>
+        <text wx:if="{{timestamp}}" class="details-common__time">{{timestamp}}</text>
+      </view>
+    </view>
+
+    <!-- 附加字段 -->
+    <text wx:if="{{speaker}}" class="details-common__content">主讲人：{{speaker}}\t</text>
+    <text wx:if="{{place}}" class="details-common__content">地点：{{place}}</text>
+
+    <!-- 主题内容 -->
+    <text class="details-common__content">{{content}}</text>
+
+    <!-- 文件下载 -->
+    <view wx:if="{{href}}" class="download">
+      <image class="download__icon" src="/images/file_type/doc.png"></image>
+      <text class="download__title">{{title}}.doc</text>
+      <text class="download__tip">该文件支持预览</text>
+      <button class="download__preview">预览文件</button>
+    </view>
+  </view>
+</template>

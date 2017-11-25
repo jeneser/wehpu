@@ -193,6 +193,7 @@
   color: #000;
 }
 .list-article__description {
+  margin-bottom: 15rpx;
   font-size: 10pt;
   color: #999;
 }
@@ -200,7 +201,6 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 15rpx;
   font-size: 9pt;
   color: #999;
 }
