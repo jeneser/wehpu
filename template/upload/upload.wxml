@@ -3,7 +3,7 @@
   <view class="upload-photo">
     <view class="upload-photo__add" bindtap="chooseImage"></view>
     <!-- 预览图片 -->
-    <block wx:for="{{imageList}}" wx:for-item="image" wx:key="*this">
+    <block wx:for="{{tempImageList}}" wx:for-item="image" wx:key="*this">
       <image class="upload-photo__preview" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
     </block>
   </view>

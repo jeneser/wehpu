@@ -3,16 +3,17 @@
 
 <!-- 反馈 -->
 <view class="feedback">
-  <view class="feedback-form" bindsubmit="formSubmit">
+  <!-- 反馈表单 -->
+  <view wx:if="{{!orderUrl}}" class="feedback-form" bindsubmit="formSubmit">
     <!-- 反馈类型 -->
     <view class="feedback-form__item">
       <view class="feedback-form__title">
         <text class="feedback-form__text">反馈类型</text>
         <text class="feedback-form__required">*</text>
       </view>
-      <radio-group class="radio-group">
-        <label class="radio-group__radio" wx:for="{{items}}" wx:key="id">
-          <radio value="{{item.name}}" checked="{{item.checked}}" color="#0099ff"/>{{item.value}}
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio-group__radio" wx:for="{{types}}" wx:key="id">
+          <radio value="{{item.name}}" checked="{{item.checked}}" color="#0099ff" />{{item.value}}
         </label>
       </radio-group>
     </view>
@@ -23,13 +24,25 @@
         <text class="feedback-form__required">*</text>
       </view>
       <textarea class="content" name="textarea" value="" maxlength="300" auto-height="true" cursor-spacing="45" placeholder="请详细描述你的问题,可附图"
-        placeholder-style="color: #999;" />
+        placeholder-style="color: #999;" bindinput="handleInput" />
       <!-- 图片上传 -->
-      <template is="upload-photo" data="{{imageList}}" />
+      <template is="upload-photo" data="{{tempImageList}}" />
     </view>
     <!-- 提交反馈 -->
     <view class="feedback-form__item feedback-form__post">
-      <button class="feedback-form__button--post" form-type="submit">提交反馈</button>
+      <button class="feedback-form__button--post" form-type="submit" disabled="{{loading}}" bindtap="handleSubmit">提交反馈</button>
+    </view>
+  </view>
+
+  <!-- 反馈成功 -->
+  <view wx:if="{{!!orderUrl}}" class="feedback-succeed">
+    <view class="feedback-succeed__title">
+      <text>感谢您的反馈</text>
+    </view>
+    <text class="feedback-succeed__tip">复制下方链接或联系客服以跟进处理进度</text>
+    <view class="feedback-succeed__order" bindtap="handleCopy">
+      <text class="feedback-succeed__url">{{orderUrl}}</text>
+      <image src="/images/common/copy.png" class="feedback-succeed__copy"></image>
     </view>
   </view>
 </view>

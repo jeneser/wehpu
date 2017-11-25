@@ -51,3 +51,37 @@
   border: none;
   outline: none;
 }
+
+/* 反馈成功 */
+.feedback-succeed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 45rpx;
+  margin: 15rpx;
+}
+.feedback-succeed__title {
+  padding-bottom: 100rpx;
+  font-size: 13pt;
+  color: #000;
+  font-weight: bold;
+}
+.feedback-succeed__tip {
+  display: inline-block;
+}
+.feedback-succeed__tip,
+.feedback-succeed__order {
+  padding-bottom: 15rpx;
+  font-size: 9pt;
+  color: #999;
+  font-weight: bold;
+}
+.feedback-succeed__order {
+  display: flex;
+  align-items: center;
+}
+.feedback-succeed__copy {
+  width: 45rpx;
+  height: 45rpx;
+}
