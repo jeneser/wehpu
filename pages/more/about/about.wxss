@@ -39,6 +39,11 @@
   width: 45rpx;
   height: 45rpx;
 }
+.menu-list__contact {
+  width: 100%;
+  line-height: normal;
+  background-color: #fff;
+}
 
 /* 版权 */
 .copyright {
@@ -49,10 +54,10 @@
   left: 0;
   right: 0;
   bottom: 30rpx;
-  font-size: 9pt;
+  font-size: 8pt;
   color: #999;
+  font-weight: bold;
 }
 .qq-group {
   margin-bottom: 15rpx;
-  font-weight: bold;
 }

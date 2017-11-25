@@ -2,8 +2,8 @@
   <view class="app">
     <image class="app__logo" src="/images/logo.png"></image>
     <view class="app__info">
-      <text class="app__name">Wehpu </text>
-      <text class="app__version"> {{version}}</text>
+      <text class="app__name">wehpu</text>
+      <text class="app__version">{{version}}</text>
     </view>
   </view>
   <view class="menu-list">
@@ -15,6 +15,10 @@
       <text>捐赠致谢</text>
       <image class="menu-list__r-icon" src="/images/more/arrow_right.png"></image>
     </navigator>
+    <button open-type="contact" class="menu-list__item menu-list__contact">
+      <text>联系客服</text>
+      <image class="menu-list__r-icon" src="/images/more/arrow_right.png"></image>
+    </button>
   </view>
 
   <!-- 版权 -->
