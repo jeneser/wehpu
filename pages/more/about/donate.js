@@ -21,6 +21,10 @@ Page({
     wx.request({
       url: app.api + '/donation',
       method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        Authorization: 'Bearer ' + app.store.token
+      },
       success: requestRes => {
         var _requestRes = requestRes.data;
 

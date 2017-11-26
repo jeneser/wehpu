@@ -2,6 +2,19 @@
 <import src="/template/placeholder/placeholder.wxml" />
 
 <!-- 校历 -->
-<view class="seat">
-  <template is="placeholder-fullpage" data="{{bg: '/images/placeholder/bg_location.png', text: '第三方系统升级,暂无法提供服务'}}" />
+<view class="calendar">
+  <view class="calendar__head">
+    <text class="calendar__weekly">本学期第{{currentWeekly}}周共{{totalWeekly}}周</text>
+    <text class="calendar__term">{{currentTerm}}</text>
+  </view>
+
+  <view class="calendar__main">
+    <image class="calendar__image" src="{{calendarImage}}" bindtap="previewImage"></image>
+    <text class="calendar__tip">点击图片长按下载到本地</text>
+  </view>
+
+  <!-- 暂无 -->
+  <block wx:if="{{!calendarImage}}">
+    <template is="placeholder-fullpage" data="{{bg:'/images/placeholder/bg_no_data.png'}}" />
+  </block>
 </view>
