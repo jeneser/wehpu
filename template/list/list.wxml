@@ -85,8 +85,8 @@
   </navigator>
 </template>
 
+<!-- 图书列表 -->
 <template name="list-book">
-  <!-- 图书卡片 -->
   <view class="list-book">
     <view class="list-book__head">
       <text class="list-book__title">高级程序设计</text>
@@ -94,5 +94,52 @@
     </view>
     <text class="list-book__place">剩余33天</text>
     <text class="list-book__time">2017-10-24 至 2017-10-24</text>
+  </view>
+</template>
+
+<template name="list-physical">
+  <view class="list-physical {{fold ? 'list-physical--fold' : ''}}">
+    <view class="list-physical__head">
+      <text>{{year}}年度</text>
+      <image id="{{index}}" class="list-physical__ic-fold" src="/images/common/up.png" bindtap="fold"></image>
+    </view>
+
+    <view class="list-physical__item">
+      <text>身高</text>
+      <text>{{height}}</text>
+    </view>
+    <view class="list-physical__item">
+      <text>体重</text>
+      <text>{{weight}}</text>
+    </view>
+    <view class="list-physical__item">
+      <text>肺活量</text>
+      <text>{{vitalCapacity}}</text>
+    </view>
+    <view class="list-physical__item">
+      <text>跳远</text>
+      <text>{{longJump}}</text>
+    </view>
+    <view class="list-physical__item">
+      <text>短跑</text>
+      <text>{{sprint}}</text>
+    </view>
+    <view class="list-physical__item">
+      <text>坐位体前屈</text>
+      <text>{{flexion}}</text>
+    </view>
+    <view class="list-physical__item">
+      <text>长跑</text>
+      <text>{{longRun}}</text>
+    </view>
+    <view class="list-physical__item list-physical__item--last">
+      <text>一分钟引体向上/仰卧起坐</text>
+      <text>{{pullOrSitup}}</text>
+    </view>
+
+    <view class="list-physical__foot">
+      <text>总分</text>
+      <text>{{totalScore}}</text>
+    </view>
   </view>
 </template>

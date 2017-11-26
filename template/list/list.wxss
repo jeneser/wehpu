@@ -251,3 +251,64 @@
   color: #999;
 }
 
+/* 体测成绩 */
+.list-physical {
+  margin-bottom: 15rpx;
+  padding: 30rpx 60rpx;
+  background-color: #fff;
+}
+.list-physical__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15rpx 0;
+  font-size: 9pt;
+  color: #999;
+  font-weight: bold;
+  border-bottom: solid 1rpx #eee;
+}
+.list-physical__ic-fold {
+  width: 32rpx;
+  height: 32rpx;
+}
+.list-physical__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 0;
+  font-size: 11pt;
+  color: #000;
+  font-weight: bold;
+  border-bottom: solid 1rpx #f7f7f7;
+}
+.list-physical__item--last {
+  border-bottom: solid 1rpx #eee;
+}
+.list-physical__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30rpx;
+  font-size: 13pt;
+  color: #000;
+  font-weight: bold;
+}
+/* 折叠 */
+@keyframes foldOn {
+  0% {
+    height: 400rpx;
+  }
+
+  50% {
+    height: 200;
+  }
+
+  100% {
+    height: 100;
+  }
+}
+.list-physical--fold {
+  height: 60rpx;
+  overflow: hidden;
+  animation: fold 0.5s linear;
+}

@@ -1,7 +1,13 @@
 <!-- 导入模板 -->
 <import src="/template/placeholder/placeholder.wxml" />
+<import src="/template/list/list.wxml" />
 
-<!-- 座位预约 -->
+<!-- 体测成绩 -->
 <view class="physical">
-  <template is="placeholder-fullpage" data="{{bg: '/images/placeholder/bg_location.png', text: '第三方系统升级,暂无法提供服务'}}" />
+
+  <block wx:for="{{scoreList}}" wx:key="year">
+    <template is="list-physical" data="{{...item, index: index}}" />
+  </block>
+
+  <!-- <template is="placeholder-fullpage" data="{{bg: '/images/placeholder/bg_location.png', text: '第三方系统升级,暂无法提供服务'}}" /> -->
 </view>

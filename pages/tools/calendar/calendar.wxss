@@ -30,6 +30,7 @@
 }
 .calendar__image {
   width: 100%;
+  max-width: 660rpx;
   height: 1480rpx;
 }
 .calendar__tip {
