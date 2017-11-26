@@ -63,7 +63,7 @@
 }
 .feedback-succeed__title {
   padding-bottom: 100rpx;
-  font-size: 13pt;
+  font-size: 16pt;
   color: #000;
   font-weight: bold;
 }

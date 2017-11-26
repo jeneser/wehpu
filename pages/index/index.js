@@ -49,24 +49,9 @@ Page({
       ],
       [
         {
-          id: 'seat',
-          name: '座位预约',
-          url: '/pages/tools/seat/seat'
-        },
-        {
-          id: 'evaluation',
-          name: '学生评教',
-          url: '/pages/tools/evaluation/evaluation'
-        },
-        {
           id: 'calendar',
           name: '校历',
           url: '/pages/tools/calendar/calendar'
-        },
-        {
-          id: 'gpa',
-          name: '绩点计算',
-          url: '/pages/tools/gpa/gpa'
         }
       ]
     ],

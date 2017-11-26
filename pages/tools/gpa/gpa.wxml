@@ -1,7 +1,0 @@
-<!-- 导入模板 -->
-<import src="/template/placeholder/placeholder.wxml" />
-
-<!-- 绩点计算 -->
-<view class="seat">
-  <template is="placeholder-fullpage" data="{{bg: '/images/placeholder/bg_location.png', text: '第三方系统升级,暂无法提供服务'}}" />
-</view>

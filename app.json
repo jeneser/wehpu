@@ -2,11 +2,8 @@
   "pages": [
     "pages/index/index",
     
-    "pages/tools/gpa/gpa",
-    "pages/tools/evaluation/evaluation",
     "pages/tools/calendar/calendar",
     "pages/tools/physical/physical",
-    "pages/tools/seat/seat",
     "pages/tools/repair/repair",
     "pages/tools/library/library",
     "pages/tools/classroom/classroom",
