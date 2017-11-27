@@ -9,5 +9,8 @@
     <template is="list-physical" data="{{...item, index: index}}" />
   </block>
 
-  <!-- <template is="placeholder-fullpage" data="{{bg: '/images/placeholder/bg_location.png', text: '第三方系统升级,暂无法提供服务'}}" /> -->
+  <!-- 暂无 -->
+  <block wx:if="{{!scoreList.length}}">
+    <template is="placeholder-fullpage" data="{{bg:'/images/placeholder/bg_no_data.png'}}" />
+  </block>
 </view>

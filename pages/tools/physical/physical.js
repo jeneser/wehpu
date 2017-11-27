@@ -2,11 +2,23 @@ var app = getApp();
 
 Page({
   data: {
-    scoreList: []
+    scoreList: [],
+    pullDownFlag: true
   },
 
   onLoad: function() {
     this.getScore();
+  },
+
+  onPullDownRefresh: function() {
+    var _pullDownFlag = this.data.pullDownFlag;
+
+    if (_pullDownFlag) {
+      this.data.pullDownFlag = false;
+
+      this.getScore();
+      wx.stopPullDownRefresh();
+    }
   },
 
   getScore: function() {
@@ -47,6 +59,7 @@ Page({
       },
       complete: () => {
         wx.hideLoading();
+        this.data.pullDownFlag = true;
       }
     });
   },

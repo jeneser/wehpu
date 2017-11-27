@@ -99,9 +99,9 @@
 
 <template name="list-physical">
   <view class="list-physical {{fold ? 'list-physical--fold' : ''}}">
-    <view class="list-physical__head">
+    <view id="{{index}}" class="list-physical__head" bindtap="fold">
       <text>{{year}}年度</text>
-      <image id="{{index}}" class="list-physical__ic-fold" src="/images/common/up.png" bindtap="fold"></image>
+      <image class="list-physical__ic-fold" src="/images/common/up.png"></image>
     </view>
 
     <view class="list-physical__item">
