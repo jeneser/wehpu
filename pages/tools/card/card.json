@@ -1,3 +1,5 @@
 {
-  "navigationBarTitleText": "一卡通"
+  "navigationBarTitleText": "校园卡",
+  "navigationBarBackgroundColor": "#ffc11b",
+  "navigationBarTextStyle": "white"
 }

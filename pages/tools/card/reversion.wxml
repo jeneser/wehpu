@@ -1,0 +1,48 @@
+<view class="reversion">
+  <form bindsubmit="formSubmit">
+    <view class="reversion-form__item">
+      <view class="reversion-form__title">
+        <text class="reversion-form__text">失主学号</text>
+        <text class="reversion-form__required">*</text>
+      </view>
+      <view class="reversion-form__container">
+        <input id="studentId" class="reversion-form__input" type="number" value="" confirm-type="done" auto-focus="true" placeholder="学号/一卡通号"
+          bindfocus="inputFocus" bindblur="inputBlur" />
+        <image class="reversion-form__r-icon" src="/images/ic_sync_big.png" bindtap="checkUser"></image>
+      </view>
+    </view>
+    <view class="reversion-form__item">
+      <view class="reversion-form__title">
+        <text class="reversion-form__text">捡卡人</text>
+        <text class="reversion-form__required">*</text>
+      </view>
+      <view class="reversion-form__container">
+        <input id="publisher" class="reversion-form__input" type="text" confirm-type="done" placeholder="输入你的姓名" bindblur="inputBlur"
+        />
+      </view>
+    </view>
+    <view class="reversion-form__item">
+      <view class="reversion-form__title">
+        <text class="reversion-form__text">联系方式</text>
+        <text class="reversion-form__required">*</text>
+      </view>
+      <view class="reversion-form__container">
+        <input id="contact" class="reversion-form__input" type="text" confirm-type="done" placeholder="你的联系方式" bindblur="inputBlur"
+        />
+      </view>
+    </view>
+    <view class="reversion-form__item">
+      <view class="reversion-form__title">
+        <text class="reversion-form__text">备注</text>
+        <text class="reversion-form__required">*</text>
+      </view>
+      <textarea id="comment" class="content" name="textarea" maxlength="300" auto-height="true" cursor-spacing="45" placeholder="给失主捎句话"
+        placeholder-style="color: #999;" bindblur="inputBlur" />
+    </view>
+    <!-- 提交 -->
+    <view class="reversion-form__item reversion-form__post">
+      <button class="reversion-form__button--post" formType="submit">发送通知</button>
+    </view>
+  </form>
+
+</view>

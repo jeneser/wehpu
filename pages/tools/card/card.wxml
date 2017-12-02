@@ -1,29 +1,24 @@
 <!-- 导入模板 -->
 <import src="/template/tip/tip.wxml" />
 <import src="/template/help/help.wxml" />
+<import src="/template/list/list.wxml" />
 
 <!-- 一卡通 -->
 <view class="card">
   <view class="e-card">
-    <view class="e-card__stripe"></view>
-    <view class="e-card__head">
-      <text>余额</text>
+    <view class="e-card__balance">
+      <text class="e-card__rmb">0.00</text>
     </view>
-    <view class="e-card__body">
-      <view class="e-card__balance">
-        <text class="e-card__rmb">108</text>
-        <text class="e-card__yuan">元</text>
-      </view>
-      <view class="e-card__badge">
-        <image class="e-card__img" src="/images/tools/card__badge.png"></image>
-      </view>
-    </view>
-    <view class="e-card__meta">
-      <text class="e-card__time">截至: 2017/9/18</text>
-      <text class="e-card__id">311509040120</text>
+    <view class="e-card__tip">当前校园卡可用余额</view>
+    <view class="e-card__foot">
+      <text>对余额有疑问?</text>
+      <text class="e-card__help" bindtap="showHelp">帮助</text>
     </view>
   </view>
-  <!-- 帮助 -->
-  <template is="tip-basic" data="{{text: '余额不准确, ', help: '需要帮助?'}}" />
+
+  <view class="tools">
+    <template is="list-icon" data="{{href: 'reversion', lIcon: '/images/ic_setting.png', text: '饭卡回家'}}" />
+  </view>
+
   <template is="help" data="{{...help}}" />
 </view>

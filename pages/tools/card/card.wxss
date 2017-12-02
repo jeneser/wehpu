@@ -1,52 +1,35 @@
 /* 一卡通 */
 .e-card {
-  margin: 60rpx 20rpx;
-  padding-bottom: 15rpx;
   color: #fff;
-  background-color: #ff9933;
-  border-radius: 25rpx;
-  box-shadow: 0 0 60rpx #ccc;
-  overflow: hidden;
+  background-color: #ffc11b;
 }
-.e-card__stripe {
-  margin-top: 45rpx;
-  width: 100%;
-  height: 100rpx;
-  background-color: #666;
-}
-.e-card__head {
-  box-sizing: border-box;
-  padding: 60rpx 30rpx 0 30rpx;
-  font-size: 11pt;
-  font-weight: 400;
-}
-.e-card__body {
-  box-sizing: border-box;
+.e-card__balance {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 30rpx;
-  margin-left: 100rpx;
-  margin-right: 50rpx;
+  justify-content: center;
+  padding: 45rpx 0 15rpx 0;
 }
 .e-card__rmb {
   font-size: 34pt;
   font-weight: bolder;
 }
-.e-card__yuan {
-  margin-left: 30rpx;
+.e-card__tip {
+  text-align: center;
   font-size: 9pt;
+  font-weight: 400;
 }
-.e-card__img {
-  width: 120rpx;
-  height: 100rpx;
-}
-.e-card__meta {
-  box-sizing: border-box;
+
+.e-card__foot {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 30rpx;
+  margin-top: 80rpx;
+  padding: 15rpx 30rpx;
+  height: 60rpx;
   font-size: 9pt;
-  font-weight: 400;
+  font-weight: bold;
+  background-color: #ffae0d;
+}
+.e-card__help {
+  padding: 5rpx 10rpx;
+  border: solid 1rpx #fff;
 }

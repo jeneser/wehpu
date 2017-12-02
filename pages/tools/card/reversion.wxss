@@ -1,0 +1,55 @@
+/* 报修 */
+.reversion {
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+  overflow: hidden;
+}
+.reversion-form__r-icon {
+  width: 64rpx;
+  height: 64rpx;
+  margin-left: 45rpx;
+}
+.reversion-form__item {
+  box-sizing: border-box;
+  margin-bottom: 15rpx;
+  padding: 45rpx 45rpx 30rpx 45rpx;
+  background-color: #fff;
+}
+.reversion-form__title {
+  margin-bottom: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: solid 1rpx #eee;
+}
+.reversion-form__text {
+  font-size: 13pt;
+  color: #000;
+  font-weight: bold;
+}
+.reversion-form__required {
+  color: #cc3333;
+  font-weight: bold;
+}
+.reversion-form__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.reversion-form__input {
+  flex: 1;
+}
+.reversion-form__r-icon {
+  width: 64rpx;
+  height: 64rpx;
+  margin-left: 45rpx;
+}
+
+/* 提交反馈 */
+.reversion-form__post {
+  margin-bottom: 0;
+}
+.reversion-form__button--post {
+  color: #fff;
+  background-color: #0099ff;
+  border: none;
+  outline: none;
+}

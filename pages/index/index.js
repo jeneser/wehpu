@@ -28,7 +28,7 @@ Page({
         },
         {
           id: 'card',
-          name: '一卡通',
+          name: '校园卡',
           url: '/pages/tools/card/card'
         },
         {
