@@ -10,7 +10,7 @@
 </view>
 
 <view class="news-list">
-  <block wx:for="{{newsList[classifyActived].list}}" wx:key="*this">
+  <block wx:for="{{newsList[classifyActived].list}}" wx:key="{{title}}">
     <template is="list-article" data="{{...item, classify: classifyActived}}" />
   </block>
 

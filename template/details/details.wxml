@@ -1,3 +1,6 @@
+<!-- 导入模板 -->
+<import src="/template/placeholder/placeholder.wxml" />
+
 <!-- 基础提示 -->
 <template name="details-common">
   <view class="details-common">
@@ -15,14 +18,28 @@
     <text wx:if="{{place}}" class="details-common__content">地点：{{place}}</text>
 
     <!-- 主题内容 -->
-    <text class="details-common__content">{{content}}</text>
+    <text wx:if="{{content}}" class="details-common__content">{{content}}</text>
+    <!-- 暂无 -->
+    <view wx:if="{{!content && !href}}" class="details-common__no-content">
+      <template is="placeholder-fullpage" data="{{bg:'/images/placeholder/bg_no_data.png'}}" />
+      <text class="details-common__tip">文件过大或不适合展示</text>
+    </view>
 
     <!-- 文件下载 -->
     <view wx:if="{{href}}" class="download">
-      <image class="download__icon" src="/images/file_type/doc.png"></image>
-      <text class="download__title">{{title}}.doc</text>
-      <text class="download__tip">该文件支持预览</text>
-      <button class="download__preview">预览文件</button>
+      <image class="download__icon" src="/images/file_type/{{suffix}}.png"></image>
+
+      <block wx:if="{{preview}}">
+        <text class="download__title">{{title}}.{{suffix}}</text>
+        <text class="download__tip">该文件支持预览</text>
+        <button class="download__preview" bindtap="openDocument">预览文件</button>
+      </block>
+      <block wx:if="{{!preview}}">
+        <text class="download__title">{{title}}</text>
+        <text class="download__tip">不支持预览请手动下载文件</text>
+        <button class="download__preview" bindtap="handleCopy">复制链接</button>
+      </block>
+
     </view>
   </view>
 </template>

@@ -1,6 +1,5 @@
 .news-details {
   padding: 45rpx;
-  /* background-color: #fff; */
 }
 .news-details__foot {
   text-align: center;

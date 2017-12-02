@@ -5,8 +5,11 @@ Page({
     classify: '',
     id: '',
     news: {},
+    suffix: '',
+    preview: false,
     loading: true,
-    pullDownFlag: true
+    pullDownFlag: true,
+    fileType: ['doc', 'xls', 'pdf', 'docx', 'xlsx']
   },
 
   onLoad: function(options) {
@@ -44,14 +47,56 @@ Page({
         },
         success: res => {
           // console.log(res);
+
           this.setData({
             loading: false
           });
 
           var _requestRes = res.data;
           if (_requestRes.statusCode === 200) {
+            var _data = _requestRes.data;
+
+            if (_data.href) {
+              // 使用https
+              _data.href = _data.href.replace(/http:/, 'https:');
+
+              // 判断是否支持预览
+              var _suffix = _data.href.split('.').pop();
+              if (
+                this.data.fileType.find(elem => {
+                  return elem === _suffix;
+                })
+              ) {
+                this.setData({
+                  preview: true
+                });
+              }
+
+              // 修改默认后缀
+              switch (_suffix) {
+                case 'docx':
+                  _suffix = 'doc';
+                  break;
+                case 'xlsx':
+                  _suffix = 'xls';
+                  break;
+                case 'doc':
+                  break;
+                case 'xls':
+                  break;
+                case 'pdf':
+                  break;
+                default:
+                  _suffix = 'file';
+                  break;
+              }
+              this.setData({
+                suffix: _suffix
+              });
+            }
+
             this.setData({
-              news: _requestRes.data
+              news: _data
             });
 
             // 更新导航标题
@@ -93,5 +138,47 @@ Page({
         duration: 2000
       });
     }
+  },
+
+  // 预览文件
+  openDocument: function() {
+    wx.downloadFile({
+      url: this.data.news.href,
+      success: res => {
+        var filePath = res.tempFilePath;
+        wx.openDocument({
+          filePath: filePath,
+          success: () => {},
+          fail: () => {
+            wx.showToast({
+              title: '打开失败',
+              image: '/images/common/fail.png',
+              duration: 2000
+            });
+          }
+        });
+      },
+      fail: () => {
+        wx.showToast({
+          title: '加载失败',
+          image: '/images/common/fail.png',
+          duration: 2000
+        });
+      }
+    });
+  },
+
+  // 下载文件
+  handleCopy: function() {
+    wx.setClipboardData({
+      data: this.data.news.href,
+      success: res => {
+        wx.showToast({
+          title: '链接已复制',
+          icon: 'success',
+          duration: 2000
+        });
+      }
+    });
   }
 });

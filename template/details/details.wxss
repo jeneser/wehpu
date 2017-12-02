@@ -21,7 +21,15 @@
   font-size: 12pt;
   color: #333;
   font-weight: 400;
-  word-wrap: break-word;  
+  word-wrap: break-word;
+}
+.details-common__no-content {
+  text-align: center;
+}
+.details-common__tip {
+  font-size: 9pt;
+  color: #999;
+  font-weight: bold;
 }
 
 .download {
@@ -36,7 +44,8 @@
   margin-bottom: 30rpx;
 }
 .download__title {
-  margin-bottom: 80rpx;
+  margin-bottom: 120rpx;
+  text-align: center;
   font-size: 10pt;
   color: #000;
   font-weight: bold;

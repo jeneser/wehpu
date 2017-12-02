@@ -112,7 +112,7 @@ Page({
           Authorization: 'Bearer ' + app.store.token
         },
         success: res => {
-          console.log(res);
+          // console.log(res);
 
           var _requestRes = res.data;
           if (_requestRes.statusCode === 200) {
