@@ -20,10 +20,10 @@ Page({
         id: 'notice',
         name: '公告'
       },
-      {
-        id: 'library',
-        name: '图书馆'
-      }
+      // {
+      //   id: 'library',
+      //   name: '图书馆'
+      // }
     ],
     // 当前选中
     classifyActived: 'news',

@@ -43,7 +43,7 @@ Page({
           Authorization: 'Bearer ' + app.store.token
         },
         success: res => {
-          console.log(res);
+          // console.log(res);
           this.setData({
             loading: false
           });
