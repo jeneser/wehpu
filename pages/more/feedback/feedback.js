@@ -90,7 +90,7 @@ Page({
               Authorization: 'Bearer ' + app.store.token
             },
             success: requestRes => {
-              console.log(requestRes);
+              // console.log(requestRes);
               var _requestRes = requestRes.data;
 
               if (_requestRes.statusCode === 201) {
@@ -158,7 +158,7 @@ Page({
     this.setData({
       content: e.detail.value
     });
-    console.log(this.data.content);
+    // console.log(this.data.content);
   },
 
   // 选择图片
@@ -175,7 +175,7 @@ Page({
               tempImageList: this.data.tempImageList
             });
 
-            console.log(this.data);
+            // console.log(this.data);
           } else {
             wx.showToast({
               title: '图片尺寸过大',
@@ -210,7 +210,7 @@ Page({
       var tempImageList = this.data.tempImageList;
       if (tempImageList.length) {
         tempImageList.forEach(tempFile => {
-          console.log(tempFile);
+          // console.log(tempFile);
 
           wx.uploadFile({
             url: app.api + '/upload',
@@ -226,7 +226,7 @@ Page({
             success: requestRes => {
               var _requestRes = JSON.parse(requestRes.data);
 
-              console.log(_requestRes);
+              // console.log(_requestRes);
 
               if (_requestRes.statusCode === 201) {
                 this.data.imageList.push(_requestRes.data.url[0]);
@@ -250,7 +250,7 @@ Page({
 
               if (count === tempImageList.length) {
                 wx.hideLoading();
-                console.log(this.data.imageList);
+                // console.log(this.data.imageList);
                 resolve();
               }
             }
