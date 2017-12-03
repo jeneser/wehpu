@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "校历"
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#0099ff",
+  "navigationBarTextStyle": "white"
 }

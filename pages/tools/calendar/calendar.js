@@ -43,7 +43,7 @@ Page({
       success: requestRes => {
         var _requestRes = requestRes.data;
 
-        console.log(_requestRes);
+        // console.log(_requestRes);
         if (_requestRes.statusCode === 200) {
           this.setData({
             totalWeekly: _requestRes.data.totalWeekly,
