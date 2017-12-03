@@ -149,19 +149,16 @@ Page({
   },
 
   bindPickerChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value);
     this.setData({
       locationIndex: e.detail.value
     });
   },
   bindLessonChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value);
     this.setData({
       lessonIndex: e.detail.value
     });
   },
   bindWeeklyChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value);
     this.setData({
       weeklyIndex: e.detail.value
     });
@@ -195,9 +192,7 @@ Page({
   // 选择地址
   chooseLocation: function() {
     wx.chooseLocation({
-      success: function(res) {
-        console.log(res.name);
-      }
+      success: () => {}
     });
   },
 
