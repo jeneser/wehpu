@@ -1,2 +1,6 @@
+<!-- 导入模板 -->
+<import src="/template/placeholder/placeholder.wxml" />
+
 <view class="cet">
+  <template is="placeholder-basic" data="{{bg:'/images/placeholder/bg_no_data.png', text: '新功能即将到来'}}" />
 </view>

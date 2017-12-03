@@ -13,7 +13,7 @@
 }
 .placeholder-fullpage__tip,
 .placeholder-basic__tip {
-  font-size: 13pt;
+  font-size: 11pt;
   color: #999;
 }
 
