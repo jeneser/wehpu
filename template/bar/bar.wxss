@@ -5,7 +5,7 @@
 }
 .bar-search__input {
   width: 100%;
-  padding: 30rpx 0;
+  padding: 30rpx 60rpx 30rpx 0;
   vertical-align: baseline;
   font-size: 11pt;
   border-bottom: solid 1rpx #eee;

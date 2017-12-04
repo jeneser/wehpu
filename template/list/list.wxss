@@ -262,6 +262,8 @@
 
 .list-book__query {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
 }
 

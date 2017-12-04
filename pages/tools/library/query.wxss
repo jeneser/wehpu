@@ -35,46 +35,16 @@
   overflow-y: scroll;
   z-index: 10;
 }
-.query-detail__close {
-  position: absolute;
-  top: 30rpx;
-  right: 30rpx;
-  width: 45rpx;
-  height: 45rpx;
-}
 .query-detail__content {
   margin-bottom: 30rpx;
-}
-.query-detail__name {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: 45rpx;
-  font-size: 13pt;
-  color: #000;
-  font-weight: bold;
-}
-.query-detail__place,
-.query-detail__weekly,
-.query-detail__teacher {
-  display: flex;
-  align-items: center;
-  margin-top: 30rpx;
-  font-size: 11pt;
-  line-height: 1;
-}
-.query-detail__title {
-  color: #999;
-  margin: 0 15rpx 0 0;
-}
-.query-detail__flag {
-  color: #999;
-  font-size: 8pt;
 }
 .query-detail__item {
   padding: 15rpx 0;
   border-top: solid 1rpx #f7f7f7;
 }
 .query-detail__place {
+  display: flex;
+  margin-top: 30rpx;
   font-size: 11pt;
   color: #000;
 }
