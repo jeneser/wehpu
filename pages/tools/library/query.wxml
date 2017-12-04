@@ -1,0 +1,30 @@
+<!-- 导入模板 -->
+<import src="/template/bar/bar.wxml" />
+<import src="/template/list/list.wxml" />
+<import src="/template/placeholder/placeholder.wxml" />
+
+<view class="query">
+  <!-- 顶部搜索 -->
+  <template is="bar-search" data="{{placeholder: '馆藏查询', value: query, queryFocus: queryFocus}}" />
+
+  <view class="query-list">
+    <block wx:for="{{bookList}}" wx:key="{{item.id}}">
+      <template is="list-book" data="{{...item, query: true}}" />
+    </block>
+    <template wx:if="{{!bookList.length}}" is="placeholder-basic" data="{{bg:'/images/placeholder/bg_no_data.png'}}" />
+  </view>
+  <view wx:if="{{bookList.length}}" class="query-list__foot">
+    <text class="query-list__tip">已显示全部</text>
+  </view>
+</view>
+
+<view wx:if="{{detailStatus}}" class="query-detail" id="query-detail" bindtap="hideDetail">
+  <view wx:if="{{bookDetail.length}}" class="query-detail__box">
+    <view class="query-detail__content">
+      <view class="query-detail__item" wx:for="{{bookDetail}}" wx:key="*this">
+        <text class="query-detail__place">{{item.place}}</text>
+        <text class="query-detail__state">{{item.state ? '可借' : '不可借'}}</text>
+      </view>
+    </view>
+  </view>
+</view>

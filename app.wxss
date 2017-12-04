@@ -9,3 +9,4 @@
 @import "/template/placeholder/placeholder.wxss";
 @import "/template/course/course.wxss";
 @import "/template/details/details.wxss";
+@import "/template/bar/bar.wxss";

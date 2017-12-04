@@ -87,13 +87,19 @@
 
 <!-- 图书列表 -->
 <template name="list-book">
-  <view class="list-book">
+  <view class="list-book" id="{{id}}" bindtap="showDetail">
     <view class="list-book__head">
-      <text class="list-book__title">高级程序设计</text>
-      <text class="list-book__renew">续借</text>
+      <text class="{{query ? 'list-book__title--query' : 'list-book__title'}}">{{title}}</text>
+      <text wx:if="{{0}}" class="list-book__renew">续借</text>
     </view>
-    <text class="list-book__place">剩余33天</text>
-    <text class="list-book__time">2017-10-24 至 2017-10-24</text>
+    <view wx:if="{{query}}" class="list-book__query">
+      <text wx:if="{{callNumber}}" class="list-book__meta">{{callNumber}}</text>
+      <text wx:if="{{author}}" class="list-book__meta">{{author}}</text>
+      <text wx:if="{{publisher}}" class="list-book__meta">{{publisher}}</text>
+    </view>
+
+    <!-- <text class="list-book__place">剩余33天</text>
+    <text class="list-book__time">2017-10-24 至 2017-10-24</text> -->
   </view>
 </template>
 

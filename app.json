@@ -6,6 +6,7 @@
     "pages/tools/physical/physical",
     "pages/tools/repair/repair",
     "pages/tools/library/library",
+    "pages/tools/library/query",
     "pages/tools/classroom/classroom",
     "pages/tools/card/card",
     "pages/tools/card/reversion",
