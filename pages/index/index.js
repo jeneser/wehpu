@@ -150,7 +150,7 @@ Page({
     // 从缓存中获取
     if (app.store.courses) {
       this.updateView(app.store.courses);
-      console.log(this.data);
+      // console.log(this.data);
     } else {
       //发起网络请求
       wx.request({
@@ -234,7 +234,7 @@ Page({
     this.setData(data);
     this.checkCourse();
 
-    console.log(this.data);
+    // console.log(this.data);
     wx.hideLoading();
   },
 
