@@ -1,18 +1,38 @@
 <!-- 导入模板 -->
+<import src="/template/help/help.wxml" />
+<import src="/template/tip/tip.wxml" />
 <import src="/template/bar/bar.wxml" />
 <import src="/template/placeholder/placeholder.wxml" />
 <import src="/template/list/list.wxml" />
 
 <!-- 图书馆 -->
 <view class="library">
-  <template wx:if="{{0}}" is="placeholder-fullpage" data="{{bg: '/images/placeholder/bg_book.png', text: '图书馆系统升级,暂无法提供服务'}}"
-  />
-
   <!-- 顶部搜索 -->
   <template is="bar-search" data="{{placeholder: '馆藏查询', queryFocus: queryFocus}}" />
 
   <!-- 借阅图书列表 -->
-  <template is="list-book" />
-  <template is="list-book" />
+  <block wx:for="{{borrowingList}}" wx:key="{{item.name}}">
+    <template is="list-book" data="{{...item, borrowing: true, id: 'borrowing'}}" />
+  </block>
 
+  <view wx:if="{{borrowingList.length}}" class="foot">
+    <text class="foot__tip">已显示全部</text>
+  </view>
+
+  <template wx:if="{{!borrowingList.length}}" is="placeholder-fullpage" data="{{bg: '/images/placeholder/bg_book.png'}}" />
 </view>
+
+<view wx:if="{{modelStatus}}" class="model" id="model" bindtap="hideModel">
+  <view class="model__box">
+    <view class="model__content">
+      <input id="libPassWord" type="password" class="model__input {{libPassWordFocus === true ? 'input-active' : ''}}" value=""
+        confirm-type="done" placeholder="图书馆登陆密码" bindinput="handleInput" bindfocus="inputFocus" bindblur="inputBlur" />
+      <image class="model__ic-send" src="/images/common/send.png" bindtap="submit"></image>
+      <!-- tip -->
+      <template is="tip-basic" data="{{text: '不清楚登陆密码, ', help: '帮助?'}}" />
+    </view>
+  </view>
+</view>
+
+<!-- 帮助 -->
+<template is="help" data="{{...help}}" />

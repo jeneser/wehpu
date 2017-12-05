@@ -2,3 +2,63 @@
   padding: 0 30rpx 30rpx 30rpx;
 }
 
+/* model */
+.model {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9;
+}
+.model__box {
+  position: relative;
+  width: 75%;
+  max-height: 80%;
+  padding: 45rpx 45rpx 15rpx 45rpx;
+  background-color: #fff;
+  border-radius: 5rpx;
+  overflow-y: scroll;
+  z-index: 10;
+}
+.model__content {
+  position: relative;
+  width: 100%;
+  margin-bottom: 30rpx;
+  overflow: hidden;
+}
+.model__input {
+  margin-bottom: 80rpx;
+  padding: 30rpx 60rpx 30rpx 0;
+  vertical-align: baseline;
+  font-size: 11pt;
+  border-bottom: solid 1rpx #eee;
+  z-index: 1;
+}
+.input-placeholder {
+  color: #999;
+}
+.model__ic-send {
+  position: absolute;
+  top: 30rpx;
+  right: 0;
+  width: 64rpx;
+  height: 64rpx;
+}
+.input-active {
+  border-color: #0099ff;
+}
+
+/* 底部 */
+.foot {
+  margin-top: 15rpx;
+  text-align: center;
+}
+.foot__tip {
+  font-size: 9pt;
+  color: #999;
+}

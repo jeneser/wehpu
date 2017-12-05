@@ -2,18 +2,49 @@ var app = getApp();
 
 Page({
   data: {
+    borrowingList: [],
     query: '',
-    queryFocus: false
+    libPassWord: '',
+    queryFocus: false,
+    libPassWordFocus: false,
+    modelStatus: true,
+    help: {
+      helpStatus: false,
+      faqList: [
+        {
+          question: '1.不清楚登陆密码?',
+          answer: '初次登陆，请到校图书馆主页进行设置。'
+        },
+        {
+          question: '2.忘记密码?',
+          answer: '需凭本人有效证件到南校区图书馆三楼数据中心进行查询'
+        },
+        {
+          question: '3.无法认证?',
+          answer: '请避开网络高峰期。若有疑问请联系客服人员或提交反馈给我们。'
+        }
+      ]
+    }
   },
 
   onLoad: function() {
-    // this.getBorrowing();
+    this.checkUserInfo();
+    if (app.store.libPassWord) {
+      this.getBorrowing();
+    }
   },
 
   handleInput: function(e) {
-    this.setData({
-      query: e.detail.value
-    })
+    if (e.target.id === 'query') {
+      this.setData({
+        query: e.detail.value
+      });
+    } else if (e.target.id === 'libPassWord') {
+      this.setData({
+        libPassWord: e.detail.value
+      });
+      console.log(this.data);
+    }
   },
 
   // 获取焦点
@@ -21,6 +52,10 @@ Page({
     if (e.target.id === 'query') {
       this.setData({
         queryFocus: true
+      });
+    } else if (e.target.id === 'libPassWord') {
+      this.setData({
+        libPassWordFocus: true
       });
     }
   },
@@ -31,6 +66,23 @@ Page({
       this.setData({
         queryFocus: false
       });
+    } else if (e.target.id === 'libPassWord') {
+      this.setData({
+        libPassWordFocus: false
+      });
+    }
+  },
+
+  checkUserInfo: function() {
+    if (app.store.libPassWord) {
+      // 更新视图
+      this.setData({
+        modelStatus: false
+      });
+
+      return true;
+    } else {
+      return false;
     }
   },
 
@@ -38,57 +90,178 @@ Page({
     if (e && e.target.id === 'query') {
       this.setData({
         query: e.detail.value
-      })
+      });
     }
-    console.log(this.data)
+    console.log(this.data);
 
-    if(e.detail.value || this.data.query) {
+    if (e.detail.value || this.data.query) {
       wx.navigateTo({
         url: 'query?q=' + this.data.query
       });
     }
   },
 
-  // getBorrowing: function() {
-  //   // 加载中
-  //   wx.showLoading({
-  //     title: '获取课表中',
-  //     mask: true
-  //   });
+  getBorrowing: function() {
+    // 加载中
+    wx.showLoading({
+      title: '获取中',
+      mask: true
+    });
 
-  //   wx.request({
-  //     url: app.api + '/library/books',
-  //     method: 'GET',
-  //     query: {
-  //       q: query
-  //     },
-  //     header: {
-  //       'content-type': 'application/x-www-form-urlencoded',
-  //       Authorization: 'Bearer ' + app.store.token
-  //     },
-  //     success: requestRes => {
-  //       var _requestRes = requestRes.data;
-  //       // console.log(requestRes);
+    wx.request({
+      url: app.api + '/library/borrowing',
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        Authorization: 'Bearer ' + app.store.token
+      },
+      success: requestRes => {
+        var _requestRes = requestRes.data;
+        // console.log(requestRes);
 
-  //       if (_requestRes.statusCode === 200) {
-  //         console.log(_requestRes);
-  //       } else {
-  //         wx.hideLoading();
-  //         wx.showToast({
-  //           title: '获取课表失败',
-  //           icon: '/images/common/fail.png',
-  //           duration: 2000
-  //         });
-  //       }
-  //     },
-  //     fail: () => {
-  //       wx.hideLoading();
-  //       wx.showToast({
-  //         title: '未知错误',
-  //         icon: '/images/common/fail.png',
-  //         duration: 2000
-  //       });
-  //     }
-  //   });
-  // }
+        if (_requestRes.statusCode === 200) {
+          console.log(_requestRes);
+          this.setData({
+            borrowingList: _requestRes.data
+          });
+        } else {
+          wx.hideLoading();
+          wx.showToast({
+            title: '获取失败',
+            image: '/images/common/fail.png',
+            duration: 2000
+          });
+        }
+      },
+      fail: () => {
+        wx.hideLoading();
+        wx.showToast({
+          title: '未知错误',
+          image: '/images/common/fail.png',
+          duration: 2000
+        });
+      },
+      complete: () => {
+        wx.hideLoading();
+      }
+    });
+  },
+
+  // 更新用户信息
+  submit: function() {
+    var libPassWord = this.data.libPassWord;
+    if (!libPassWord) {
+      return;
+    }
+    // 加载中
+    wx.showLoading({
+      title: '获取中',
+      mask: true
+    });
+
+    wx.request({
+      url: app.api + '/user',
+      method: 'PUT',
+      data: {
+        key: 'libPassWord',
+        value: libPassWord
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        Authorization: 'Bearer ' + app.store.token
+      },
+      success: requestRes => {
+        var _requestRes = requestRes.data;
+        // console.log(requestRes);
+
+        if (_requestRes.statusCode === 201) {
+          console.log(_requestRes);
+          // 更新视图
+          this.setData({
+            modelStatus: false
+          });
+          this.setStore('libPassWord', true);
+          wx.showToast({
+            title: '已绑定',
+            icon: 'success',
+            duration: 2000
+          });
+
+          // 查询借阅情况
+          this.getBorrowing();
+        } else {
+          wx.showToast({
+            title: '更新失败',
+            image: '/images/common/fail.png',
+            duration: 2000
+          });
+        }
+      },
+      fail: () => {
+        wx.hideLoading();
+        wx.showToast({
+          title: '未知错误',
+          image: '/images/common/fail.png',
+          duration: 2000
+        });
+      },
+      complete: () => {
+        wx.hideLoading();
+      }
+    });
+  },
+
+  renew: function() {
+    wx.showModal({
+      title: '提示',
+      showCancel: false,
+      content: '续借功能即将到来，请耐心等待',
+      success: res => {}
+    });
+  },
+
+  showDetail: function() {},
+
+  showModel: function(e) {
+    var id = e.currentTarget.id;
+
+    // 更新视图
+    this.setData({
+      modelStatus: true
+    });
+  },
+
+  hideModel: function(e) {
+    if (e.target.id === 'model' || e.target.id === 'close') {
+      this.setData({
+        modelStatus: false
+      });
+    }
+  },
+
+  // 更新store和storage
+  setStore: function(key, value) {
+    if (!key) {
+      return;
+    }
+    app.store[key] = value;
+    wx.setStorage({
+      key: key,
+      data: value
+    });
+  },
+
+  // 帮助
+  showHelp: function() {
+    this.setData({
+      'help.helpStatus': true
+    });
+  },
+  hideHelp: function(e) {
+    if (e.target.id === 'help' || e.target.id === 'close-help') {
+      this.setData({
+        'help.helpStatus': false
+      });
+    }
+  }
 });

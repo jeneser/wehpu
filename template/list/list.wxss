@@ -228,9 +228,9 @@
   align-items: center;
 }
 .list-book__title {
-  width: 65%;
+  width: 80%;
   margin-bottom: 15rpx;
-  font-size: 13pt;
+  font-size: 12pt;
   font-weight: bold;
   color: #000;
   white-space: nowrap;
@@ -250,6 +250,10 @@
   color: #0099ff;
   border: solid 1rpx #0099ff;
 }
+.list-book__renew--disabled {
+  color: #999;
+  border: solid 1rpx #999;
+}
 .list-book__meta,
 .list-book__place,
 .list-book__time {
@@ -260,6 +264,10 @@
   color: #999;
 }
 
+.list-book__borrowing {
+  display: flex;
+  flex-direction: column;
+}
 .list-book__query {
   display: flex;
   flex-wrap: wrap;
