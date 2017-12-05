@@ -1,4 +1,4 @@
-/* 报修 */
+/* 饭卡回家 */
 .reversion {
   box-sizing: border-box;
   background-color: #f7f7f7;
@@ -42,6 +42,9 @@
   height: 64rpx;
   margin-left: 45rpx;
 }
+.content {
+  z-index: 1;
+}
 
 /* 提交反馈 */
 .reversion-form__post {
@@ -52,4 +55,32 @@
   background-color: #0099ff;
   border: none;
   outline: none;
+}
+
+/* 成功 */
+.succeed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 45rpx;
+  margin: 15rpx;
+}
+.succeed__title {
+  padding-bottom: 80rpx;
+  font-size: 16pt;
+  color: #000;
+  font-weight: bold;
+}
+.succeed__tip {
+  display: inline-block;
+  padding-bottom: 15rpx;
+  font-size: 9pt;
+  color: #999;
+  font-weight: bold;
+}
+
+/* reset */
+.tip-basic {
+  margin-top: 80rpx;
 }

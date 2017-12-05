@@ -1,48 +1,78 @@
+<!-- 导入模板 -->
+<import src="/template/help/help.wxml" />
+<import src="/template/tip/tip.wxml" />
+
 <view class="reversion">
-  <form bindsubmit="formSubmit">
+  <form wx:if="{{succeed === false}}" bindsubmit="formSubmit" report-submit='true'>
     <view class="reversion-form__item">
       <view class="reversion-form__title">
         <text class="reversion-form__text">失主学号</text>
         <text class="reversion-form__required">*</text>
       </view>
       <view class="reversion-form__container">
-        <input id="studentId" class="reversion-form__input" type="number" value="" confirm-type="done" auto-focus="true" placeholder="学号/一卡通号"
-          bindfocus="inputFocus" bindblur="inputBlur" />
-        <image class="reversion-form__r-icon" src="/images/ic_sync_big.png" bindtap="checkUser"></image>
-      </view>
-    </view>
-    <view class="reversion-form__item">
-      <view class="reversion-form__title">
-        <text class="reversion-form__text">捡卡人</text>
-        <text class="reversion-form__required">*</text>
-      </view>
-      <view class="reversion-form__container">
-        <input id="publisher" class="reversion-form__input" type="text" confirm-type="done" placeholder="输入你的姓名" bindblur="inputBlur"
+        <input id="studentId" class="reversion-form__input" type="number" value="" confirm-type="done" placeholder="学号/一卡通号" bindblur="inputBlur"
         />
+        <image class="reversion-form__r-icon" src="{{exist ? '/images/ic_succeed.png' : '/images/common/send.png'}}" bindtap="checkUser"></image>
       </view>
     </view>
-    <view class="reversion-form__item">
-      <view class="reversion-form__title">
-        <text class="reversion-form__text">联系方式</text>
-        <text class="reversion-form__required">*</text>
+
+    <block wx:if="{{exist}}">
+      <view class="reversion-form__item">
+        <view class="reversion-form__title">
+          <text class="reversion-form__text">失主姓名</text>
+          <text class="reversion-form__required">*</text>
+        </view>
+        <view class="reversion-form__container">
+          <input id="studentName" class="reversion-form__input" type="text" confirm-type="done" placeholder="失主姓名" bindblur="inputBlur"
+          />
+        </view>
       </view>
-      <view class="reversion-form__container">
-        <input id="contact" class="reversion-form__input" type="text" confirm-type="done" placeholder="你的联系方式" bindblur="inputBlur"
-        />
+      <view class="reversion-form__item">
+        <view class="reversion-form__title">
+          <text class="reversion-form__text">捡卡人</text>
+          <text class="reversion-form__required">*</text>
+        </view>
+        <view class="reversion-form__container">
+          <input id="publisher" class="reversion-form__input" type="text" confirm-type="done" placeholder="你的姓名" bindblur="inputBlur"
+          />
+        </view>
       </view>
-    </view>
-    <view class="reversion-form__item">
-      <view class="reversion-form__title">
-        <text class="reversion-form__text">备注</text>
-        <text class="reversion-form__required">*</text>
+      <view class="reversion-form__item">
+        <view class="reversion-form__title">
+          <text class="reversion-form__text">联系方式</text>
+          <text class="reversion-form__required">*</text>
+        </view>
+        <view class="reversion-form__container">
+          <input id="contact" class="reversion-form__input" type="text" confirm-type="done" placeholder="你的联系方式" bindblur="inputBlur"
+          />
+        </view>
       </view>
-      <textarea id="comment" class="content" name="textarea" maxlength="300" auto-height="true" cursor-spacing="45" placeholder="给失主捎句话"
-        placeholder-style="color: #999;" bindblur="inputBlur" />
-    </view>
-    <!-- 提交 -->
-    <view class="reversion-form__item reversion-form__post">
-      <button class="reversion-form__button--post" formType="submit">发送通知</button>
-    </view>
+      <view class="reversion-form__item">
+        <view class="reversion-form__title">
+          <text class="reversion-form__text">备注</text>
+          <text class="reversion-form__required">*</text>
+        </view>
+        <textarea id="comment" class="content" name="textarea" maxlength="300" auto-height="true" cursor-spacing="45" placeholder="给失主捎句话"
+          placeholder-style="color: #999;" bindblur="inputBlur" />
+      </view>
+      <!-- 提交 -->
+      <view class="reversion-form__item reversion-form__post">
+        <button class="reversion-form__button--post" formType="submit">发送通知</button>
+      </view>
+    </block>
   </form>
 
+  <!-- 反馈成功 -->
+  <view wx:if="{{succeed === true}}" class="succeed">
+    <view class="succeed__title">
+      <text>感谢您</text>
+    </view>
+    <text class="succeed__tip">系统已成功通知失主。谢谢您，雷锋同学。</text>
+  </view>
 </view>
+
+<!-- tip -->
+<template is="tip-basic" data="{{text: '不了解饭卡回家, ', help: '帮助?'}}" />
+
+<!-- 帮助 -->
+<template is="help" data="{{...help}}" />
