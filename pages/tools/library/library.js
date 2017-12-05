@@ -2,12 +2,17 @@ var app = getApp();
 
 Page({
   data: {
+    // 借阅图书
     borrowingList: [],
+    // 查询关键字
     query: '',
+    // 暂存图书馆登陆密码
     libPassWord: '',
+    // 聚焦
     queryFocus: false,
     libPassWordFocus: false,
     modelStatus: true,
+    // 帮助
     help: {
       helpStatus: false,
       faqList: [
@@ -34,6 +39,14 @@ Page({
     }
   },
 
+  onPullDownRefresh: function() {
+    if (app.store.libPassWord) {
+      this.getBorrowing();
+    }
+    wx.stopPullDownRefresh();
+  },
+
+  // 输入
   handleInput: function(e) {
     if (e.target.id === 'query') {
       this.setData({
@@ -43,7 +56,6 @@ Page({
       this.setData({
         libPassWord: e.detail.value
       });
-      console.log(this.data);
     }
   },
 
@@ -73,6 +85,7 @@ Page({
     }
   },
 
+  // 检查是否绑定密码
   checkUserInfo: function() {
     if (app.store.libPassWord) {
       // 更新视图
@@ -86,13 +99,13 @@ Page({
     }
   },
 
+  // 查询图书
   queryBook: function(e) {
     if (e && e.target.id === 'query') {
       this.setData({
         query: e.detail.value
       });
     }
-    console.log(this.data);
 
     if (e.detail.value || this.data.query) {
       wx.navigateTo({
@@ -101,6 +114,7 @@ Page({
     }
   },
 
+  // 获取借阅信息
   getBorrowing: function() {
     // 加载中
     wx.showLoading({
@@ -120,7 +134,7 @@ Page({
         // console.log(requestRes);
 
         if (_requestRes.statusCode === 200) {
-          console.log(_requestRes);
+          // console.log(_requestRes);
           this.setData({
             borrowingList: _requestRes.data
           });
@@ -175,7 +189,7 @@ Page({
         // console.log(requestRes);
 
         if (_requestRes.statusCode === 201) {
-          console.log(_requestRes);
+          // console.log(_requestRes);
           // 更新视图
           this.setData({
             modelStatus: false
@@ -211,6 +225,7 @@ Page({
     });
   },
 
+  // 续借
   renew: function() {
     wx.showModal({
       title: '提示',
@@ -220,6 +235,7 @@ Page({
     });
   },
 
+  // 模态窗
   showDetail: function() {},
 
   showModel: function(e) {
