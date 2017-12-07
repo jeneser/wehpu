@@ -136,7 +136,6 @@ Page({
 
   // 更改区域
   bindAreaChange: function(e) {
-    console.log('bindAreaChange', e.detail.value);
     this.setData({
       areaIndex: e.detail.value
     });
@@ -230,7 +229,6 @@ Page({
     }
 
     this.setData(data);
-    console.log(this.data.projectIndex);
   },
 
   // 处理反馈内容
@@ -293,8 +291,6 @@ Page({
       imgList: ''
     };
 
-    console.log(field);
-
     if (!this.checkField()) {
       wx.showToast({
         title: '请正确填写表单',
@@ -320,7 +316,6 @@ Page({
       },
       success: requestRes => {
         var _requestRes = requestRes.data;
-        console.log(requestRes);
 
         if (_requestRes.statusCode === 201) {
           // console.log(_requestRes);

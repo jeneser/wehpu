@@ -16,8 +16,6 @@ Page({
 
       this.queryBook();
     }
-
-    console.log(this.data);
   },
 
   handleInput: function(e) {
@@ -50,7 +48,6 @@ Page({
         query: e.detail.value
       });
     }
-    console.log(this.data);
     // 加载中
     wx.showLoading({
       title: '查询中',
@@ -72,7 +69,6 @@ Page({
         // console.log(requestRes);
 
         if (_requestRes.statusCode === 200) {
-          console.log(_requestRes);
           this.setData({
             bookList: _requestRes.data
           });
@@ -121,12 +117,9 @@ Page({
         // console.log(requestRes);
 
         if (_requestRes.statusCode === 200) {
-          console.log(_requestRes);
           this.setData({
             bookDetail: _requestRes.data
           });
-
-          console.log(this.data);
         } else {
           wx.hideLoading();
           wx.showToast({
@@ -152,8 +145,6 @@ Page({
 
   showDetail: function(e) {
     var id = e.currentTarget.id;
-
-    console.log(id);
 
     if (id) {
       this.getDetail(id);
