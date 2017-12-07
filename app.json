@@ -1,18 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    
-    "pages/tools/calendar/calendar",
-    "pages/tools/physical/physical",
-    "pages/tools/repair/repair",
-    "pages/tools/library/library",
-    "pages/tools/library/query",
-    "pages/tools/classroom/classroom",
-    "pages/tools/card/card",
-    "pages/tools/card/reversion",
-    "pages/tools/score/score",
-    "pages/tools/cet/cet",
-    "pages/tools/course/course",
 
     "pages/news/news",
     "pages/news/news_details",
@@ -23,7 +11,19 @@
     "pages/more/feedback/feedback",
     "pages/more/about/about",
     "pages/more/about/donate",
-    "pages/more/about/opensource"
+    "pages/more/about/opensource",
+
+    "pages/tools/calendar/calendar",
+    "pages/tools/physical/physical",
+    "pages/tools/repair/repair",
+    "pages/tools/library/library",
+    "pages/tools/library/query",
+    "pages/tools/classroom/classroom",
+    "pages/tools/card/card",
+    "pages/tools/card/reversion",
+    "pages/tools/score/score",
+    "pages/tools/cet/cet",
+    "pages/tools/course/course"
   ],
   "window": {
     "navigationBarTextStyle": "black",
