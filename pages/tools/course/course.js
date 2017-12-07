@@ -126,7 +126,7 @@ Page({
             wx.hideLoading();
             wx.showToast({
               title: '获取课表失败',
-              icon: '/images/common/fail.png',
+              image: '/images/common/fail.png',
               duration: 2000
             });
           }
@@ -135,7 +135,7 @@ Page({
           wx.hideLoading();
           wx.showToast({
             title: '未知错误',
-            icon: '/images/common/fail.png',
+            image: '/images/common/fail.png',
             duration: 2000
           });
         }

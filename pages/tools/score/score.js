@@ -55,13 +55,13 @@ Page({
         } else if (_requestRes.statusCode === 404) {
           wx.showToast({
             title: '无结果',
-            icon: '/images/common/fail.png',
+            image: '/images/common/fail.png',
             duration: 2000
           });
         } else {
           wx.showToast({
             title: '未知错误',
-            icon: '/images/common/fail.png',
+            image: '/images/common/fail.png',
             duration: 2000
           });
         }
@@ -70,7 +70,7 @@ Page({
         wx.hideLoading();
         wx.showToast({
           title: '未知错误',
-          icon: '/images/common/fail.png',
+          image: '/images/common/fail.png',
           duration: 2000
         });
       }
