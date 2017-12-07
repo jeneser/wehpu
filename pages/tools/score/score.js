@@ -4,6 +4,8 @@ Page({
   data: {
     title: '本学期成绩',
     scoreList: [],
+    detailStatus: false,
+    scoreDetail: {},
     help: {
       helpStatus: false,
       faqList: [
@@ -50,8 +52,6 @@ Page({
           this.setData({
             scoreList: _requestRes.data
           });
-          // 暂存本次查询地点
-          // this.setStore('usedBuilding', this.data.locationIndex);
         } else if (_requestRes.statusCode === 404) {
           wx.showToast({
             title: '无结果',
@@ -75,6 +75,25 @@ Page({
         });
       }
     });
+  },
+
+  // 详情
+  showDetail: function(e) {
+    var data = e.currentTarget.dataset.score;
+
+    // 更新视图
+    this.setData({
+      detailStatus: true,
+      scoreDetail: data
+    });
+  },
+
+  hideDetail: function(e) {
+    if (e.target.id === 'score-detail' || e.target.id === 'close-detail') {
+      this.setData({
+        detailStatus: false
+      });
+    }
   },
 
   // 帮助

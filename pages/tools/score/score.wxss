@@ -9,3 +9,41 @@
   overflow-y: scroll;
   background-color: #f7f7f7;
 }
+
+/* 详细信息 */
+.score-detail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9;
+}
+.score-detail__box {
+  position: relative;
+  width: 75%;
+  max-height: 80%;
+  padding: 45rpx 45rpx 15rpx 45rpx;
+  background-color: #fff;
+  border-radius: 5rpx;
+  overflow-y: scroll;
+  z-index: 10;
+}
+.score-detail__content {
+  margin-bottom: 30rpx;
+}
+.score-detail__item {
+  display: flex;
+  padding: 30rpx 0;
+  font-size: 11pt;
+  color: #000;
+  border-top: solid 1rpx #f7f7f7;
+}
+.score-detail__key {
+  margin-right: 15rpx;
+  color: #999;
+}

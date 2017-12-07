@@ -9,3 +9,34 @@
   <!-- 帮助 -->
   <template is="help" data="{{...help}}" />
 </view>
+
+<view wx:if="{{detailStatus}}" class="score-detail" id="score-detail" bindtap="hideDetail">
+  <view class="score-detail__box">
+    <view class="score-detail__content">
+      <view class="score-detail__item">
+        <text class="score-detail__key">课程</text>
+        <text class="score-detail__value">{{scoreDetail.name}}</text>
+      </view>
+      <view class="score-detail__item">
+        <text class="score-detail__key">分数</text>
+        <text class="score-detail__value">{{scoreDetail.mark || '-'}}</text>
+      </view>
+      <view class="score-detail__item">
+        <text class="score-detail__key">排名</text>
+        <text class="score-detail__value">{{scoreDetail.rank || '-'}}</text>
+      </view>
+      <view class="score-detail__item">
+        <text class="score-detail__key">平均</text>
+        <text class="score-detail__value">{{scoreDetail.average || '-'}}</text>
+      </view>
+      <view class="score-detail__item">
+        <text class="score-detail__key">最高</text>
+        <text class="score-detail__value">{{scoreDetail.highest || '-'}}</text>
+      </view>
+      <view class="score-detail__item">
+        <text class="score-detail__key">最低</text>
+        <text class="score-detail__value">{{scoreDetail.lowest || '-'}}</text>
+      </view>
+    </view>
+  </view>
+</view>

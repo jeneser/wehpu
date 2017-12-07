@@ -63,9 +63,9 @@
     </view>
     <view class="card-score__box">
       <block wx:if="{{scoreList}}" wx:for="{{scoreList}}" wx:key="courseName">
-        <view class="card-score__item">
+        <view class="card-score__item" data-score="{{item}}" bindtap="showDetail">
           <text class="card-score__course-name">{{item.name}}</text>
-          <text class="card-score__mark">{{item.mark}}</text>
+          <text class="card-score__mark">{{item.mark ? item.mark : '-'}}</text>
         </view>
       </block>
       <block wx:if="{{scoreList.length === 0}}">
