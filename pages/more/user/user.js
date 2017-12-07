@@ -25,7 +25,7 @@ Page({
         name: store.name,
         nickName: store.nickName,
         studentId: store.studentId,
-        dormitory: '--'
+        dormitory: store.usedBAddress ? store.usedBAddress.replace(/[^0-9]/g, '') : '--'
       };
 
       // 更新数据
