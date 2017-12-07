@@ -3,7 +3,7 @@
 
 <!-- 报修 -->
 <view class="repair">
-  <form class="repair-form" bindsubmit="formSubmit">
+  <form wx:if="{{succeed === false}}" class="repair-form" bindsubmit="formSubmit">
     <!-- 故障区域 -->
     <view class="repair-form__item">
       <view class="repair-form__title">
@@ -11,12 +11,12 @@
         <text class="repair-form__required">*</text>
       </view>
       <view class="repair-form__container">
-        <picker class="repair-form__picker" bindchange="bindPickerChange" value="{{locationIndex}}" range="{{location}}">
+        <picker class="repair-form__picker" bindchange="bindAreaChange" value="{{areaIndex}}" range="{{area}}">
           <view class="repair-form__field">
-            <text class="repair-form__value">{{location[locationIndex]}}</text>
+            <text class="repair-form__value">{{area[areaIndex]}}</text>
           </view>
         </picker>
-        <image class="repair-form__r-icon" src="/images/ic_location.png" bindtap="chooseLocation"></image>
+        <image class="repair-form__r-icon" src="/images/ic_location.png" bindtap=""></image>
       </view>
     </view>
     <!-- 详细地址 -->
@@ -26,7 +26,8 @@
         <text class="repair-form__required">*</text>
       </view>
       <view class="repair-form__container">
-        <input type="text" confirm-type="done" placeholder="请输入详细地址" />
+        <input id="bAddress" class="repair-form__input" type="text" value="{{bAddress}}" confirm-type="done" placeholder="请输入寝室号" bindblur="inputBlur"
+        />
       </view>
     </view>
     <!-- 维修项目 -->
@@ -36,7 +37,8 @@
         <text class="repair-form__required">*</text>
       </view>
       <view class="repair-form__container">
-        <picker class="repair-form__picker" mode="multiSelector" bindchange="bindProjectChange" value="{{projectIndex}}" range="{{project}}">
+        <picker class="repair-form__picker" mode="multiSelector" bindchange="bindProjectChange" bindcolumnchange="bindprojectColumnChange"
+          value="{{projectIndex}}" range="{{project}}">
           <view class="repair-form__field">
             <text class="repair-form__value">{{project[0][projectIndex[0]]}} / </text>
             <text class="repair-form__value">{{project[1][projectIndex[1]]}}</text>
@@ -51,7 +53,8 @@
         <text class="repair-form__required">*</text>
       </view>
       <view class="repair-form__container">
-        <input type="number" confirm-type="done" placeholder="请输入手机号码" />
+        <input id="mobile" class="repair-form__input" type="number" value="{{mobile}}" confirm-type="done" placeholder="请输入手机号码" bindblur="inputBlur"
+        />
       </view>
     </view>
     <!-- 故障详情 -->
@@ -60,14 +63,22 @@
         <text class="repair-form__text">故障详情</text>
         <text class="repair-form__required">*</text>
       </view>
-      <textarea class="content" name="textarea" maxlength="300" auto-height="true" cursor-spacing="45" placeholder="请详细描述您的问题,可附图"
-        placeholder-style="color: #999;" />
+      <textarea id="bContent" class="content" name="textarea" maxlength="400" auto-height="true" cursor-spacing="45" placeholder="请详细描述您的问题,可附图"
+        placeholder-style="color: #999;" bindblur="inputBlur" />
       <!-- 图片上传 -->
-      <template is="upload-photo" data="{{imageList}}" />
+      <template is="upload-photo" data="{{tempImageList}}" />
     </view>
     <!-- 提交 -->
     <view class="repair-form__item repair-form__post">
       <button class="repair-form__button--post" form-type="submit">提交信息</button>
     </view>
   </form>
+
+  <!-- 成功 -->
+  <view wx:if="{{succeed === true}}" class="succeed">
+    <view class="succeed__title">
+      <text>报修成功</text>
+    </view>
+    <text class="succeed__tip">请耐心等待后勤师傅前来维修</text>
+  </view>
 </view>

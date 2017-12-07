@@ -62,7 +62,7 @@
     </block>
   </form>
 
-  <!-- 反馈成功 -->
+  <!-- 成功 -->
   <view wx:if="{{succeed === true}}" class="succeed">
     <view class="succeed__title">
       <text>感谢您</text>

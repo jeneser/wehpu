@@ -39,7 +39,7 @@
   margin-left: 45rpx;
 }
 
-/* 提交反馈 */
+/* 提交 */
 .repair-form__post {
   margin-bottom: 0;
 }
@@ -48,4 +48,27 @@
   background-color: #0099ff;
   border: none;
   outline: none;
+}
+
+/* 成功 */
+.succeed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 45rpx;
+  margin: 15rpx;
+}
+.succeed__title {
+  padding-bottom: 80rpx;
+  font-size: 16pt;
+  color: #000;
+  font-weight: bold;
+}
+.succeed__tip {
+  display: inline-block;
+  padding-bottom: 15rpx;
+  font-size: 9pt;
+  color: #999;
+  font-weight: bold;
 }
