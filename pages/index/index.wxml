@@ -23,11 +23,11 @@
   </swiper>
   <!-- 课表信息 -->
   <view class="main">
-    <!-- 暂无课程 -->
-    <template wx:if="{{todayCourse.length === 0 && bind}}" is="placeholder-basic" data="{{text: '暂无课程', bg: '/images/placeholder/bg_no_data.png'}}"
-    />
     <!-- 课程列表 -->
-    <template wx:elif="{{todayCourse.length !== 0}}" is="list-course" data="{{courses: todayCourse}}" />
+    <template wx:if="{{todayCourse.length !== 0}}" is="list-course" data="{{courses: todayCourse}}" />
+    <!-- 暂无课程 -->
+    <template wx:elif="{{todayCourse.length === 0 && bind}}" is="placeholder-basic" data="{{text: '暂无课程', bg: '/images/placeholder/bg_no_data.png'}}"
+    />
     <!-- 未绑定 -->
     <template wx:else is="placeholder-basic" data="{{href: '/pages/more/binding', text: '未绑定', bg: '/images/placeholder/bg_no_login.png'}}"
     />

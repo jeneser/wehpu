@@ -108,10 +108,21 @@ Page({
   onLoad: function() {
     // 获取用户基本信息
     this.getUserInfo();
-    // 设置日期
-    this.setDate();
-    this.getCourse();
-    this.getTodayCourse();
+    if (this.data.bind) {
+      // 设置日期
+      this.setDate();
+      this.getCourse();
+      this.getTodayCourse();
+    }
+  },
+
+  onShow: function() {
+    if (!this.data.todayCourse.length && this.data.bind) {
+      // 设置日期
+      this.setDate();
+      this.getCourse();
+      this.getTodayCourse();
+    }
   },
 
   onPullDownRefresh: function() {
