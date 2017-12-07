@@ -1,20 +1,6 @@
 <!-- 导入模板 -->
 <import src="/template/placeholder/placeholder.wxml" />
 
-<!-- 基础卡片 -->
-<template name="card-basis">
-  <navigator class="card-basis" url="{{href}}">
-    <view class="card-basis__content">
-      <text class="card-basis__title">{{title}}</text>
-      <view class="card-basis__meta">
-        <image wx:if="{{icon}}" class="card-basis__l-icon" src="/images/{{icon}}.png"></image>
-        <text wx:if="{{time}}" class="card-basis__time">{{time}}</text>
-        <text wx:if="{{description}}" class="card-basis__description">{{description}}</text>
-      </view>
-    </view>
-  </navigator>
-</template>
-
 <!-- 成绩卡片 -->
 <template name="card-score">
   <view class="card-score">
