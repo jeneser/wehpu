@@ -3,7 +3,7 @@
 
 <view class="donate">
   <view class="pay">
-    <view class="pay__tip">扫二维码捐助我，请随意打赏</view>
+    <view class="pay__tip">扫二维码捐助我，请量力而行</view>
     <image wx:if="{{mode === 'wechatpay'}}" class="pay__qrcode pay__wechatpay-qrcode" src="/images/more/wechatpay_qrcode.png"
       bindtap="previewImage"></image>
     <image wx:if="{{mode === 'alipay'}}" class="pay__qrcode pay__alipay-qrcode" src="/images/more/alipay_qrcode.png" bindtap="previewImage"></image>
