@@ -206,7 +206,7 @@ Page({
 
   getTodayCourse: function() {
     this.setData({
-      todayCourse: this.data[this.data._week[this.data.today]]
+      todayCourse: this.data[this.data._week[this.data.today]].reverse()
     });
   },
 
