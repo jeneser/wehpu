@@ -1,6 +1,5 @@
 @import "/template/card/card.wxss";
 @import "/template/head/head.wxss";
-@import "/template/button/button.wxss";
 @import "/template/list/list.wxss";
 @import "/template/upload/upload.wxss";
 @import "/template/help/help.wxss";
