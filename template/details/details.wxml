@@ -1,7 +1,7 @@
 <!-- 导入模板 -->
 <import src="/template/placeholder/placeholder.wxml" />
 
-<!-- 基础提示 -->
+<!-- 详情 -->
 <template name="details-common">
   <view class="details-common">
     <view wx:if="{{!href}}" class="details-common__head">

@@ -30,18 +30,6 @@
   </navigator>
 </template>
 
-<!-- 缩略图列表 -->
-<template name="list-thumbnail">
-  <view class="list-thumbnail__item">
-    <image class="list-thumbnail__image" src="{{image}}"></image>
-    <view class="list-thumbnail__meta">
-      <text class="list-thumbnail__title">{{title}}</text>
-      <text class="list-thumbnail__time">{{time}}</text>
-    </view>
-    <image class="list-thumbnail__r-icon" src="{{rIcon}}" bindtap="{{tapHandle}}"></image>
-  </view>
-</template>
-
 <!-- 头像列表 -->
 <template name="list-avatar">
   <view class="list-avatar">
@@ -109,6 +97,7 @@
   </view>
 </template>
 
+<!-- 体测成绩列表 -->
 <template name="list-physical">
   <view class="list-physical {{fold ? 'list-physical--fold' : ''}}">
     <view id="{{index}}" class="list-physical__head" bindtap="fold">
