@@ -23,14 +23,6 @@
   font-weight: 400;
   word-wrap: break-word;
 }
-.details-common__no-content {
-  text-align: center;
-}
-.details-common__tip {
-  font-size: 9pt;
-  color: #999;
-  font-weight: bold;
-}
 
 .download {
   display: flex;

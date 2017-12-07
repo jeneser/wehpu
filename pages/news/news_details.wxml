@@ -5,12 +5,8 @@
 
 <!-- 公告详情 -->
 <view class="news-details">
-  <template is="details-common" data="{{...news, suffix: suffix, preview: preview}}" />
+  <template wx:if="{{loading === false}}" is="details-common" data="{{...news, suffix: suffix, preview: preview}}" />
 
   <!-- 暂无 -->
   <template wx:if="{{loading === true}}" is="placeholder-fullpage" data="{{bg:'/images/placeholder/bg_no_data.png'}}" />
-
-  <view wx:if="{{!news.title}}" class="news-details__foot">
-    <text>试试下拉刷新</text>
-  </view>
 </view>

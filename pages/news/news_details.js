@@ -52,6 +52,8 @@ Page({
             loading: false
           });
 
+          wx.hideLoading();
+
           var _requestRes = res.data;
           if (_requestRes.statusCode === 200) {
             var _data = _requestRes.data;
@@ -116,6 +118,7 @@ Page({
           }
         },
         fail: () => {
+          wx.hideLoading();
           wx.showToast({
             title: '新闻走丢了',
             image: '/images/common/fail.png',
@@ -123,7 +126,6 @@ Page({
           });
         },
         complete: () => {
-          wx.hideLoading();
           wx.stopPullDownRefresh();
           this.data.pullDownFlag = true;
         }

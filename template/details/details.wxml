@@ -4,12 +4,12 @@
 <!-- 详情 -->
 <template name="details-common">
   <view class="details-common">
+    <!-- 头部 -->
     <view wx:if="{{!href}}" class="details-common__head">
       <view class="details-common__title">{{title}}</view>
       <view class="details-common__meta">
         <text wx:if="{{tag}}" class="details-common__tag">{{tag}}</text>
-        <text wx:if="{{time}}" class="details-common__time">{{time}}</text>
-        <text wx:if="{{timestamp}}" class="details-common__time">{{timestamp}}</text>
+        <text wx:if="{{time || timestamp}}" class="details-common__time">{{time || timestamp}}</text>
       </view>
     </view>
 
@@ -19,11 +19,9 @@
 
     <!-- 主题内容 -->
     <text wx:if="{{content}}" class="details-common__content">{{content}}</text>
+
     <!-- 暂无 -->
-    <view wx:if="{{!content && !href}}" class="details-common__no-content">
-      <template is="placeholder-fullpage" data="{{bg:'/images/placeholder/bg_no_data.png'}}" />
-      <text class="details-common__tip">文件过大或不适合展示</text>
-    </view>
+    <template wx:if="{{!content && !href}}" is="placeholder-fullpage" data="{{bg:'/images/placeholder/bg_no_data.png'}}" />
 
     <!-- 文件下载 -->
     <view wx:if="{{href}}" class="download">
