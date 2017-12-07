@@ -15,43 +15,6 @@
   </navigator>
 </template>
 
-<!-- 附加图片卡片 -->
-<template name="card-image">
-  <navigator src="{{href}}">
-    <view class="card-image">
-      <image class="card-image__cover" src="{{cover}}"></image>
-      <view class="card-image__info">
-        <text class="card-image__title">{{title}}</text>
-        <view class="card-image__meta">
-          <view class="card-image__from">
-            <image class="card-image__ic-from" src="/images/ic_from.png"></image>
-            <text class="card-image__author">{{author}}</text>
-          </view>
-          <view class="card-image__time">{{time}}</view>
-        </view>
-      </view>
-    </view>
-  </navigator>
-</template>
-
-<!-- 文章详情卡片 -->
-<template name="card-article">
-  <view class="card-article">
-    <view class="card-article__head">
-      <view class="card-article__title">{{title}}</view>
-    </view>
-    <view class="card-article__content">
-      <text>{{content}}</text>
-    </view>
-    <view class="card-article__foot">
-      <text class="card-article__from">{{from}}</text>
-      <button class="card-article__share" open-type="share">
-        <image class="card-article__ic-share" src="/images/ic_share.png"></image>
-      </button>
-    </view>
-  </view>
-</template>
-
 <!-- 成绩卡片 -->
 <template name="card-score">
   <view class="card-score">

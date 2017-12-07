@@ -26,38 +26,3 @@
     <text class="button-pairs__right" bindtap="{{rTapHandle}}">{{rText}}</text>
   </view>
 </template>
-
-<!-- 拨号按钮 -->
-<template name="button-dial">
-  <view class="button-dial" id="button-dial">
-    <view wx:if="{{dialStatus}}" class="button-dial__mask"></view>
-    <view wx:if="{{dialStatus}}" class="button-dial__menu" capture-catch:tap="showItem">
-      <view class="button-dial__item">
-        <view id="other">其他课程</view>
-        <image class="button-dial__r-ic" src="/images/ic_course_weekly.png"></image>
-      </view>
-      <view class="button-dial__item">
-        <view id="current">本周课程</view>
-        <image class="button-dial__r-ic" src="/images/ic_course_weekly.png"></image>
-      </view>
-      <view class="button-dial__item">
-        <!-- <picker bindchange="bindPickerChange" value="{{currentWeekly}}" range="{{weeklyArray}}">
-          <view id="switch" class="picker">切换周</view>
-        </picker> -->
-        <view class="section">
-          <picker bindchange="bindPickerChange" value="{{currentWeekly}}" range="{{weeklyArray}}">
-            <view class="picker">
-              <view>chufa</view>
-            </view>
-          </picker>
-        </view>
-        <image class="button-dial__r-ic" src="/images/ic_course_weekly.png"></image>
-      </view>
-      <view class="button-dial__item">
-        <view id="help">帮助</view>
-        <image class="button-dial__r-ic" src="/images/ic_course_weekly.png"></image>
-      </view>
-    </view>
-    <image class="button-dial__icon {{dialStatus ? 'button-dial__icon--on' : ''}} slid-up" src="/images/ic_new_red.png" bindtap="switchDial"></image>
-  </view>
-</template>
