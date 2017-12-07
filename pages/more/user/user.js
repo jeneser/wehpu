@@ -3,7 +3,7 @@ var app = getApp();
 Page({
   data: {
     userInfo: {
-      avatar: '/images/ic_avatar.png',
+      avatar: '/images/more/avatar.png',
       nickName: '',
       name: '',
       studentId: '',

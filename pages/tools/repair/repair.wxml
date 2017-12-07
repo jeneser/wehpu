@@ -16,7 +16,7 @@
             <text class="repair-form__value">{{area[areaIndex]}}</text>
           </view>
         </picker>
-        <image class="repair-form__r-icon" src="/images/ic_location.png" bindtap=""></image>
+        <image class="repair-form__r-icon" src="/images/common/location.png" bindtap=""></image>
       </view>
     </view>
     <!-- 详细地址 -->

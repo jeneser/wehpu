@@ -58,11 +58,11 @@
   <view class="succeed animation-slideIn" wx:if="{{step === 3}}">
     <view class="succeed__item">
       <text class="succeed__vpn">VPN账户</text>
-      <image class="succeed__state" src="/images/ic_succeed.png"></image>
+      <image class="succeed__state" src="/images/common/succeed.png"></image>
     </view>
     <view class="succeed__item">
       <text class="succeed__jwc">教务处账户</text>
-      <image class="succeed__state" src="/images/ic_succeed.png"></image>
+      <image class="succeed__state" src="/images/common/succeed.png"></image>
     </view>
     <button class="succeed__rebind" bindtap="rebind">重新绑定</button>
   </view>

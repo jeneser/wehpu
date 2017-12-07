@@ -84,14 +84,14 @@
   </view>
   <!-- 底部操作栏 -->
   <view class="foot">
-    <image class="foot__current foot__ic-sync" src="/images/ic_sync.png" bindtap="setCurrent"></image>
+    <image class="foot__current foot__ic-sync" src="/images/common/sync.png" bindtap="setCurrent"></image>
     <picker bindchange="bindPickerChange" value="{{currentWeekly}}" range="{{weeklyArray}}">
       <view class="foot__Weekly">
         <text>本学期第{{weeklyArray[currentWeekly]}}</text>
-        <image class="foot__ic-up" src="/images/ic_up.png"></image>
+        <image class="foot__ic-up" src="/images/common/up_small.png"></image>
       </view>
     </picker>
-    <image class="foot__other foot__ic-add" src="/images/ic_add.png" bindtap="seeOther"></image>
+    <image class="foot__other foot__ic-add" src="/images/common/add.png" bindtap="seeOther"></image>
   </view>
 </view>
 

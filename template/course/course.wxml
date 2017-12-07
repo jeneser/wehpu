@@ -12,7 +12,7 @@
 <template name="course-detail">
   <view class="course-detail" id="course-detail" bindtap="hideDetail">
     <view class="course-detail__box">
-      <image class="course-detail__close" id="close-detail" src="/images/ic_clear.png" bindtap="hideDetail"></image>
+      <image class="course-detail__close" id="close-detail" src="/images/common/clear.png" bindtap="hideDetail"></image>
       <view wx:for="{{courseDetail}}" wx:key="{{*this}}" class="course-detail__content">
         <view class="course-detail__name">
           <text>{{item.name}}</text>

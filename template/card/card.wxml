@@ -21,7 +21,7 @@
     <view class="card-score__head">
       <text class="card-score__title">{{title}}</text>
       <button class="card-score__share" bindtap="showHelp">
-        <image class="card-score__ic-share" src="/images/ic_tip.png"></image>
+        <image class="card-score__ic-share" src="/images/common/tip.png"></image>
       </button>
     </view>
     <view class="card-score__box">

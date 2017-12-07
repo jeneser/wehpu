@@ -12,7 +12,7 @@
       <view class="reversion-form__container">
         <input id="studentId" class="reversion-form__input" type="number" value="" confirm-type="done" placeholder="学号/一卡通号" bindblur="inputBlur"
         />
-        <image class="reversion-form__r-icon" src="{{exist ? '/images/ic_succeed.png' : '/images/common/send.png'}}" bindtap="checkUser"></image>
+        <image class="reversion-form__r-icon" src="{{exist ? '/images/common/succeed.png' : '/images/common/send.png'}}" bindtap="checkUser"></image>
       </view>
     </view>
 

@@ -4,7 +4,7 @@ Page({
   data: {
     userInfo: {
       href: '/pages/more/user/user',
-      avatar: '/images/ic_avatar.png',
+      avatar: '/images/more/avatar.png',
       nickName: 'wehpu',
       bind: false
     }

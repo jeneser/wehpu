@@ -10,7 +10,7 @@
           <text class="classroom-form__value">{{location[locationIndex]}}</text>
         </view>
       </picker>
-      <!-- <image class="classroom-form__r-icon" src="/images/ic_location.png" bindtap="chooseLocation"></image> -->
+      <!-- <image class="classroom-form__r-icon" src="/images/common/location.png" bindtap="chooseLocation"></image> -->
     </view>
     <!-- 周次 -->
     <view class="classroom-form__item">

@@ -17,7 +17,7 @@
   </view>
 
   <view class="tools">
-    <template is="list-icon" data="{{href: 'reversion', lIcon: '/images/ic_setting.png', text: '饭卡回家'}}" />
+    <template is="list-icon" data="{{href: 'reversion', lIcon: '/images/common/setting.png', text: '饭卡回家'}}" />
   </view>
 
   <template is="help" data="{{...help}}" />
