@@ -11,7 +11,7 @@
     <block wx:for="{{bookList}}" wx:key="{{item.id}}">
       <template is="list-book" data="{{...item, query: true}}" />
     </block>
-    <template wx:if="{{!bookList.length}}" is="placeholder-basic" data="{{bg:'/images/placeholder/bg_no_data.png'}}" />
+    <template wx:if="{{!bookList.length}}" is="placeholder-basic" data="{{bg:'/images/placeholder/bg_book.png'}}" />
   </view>
   <view wx:if="{{bookList.length}}" class="query-list__foot">
     <text class="query-list__tip">已显示全部</text>

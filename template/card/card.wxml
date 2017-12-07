@@ -32,7 +32,7 @@
         </view>
       </block>
       <block wx:if="{{scoreList.length === 0}}">
-        <template is="placeholder-basic" data="{{bg: '/images/placeholder/bg_serach.png', text: '暂无成绩信息'}}" />
+        <template is="placeholder-basic" data="{{bg: '/images/placeholder/bg_no_data.png', text: '暂无成绩信息'}}" />
       </block>
     </view>
   </view>
