@@ -1,6 +1,5 @@
 <!-- 导入模板 -->
 <import src="/template/course/course.wxml" />
-<import src="/template/button/button.wxml" />
 <import src="/template/placeholder/placeholder.wxml" />
 
 <view wx:if="{{courseStatus}}" class="course">

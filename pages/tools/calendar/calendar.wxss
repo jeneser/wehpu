@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 45rpx 45rpx 60rpx 45rpx;
+  padding: 15rpx 45rpx 60rpx 45rpx;
   background-color: #0099ff;
 }
 .calendar__weekly {
