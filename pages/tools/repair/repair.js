@@ -266,6 +266,7 @@ Page({
   formSubmit: function() {
     var _data = this.data;
     var _projectIndex = _data.projectIndex;
+    var _name = app.store.name || 'wehpu';
 
     var field = {
       // 维修项目序列号
@@ -278,7 +279,7 @@ Page({
       // 手机号
       mobile: _data.mobile,
       // 姓名
-      bUserName: app.store.name || 'wehpu',
+      bUserName: _name,
       // 报修内容
       bContent: _data.bContent,
       // 地址
