@@ -12,11 +12,11 @@
   <p align="center">
     <a href="#Wehpu">Wehpu</a>&nbsp;&nbsp;
     <a href="#特色功能">特色功能</a>&nbsp;&nbsp;
-    <a href="#截图">截图</a>&nbsp;&nbsp;
+    <a href="#部分截图">部分截图</a>&nbsp;&nbsp;
     <a href="#更新日志">更新日志</a>&nbsp;&nbsp;
     <a href="#捐赠致谢">捐赠致谢</a>&nbsp;&nbsp;
-    <a href="#Contributing">贡献</a>&nbsp;&nbsp;
-    <a href="#License">开源协议</a>&nbsp;&nbsp;
+    <a href="#贡献">贡献</a>&nbsp;&nbsp;
+    <a href="#开源协议">开源协议</a>&nbsp;&nbsp;
   </p>
 <hr />
 
@@ -73,7 +73,7 @@
 | :------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------: |
 |                                                     支付宝                                                     |                                                     微信                                                     |
 
-## Contributing
+## 贡献
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
@@ -81,7 +81,7 @@
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request
 
-## License
+## 开源协议
 
 [MIT](https://jeneser.github.io/) Copyright (c) 2017 [Jeneser](https://jeneser.github.io/)
 
