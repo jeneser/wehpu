@@ -85,4 +85,4 @@
 
 [MIT](https://jeneser.github.io/) Copyright (c) 2017 [Jeneser](https://jeneser.github.io/)
 
-[MIT](https://jeneser.github.io/) Copyright (c) 2017 [Jeneser](https://github.com/hpufe)
+[MIT](https://jeneser.github.io/) Copyright (c) 2017 [HPU-FE](https://github.com/hpufe)
