@@ -1,4 +1,5 @@
 <import src="/template/head/head.wxml" />
+<import src="/template/placeholder/placeholder.wxml" />
 
 <!-- 基础列表 -->
 <template name="list-basic">
@@ -62,6 +63,9 @@
       <view wx:if="{{item.time === '7-8'}}" class="list-course__time">04:30</view>
       <view wx:if="{{item.time === '9-10'}}" class="list-course__time">07:00</view>
     </view>
+    <!-- 暂无课程 -->
+    <template wx:if="{{todayHasCourse === false}}" is="placeholder-basic" data="{{text: '暂无课程', bg: '/images/placeholder/bg_no_data.png'}}"
+    />
   </view>
 </template>
 

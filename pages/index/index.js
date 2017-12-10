@@ -102,6 +102,7 @@ Page({
     oth: [],
     // 当前课程
     todayCourse: [],
+    todayHasCourse: false,
     courseStatus: false
   },
 
@@ -216,8 +217,14 @@ Page({
   },
 
   getTodayCourse: function() {
+    var _today = this.data[this.data._week[this.data.today]];
+    var todayHasCourse = _today.find(e => {
+      return e.current === true;
+    }) ? true : false;
+
     this.setData({
-      todayCourse: this.data[this.data._week[this.data.today]].reverse()
+      todayCourse: _today.reverse(),
+      todayHasCourse: todayHasCourse
     });
   },
 
