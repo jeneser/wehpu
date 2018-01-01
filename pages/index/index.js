@@ -110,31 +110,32 @@ Page({
     // 获取用户基本信息
     this.getUserInfo();
     if (this.data.bind) {
-      // 设置日期
-      this.setDate();
-      this.getCourse();
-      this.getTodayCourse();
+      this.initialize();
     }
   },
 
   onShow: function() {
     if (!this.data.todayCourse.length && this.data.bind) {
-      // 设置日期
-      this.setDate();
-      this.getCourse();
-      this.getTodayCourse();
+      this.initialize();
     }
   },
 
   onPullDownRefresh: function() {
-    this.setDate();
-    this.getCourse();
-    this.getTodayCourse();
+    this.initialize();
     wx.stopPullDownRefresh();
   },
 
+  initialize: function() {
+    this.setDate();
+    this.getCourse();
+    this.getTodayCourse();
+  },
+
   getUserInfo: function() {
-    var store = app.store;
+    var store = {};
+
+    app.checkInfo();
+    store = app.store;
 
     if (JSON.stringify(store) !== '{}') {
       this.setData({
