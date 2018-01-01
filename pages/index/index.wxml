@@ -24,7 +24,7 @@
   <!-- 课表信息 -->
   <view class="main">
     <!-- 课程列表 -->
-    <template wx:if="{{todayCourse.length !== 0 && bind}}" is="list-course" data="{{courses: todayCourse, todayHasCourse: todayHasCourse}}" />
+    <template wx:if="{{bind}}" is="list-course" data="{{courses: todayCourse, todayHasCourse: todayHasCourse}}" />
     <!-- 未绑定 -->
     <template wx:if="{{!bind}}" is="placeholder-basic" data="{{href: '/pages/more/binding', text: '未绑定', bg: '/images/placeholder/bg_no_login.png'}}"
     />
